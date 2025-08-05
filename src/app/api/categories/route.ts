@@ -7,9 +7,14 @@ import { createCategorySchema } from "@/lib/validations";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
     try {
-        const data = await cache.category.scan();
+        const { searchParams } = new URL(req.url);
+        const activeOnly = searchParams.get("active") !== "false";
+        
+        const data = activeOnly 
+            ? await cache.category.scan() 
+            : await queries.category.scanAll();
         return CResponse({ data });
     } catch (err) {
         return handleError(err);
