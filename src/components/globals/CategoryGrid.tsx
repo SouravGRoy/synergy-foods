@@ -72,7 +72,7 @@ function CategoryCard({ category }: CategoryCardProps) {
                     {category.commissionRate && category.commissionRate > 0 && (
                         <div className="mt-2">
                             <Badge variant="outline" className="text-xs">
-                                {(category.commissionRate / 100).toFixed(1)}% commission
+                                {((category.commissionRate || 0) / 100).toFixed(1)}% commission
                             </Badge>
                         </div>
                     )}

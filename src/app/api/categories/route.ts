@@ -11,9 +11,9 @@ export async function GET(req: NextRequest) {
     try {
         const { searchParams } = new URL(req.url);
         const activeOnly = searchParams.get("active") !== "false";
-        
-        const data = activeOnly 
-            ? await cache.category.scan() 
+
+        const data = activeOnly
+            ? await cache.category.scan()
             : await queries.category.scanAll();
         return CResponse({ data });
     } catch (err) {

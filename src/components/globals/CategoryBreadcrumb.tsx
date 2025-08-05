@@ -1,6 +1,6 @@
 "use client";
 
-import { 
+import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
@@ -26,7 +26,7 @@ export function CategoryBreadcrumb({
     currentPage,
 }: CategoryBreadcrumbProps) {
     const breadcrumbs = generateCategoryBreadcrumbs(category, subcategory, productType);
-    
+
     // Add current page if provided and different from the last breadcrumb
     if (currentPage && currentPage !== breadcrumbs[breadcrumbs.length - 1]?.label) {
         breadcrumbs.push({ label: currentPage, href: "#" });

@@ -24,7 +24,7 @@ export async function GET(_: NextRequest, { params }: RouteProps) {
     }
 }
 
-export async function PATCH(req: NextRequest, { params }: RouteProps) {
+export async function PUT(req: NextRequest, { params }: RouteProps) {
     try {
         if (env.IS_API_AUTHENTICATED) {
             const { userId } = await auth();

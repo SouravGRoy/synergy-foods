@@ -395,18 +395,18 @@ class CategoryRequestQuery {
         return data;
     }
 
-    async approve(id: string, reviewerId: string, reviewNote?: string) {
+    async approve(id: string, reviewerId: string, reviewNote?: string | null) {
         return this.update(id, {
             status: "approved",
-            reviewNote,
+            reviewNote: reviewNote || null,
             reviewerId,
         });
     }
 
-    async reject(id: string, reviewerId: string, reviewNote?: string) {
+    async reject(id: string, reviewerId: string, reviewNote?: string | null) {
         return this.update(id, {
             status: "rejected",
-            reviewNote,
+            reviewNote: reviewNote || null,
             reviewerId,
         });
     }

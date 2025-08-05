@@ -48,7 +48,7 @@ export default async function SubcategoryPage({ params }: SubcategoryPageProps) 
     return (
         <div className="container mx-auto px-4 py-8">
             <CategoryBreadcrumb category={category} subcategory={subcategory} />
-            
+
             <div className="mt-8">
                 <div className="mb-8">
                     {subcategory.imageUrl && (
@@ -72,7 +72,7 @@ export default async function SubcategoryPage({ params }: SubcategoryPageProps) 
                             </div>
                         </div>
                     )}
-                    
+
                     {!subcategory.imageUrl && (
                         <>
                             <h1 className="text-3xl md:text-4xl font-bold mb-4">

@@ -1,4 +1,3 @@
-import { CategoryGrid } from "@/components/globals/CategoryGrid";
 import { CategoryBreadcrumb } from "@/components/globals/CategoryBreadcrumb";
 import { queries } from "@/lib/db/queries";
 import { generateCategoryMetaDescription } from "@/lib/utils/category";
@@ -45,7 +44,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     return (
         <div className="container mx-auto px-4 py-8">
             <CategoryBreadcrumb category={category} />
-            
+
             <div className="mt-8">
                 <div className="mb-8">
                     {category.imageUrl && (
@@ -69,7 +68,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                             </div>
                         </div>
                     )}
-                    
+
                     {!category.imageUrl && (
                         <>
                             <h1 className="text-3xl md:text-4xl font-bold mb-4">

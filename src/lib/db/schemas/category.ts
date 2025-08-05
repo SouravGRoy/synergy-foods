@@ -9,7 +9,7 @@ export const categories = pgTable("categories", {
     name: text("name").notNull(),
     slug: text("slug").notNull().unique(),
     description: text("description"),
-    commissionRate: integer("commission_rate").default(0), // in basis points (e.g., 500 = 5%)
+    commissionRate: integer("commission_rate").default(0).notNull(), // in basis points (e.g., 500 = 5%)
     imageUrl: text("image_url"),
     isActive: boolean("is_active").default(true).notNull(),
     ...timestamps,

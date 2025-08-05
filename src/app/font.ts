@@ -1,15 +1,12 @@
-import { DM_Sans, Rubik } from "next/font/google";
+// Temporarily disabled due to network restrictions
+// import { DM_Sans, Rubik } from "next/font/google";
 
-export const dmsans = DM_Sans({
-    subsets: ["latin"],
-    weight: ["100", "200", "300", "400", "500", "600", "800", "900", "1000"],
-    display: "swap",
+export const dmsans = {
     variable: "--font-dmsans",
-});
+    className: "",
+};
 
-export const rubik = Rubik({
-    subsets: ["latin"],
-    weight: ["300", "400", "500", "600", "700", "800", "900"],
-    display: "swap",
+export const rubik = {
     variable: "--font-rubik",
-});
+    className: "",
+};
