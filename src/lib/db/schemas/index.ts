@@ -1,4 +1,5 @@
 export * from "./address";
+export * from "./banner";
 export * from "./cart";
 export * from "./category";
 export * from "./media-item";

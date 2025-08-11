@@ -351,3 +351,8 @@ export function getUrlFromString(str: string) {
 export function sanitizeHtml(html: string) {
     return html.replace(/<[^>]*>?/gm, "");
 }
+
+export function getUploadThingFileKey(url: string) {
+    const split = url.split("/").filter(Boolean);
+    return split[split.length - 1];
+}

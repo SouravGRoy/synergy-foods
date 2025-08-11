@@ -45,13 +45,13 @@ class UserQuery {
     }
 
     async get(id: string) {
-        const user = await db.query.users.findFirst({
+        const data = await db.query.users.findFirst({
             where: (f, o) => o.eq(f.id, id),
             with: { addresses: true },
         });
-        if (!user) return null;
+        if (!data) return null;
 
-        return fullUserSchema.parse(user);
+        return fullUserSchema.parse(data);
     }
 }
 

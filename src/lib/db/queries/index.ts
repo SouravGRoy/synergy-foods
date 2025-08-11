@@ -1,4 +1,5 @@
 import { addressQueries } from "./address";
+import { bannerQueries } from "./banner";
 import { cartQueries } from "./cart";
 import {
     categoryQueries,
@@ -12,6 +13,7 @@ import { wishlistQueries } from "./wishlist";
 
 export const queries = {
     address: addressQueries,
+    banner: bannerQueries,
     cart: cartQueries,
     category: categoryQueries,
     productType: productTypeQueries,

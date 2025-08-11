@@ -1,5 +1,6 @@
 export * from "./address";
 export * from "./auth";
+export * from "./banner";
 export * from "./cart";
 export * from "./category";
 export * from "./clerk";
