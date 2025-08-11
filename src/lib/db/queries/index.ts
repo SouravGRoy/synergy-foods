@@ -3,6 +3,7 @@ import { bannerQueries } from "./banner";
 import { cartQueries } from "./cart";
 import {
     categoryQueries,
+    categoryRequestQueries,
     productTypeQueries,
     subcategoryQueries,
 } from "./category";
@@ -16,6 +17,7 @@ export const queries = {
     banner: bannerQueries,
     cart: cartQueries,
     category: categoryQueries,
+    categoryRequest: categoryRequestQueries,
     productType: productTypeQueries,
     subcategory: subcategoryQueries,
     mediaItem: mediaItemQueries,
