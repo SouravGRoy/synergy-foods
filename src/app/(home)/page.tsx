@@ -1,11 +1,15 @@
 import { GeneralShell } from "@/components/globals/layouts";
 import {
     Features,
+    HeroBannerSection,
     Landing,
     MarketedProducts,
     NewArrivals,
+    Type1BannerSection,
+    Type2BannerSection,
+    Type3BannerSection,
+    Type4BannerSection,
 } from "@/components/home";
-import { BannerSections } from "@/components/home/banner-sections";
 import { queries } from "@/lib/db/queries";
 import dynamic from "next/dynamic";
 
@@ -51,6 +55,9 @@ export default async function Page() {
         <>
             <Landing />
 
+            {/* Hero banners right after the landing section */}
+            <HeroBannerSection />
+
             <GeneralShell
                 classNames={{
                     mainWrapper: "mt-6 md:mt-10",
@@ -60,11 +67,14 @@ export default async function Page() {
                 <NewArrivals limit={3} />
             </GeneralShell>
 
-            {/* Load banner sections client-side for faster initial load */}
-            <BannerSections />
+            {/* Type 1 banners after new arrivals */}
+            <Type1BannerSection />
 
             {/* Marketed Products Section - Featured Products Carousel */}
             <MarketedProducts initialData={marketedProductsData} />
+
+            {/* Type 2 banners after marketed products */}
+            <Type2BannerSection />
 
             <GeneralShell
                 classNames={{
@@ -75,6 +85,9 @@ export default async function Page() {
                 <BestSelling limit={3} />
             </GeneralShell>
 
+            {/* Type 3 banners after best selling */}
+            <Type3BannerSection />
+
             <GeneralShell
                 classNames={{
                     mainWrapper: "mt-0",
@@ -83,6 +96,9 @@ export default async function Page() {
             >
                 <Testimonials />
             </GeneralShell>
+
+            {/* Type 4 banners before the showcase */}
+            <Type4BannerSection />
 
             <ShowCase />
         </>

@@ -328,7 +328,7 @@ export function ProductListing({
     const pageCount = Math.ceil((totalCount ?? 0) / filters.limit);
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="mx-4 py-8">
             {/* Header */}
             <div className="mb-8">
                 <div className="mb-4 flex items-center justify-between">
@@ -393,7 +393,7 @@ export function ProductListing({
                 )}
             </div>
 
-            <div className="flex flex-col gap-8 md:flex-row">
+            <div className="flex flex-col gap-4 md:flex-row">
                 {/* Sidebar Filters */}
                 <div
                     className={`md:w-80 ${showFilters ? "block" : "hidden md:block"}`}
@@ -481,7 +481,7 @@ export function ProductListing({
                         </div>
                     ) : (
                         <>
-                            <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                            <div className="mb-8 grid grid-cols-1 gap-2 border-none sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                                 {safeProducts.map((product: Product) => (
                                     <ProductCard
                                         key={product.id}

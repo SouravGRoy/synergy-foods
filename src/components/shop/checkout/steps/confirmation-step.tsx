@@ -215,7 +215,7 @@ export function ConfirmationStep({
                         Need help with your order?
                         <Link
                             href="/contact"
-                            className="ml-1 text-primary hover:underline"
+                            className="ml-1 text-sm text-primary hover:underline"
                         >
                             Contact our support team
                         </Link>

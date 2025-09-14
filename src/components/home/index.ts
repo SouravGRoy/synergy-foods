@@ -4,3 +4,8 @@ export * from "./new-arrivals";
 export * from "./marketed-products";
 export * from "./features";
 export * from "./testimonials";
+export * from "./hero-banner-section";
+export * from "./type1-banner-section";
+export * from "./type2-banner-section";
+export * from "./type3-banner-section";
+export * from "./type4-banner-section";

@@ -61,7 +61,7 @@ export function MarketedProducts({ initialData }: MarketedProductsProps) {
 
     return (
         <section className="bg-muted/30 py-4 sm:py-6 lg:py-8">
-            <div className="container mx-auto px-2">
+            <div className="container mx-auto">
                 {/* Header Section */}
                 <div className="mb-6 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
                     {/* Left Section */}
@@ -118,7 +118,7 @@ export function MarketedProducts({ initialData }: MarketedProductsProps) {
                                 alt="Lost Space 1"
                                 width={350}
                                 height={350}
-                                className="mb-4 rounded-md"
+                                className="rounded-md"
                                 loading="lazy"
                             />
                         </div>
@@ -128,7 +128,7 @@ export function MarketedProducts({ initialData }: MarketedProductsProps) {
                                 alt="Lost Space 2"
                                 width={350}
                                 height={350}
-                                className="mb-4 rounded-md"
+                                className="rounded-md"
                                 loading="lazy"
                             />
                         </div>
@@ -138,7 +138,7 @@ export function MarketedProducts({ initialData }: MarketedProductsProps) {
                                 alt="Lost Space 3"
                                 width={350}
                                 height={350}
-                                className="mb-4 rounded-md"
+                                className="rounded-md"
                                 loading="lazy"
                             />
                         </div>
@@ -299,7 +299,7 @@ export function MarketedProducts({ initialData }: MarketedProductsProps) {
                                 </CarouselContent>
 
                                 {/* Bottom Marketing Banner */}
-                                <div className="relative hidden overflow-hidden rounded-md md:block">
+                                <div className="relative mt-4 hidden overflow-hidden rounded-md md:block">
                                     <Image
                                         src="/images/marketed.webp"
                                         alt="Marketing Banner"

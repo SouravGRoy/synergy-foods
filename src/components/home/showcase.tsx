@@ -58,7 +58,7 @@ export default function ShowCase() {
             </div>
 
             {/* Desktop Grid */}
-            <div className="hidden w-full flex-wrap items-center justify-center gap-8 px-4 sm:flex md:gap-12 lg:gap-16">
+            <div className="hidden w-full flex-wrap items-center justify-center gap-8 px-4 sm:flex md:gap-12 lg:gap-12">
                 {logos.map((logo, index) => (
                     <div
                         key={index}

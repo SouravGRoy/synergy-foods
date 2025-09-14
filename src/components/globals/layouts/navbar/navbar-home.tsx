@@ -44,7 +44,7 @@ export function NavbarHome() {
 
     const linkCls = (href: string) =>
         cn(
-            "px-3 py-2 text-[15px] font-semibold transition-colors",
+            "px-3 py-2 text-sm font-semibold transition-colors",
             pathname === href
                 ? "text-green-600"
                 : "text-black hover:text-green-700"
@@ -93,7 +93,7 @@ export function NavbarHome() {
                     </li>
                     <li>
                         <Link
-                            className="text-15px px-2 font-semibold text-black hover:text-green-700"
+                            className="px-2 text-sm font-semibold text-black hover:text-green-700"
                             href="/shop"
                         >
                             Shop
@@ -101,7 +101,7 @@ export function NavbarHome() {
                     </li>
                     <li>
                         <Link
-                            className="text-15px px-2 font-semibold text-black hover:text-green-700"
+                            className="px-2 text-sm font-semibold text-black hover:text-green-700"
                             href="/blog"
                         >
                             Blog

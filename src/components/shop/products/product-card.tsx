@@ -173,7 +173,7 @@ export function ProductCard({
                 </div>
             </div>
 
-            <CardContent className="p-4">
+            <CardContent className="">
                 {/* Category */}
                 {product.category && (
                     <div className="mb-2">
@@ -203,13 +203,13 @@ export function ProductCard({
                 )}
             </CardContent>
 
-            <CardFooter className="p-4 pt-0">
-                <div className="flex w-full items-center justify-between">
+            <CardFooter className="p- pt-0">
+                <div className="flex w-full flex-wrap items-center justify-between">
                     <div className="flex items-center gap-2">
                         {product.price !== null ? (
                             <Price
                                 value={product.price}
-                                className="text-lg font-bold"
+                                className="text-sm font-semibold md:text-base"
                             />
                         ) : (
                             <span className="text-lg font-bold text-muted-foreground">
