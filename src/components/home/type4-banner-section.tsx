@@ -5,7 +5,11 @@ import { axios } from "@/lib/axios";
 import { useQuery } from "@tanstack/react-query";
 
 export function Type4BannerSection() {
-    const { data: banners } = useQuery({
+    const {
+        data: banners,
+        isError,
+        isLoading,
+    } = useQuery({
         queryKey: ["promotional-banners", "home", "type4"],
         queryFn: async () => {
             const response = await axios.get(
@@ -18,9 +22,19 @@ export function Type4BannerSection() {
         },
         staleTime: 5 * 60 * 1000,
         refetchOnWindowFocus: false,
+        retry: 3,
+        retryDelay: 1000,
     });
 
-    if (!banners?.type4?.length) return null;
+    if (isLoading) {
+        return (
+            <section className="mt-8">
+                <div className="h-32 animate-pulse rounded-lg bg-muted" />
+            </section>
+        );
+    }
+
+    if (isError || !banners?.type4?.length) return null;
 
     return (
         <section className="py-4 md:mt-16">

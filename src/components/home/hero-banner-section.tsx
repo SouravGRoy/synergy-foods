@@ -5,7 +5,11 @@ import { axios } from "@/lib/axios";
 import { useQuery } from "@tanstack/react-query";
 
 export function HeroBannerSection() {
-    const { data: banners } = useQuery({
+    const {
+        data: banners,
+        isError,
+        isLoading,
+    } = useQuery({
         queryKey: ["promotional-banners", "home", "carousel"],
         queryFn: async () => {
             const response = await axios.get(
@@ -18,9 +22,19 @@ export function HeroBannerSection() {
         },
         staleTime: 5 * 60 * 1000,
         refetchOnWindowFocus: false,
+        retry: 3,
+        retryDelay: 1000,
     });
 
-    if (!banners?.carousel?.length) return null;
+    if (isLoading) {
+        return (
+            <section className="mt-8">
+                <div className="h-64 animate-pulse rounded-lg bg-muted" />
+            </section>
+        );
+    }
+
+    if (isError || !banners?.carousel?.length) return null;
 
     return (
         <section className="mt-8">
