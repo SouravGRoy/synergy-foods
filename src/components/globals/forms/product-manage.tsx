@@ -37,6 +37,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import { Tag, TagInput } from "@/components/ui/tag-input";
 import { Textarea } from "@/components/ui/textarea";
 import { PRODUCT_VERIFICATION_STATUSES } from "@/config/const";
 import { useMediaItem, useProduct } from "@/lib/react-query";
@@ -58,7 +59,6 @@ import {
 } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Country } from "country-state-city";
-import { Tag, TagInput } from "emblor";
 import Image from "next/image";
 import { useCallback, useMemo, useRef, useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
@@ -93,7 +93,6 @@ export function ProductManageForm({
     const [tags, setTags] = useState<Tag[]>(
         product?.metaKeywords.map((tag, i) => ({ id: `${i}`, text: tag })) ?? []
     );
-    const [activeTagIndex, setActiveTagIndex] = useState<number | null>(null);
 
     const editorRef = useRef<EditorRef>(null!);
 
@@ -1233,34 +1232,17 @@ export function ProductManageForm({
 
                                         <FormControl>
                                             <TagInput
-                                                {...field}
                                                 tags={tags}
-                                                setTags={(newTags) => {
+                                                onTagsChange={(newTags) => {
                                                     setTags(newTags);
                                                     field.onChange(
-                                                        (
-                                                            newTags as [
-                                                                Tag,
-                                                                ...Tag[],
-                                                            ]
-                                                        ).map((tag) => tag.text)
+                                                        newTags.map(
+                                                            (tag) => tag.text
+                                                        )
                                                     );
                                                 }}
                                                 placeholder="Enter product meta keywords"
-                                                styleClasses={{
-                                                    inlineTagsContainer:
-                                                        "border-input rounded-md bg-background ring-offset-background focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 p-1 gap-1",
-                                                    input: "w-full min-w-[80px] focus-visible:outline-none shadow-none px-2 h-7",
-                                                    tag: {
-                                                        body: "h-7 relative bg-background border border-input hover:bg-background rounded-sm font-medium text-xs ps-2 pe-7",
-                                                        closeButton:
-                                                            "absolute -inset-y-px -end-px p-0 rounded-e-lg flex size-7 transition-colors outline-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 text-muted-foreground/80 hover:text-foreground",
-                                                    },
-                                                }}
-                                                activeTagIndex={activeTagIndex}
-                                                setActiveTagIndex={
-                                                    setActiveTagIndex
-                                                }
+                                                disabled={isPending}
                                             />
                                         </FormControl>
 
