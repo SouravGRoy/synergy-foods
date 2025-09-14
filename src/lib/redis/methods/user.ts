@@ -22,7 +22,6 @@ class UserCache {
             if (!dbData) return null;
 
             cached = cachedUserSchema.parse(dbData);
-            console.log(cached);
             await this.add(cached);
         }
 
