@@ -61,7 +61,7 @@ export function MarketedProducts({ initialData }: MarketedProductsProps) {
 
     return (
         <section className="bg-muted/30 py-4 sm:py-6 lg:py-8">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-2">
                 {/* Header Section */}
                 <div className="mb-6 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
                     {/* Left Section */}
