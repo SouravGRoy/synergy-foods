@@ -27,11 +27,11 @@ export const siteConfig: SiteConfig = {
         height: 630,
     },
     links: {
-        Twitter: "https://x.com/itsdrvgo",
-        Instagram: "https://www.instagram.com/itsdrvgo",
-        Github: "https://github.com/itsdrvgo",
-        Youtube: "https://youtube.com/@itsdrvgodev",
-        Discord: "https://itsdrvgo.me/support",
+        Twitter: "https://x.com/SouravGRoy",
+        Instagram: "https://www.instagram.com/sourav_g_roy/?hl=en",
+        Github: "https://www.instagram.com/sourav_g_roy/?hl=en",
+        Youtube: "https://www.instagram.com/sourav_g_roy/?hl=en",
+        Discord: "https://www.instagram.com/sourav_g_roy/?hl=en",
     },
     contact: "contact@freveo.com",
     menu: [

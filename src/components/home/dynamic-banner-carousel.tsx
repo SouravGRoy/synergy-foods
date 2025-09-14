@@ -155,7 +155,7 @@ export function DynamicBannerCarousel({
             {!isLoading && (
                 <div className="absolute top-4 right-4 z-10 rounded bg-black/50 px-3 py-1 text-xs text-white">
                     {banners.length > 0
-                        ? `${banners.length} API banners`
+                        ? `${banners.length} banners`
                         : "Fallback banners"}
                 </div>
             )}
