@@ -1,0 +1,1 @@
+ALTER TABLE "products" ADD COLUMN "is_marketed" boolean DEFAULT false NOT NULL;

@@ -6,6 +6,7 @@ import {
     index,
     integer,
     jsonb,
+    numeric,
     pgTable,
     text,
     timestamp,
@@ -29,7 +30,9 @@ export const products = pgTable(
         isAvailable: boolean("is_available").default(true).notNull(),
         isActive: boolean("is_active").default(true).notNull(),
         isPublished: boolean("is_published").default(false).notNull(),
+        isMarketed: boolean("is_marketed").default(false).notNull(),
         publishedAt: timestamp("published_at"),
+        marketedAt: timestamp("marketed_at"),
         media: jsonb("media").$type<ProductMedia[]>().default([]).notNull(),
         productHasVariants: boolean("product_has_variants")
             .default(false)
@@ -47,9 +50,9 @@ export const products = pgTable(
             .references(() => productTypes.id, { onDelete: "cascade" }),
 
         // PRICING
-        price: integer("price"),
-        compareAtPrice: integer("compare_at_price"),
-        costPerItem: integer("cost_per_item"),
+        price: numeric("price", { precision: 10, scale: 2 }),
+        compareAtPrice: numeric("compare_at_price", { precision: 10, scale: 2 }),
+        costPerItem: numeric("cost_per_item", { precision: 10, scale: 2 }),
 
         // INVENTORY
         nativeSku: text("native_sku"),
@@ -131,9 +134,9 @@ export const productVariants = pgTable(
         combinations: jsonb("combinations").default({}).notNull(),
 
         // PRICING
-        price: integer("price").notNull(),
-        compareAtPrice: integer("compare_at_price"),
-        costPerItem: integer("cost_per_item"),
+        price: numeric("price", { precision: 10, scale: 2 }).notNull(),
+        compareAtPrice: numeric("compare_at_price", { precision: 10, scale: 2 }),
+        costPerItem: numeric("cost_per_item", { precision: 10, scale: 2 }),
 
         // INVENTORY
         nativeSku: text("native_sku").notNull().unique(),

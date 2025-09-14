@@ -17,192 +17,390 @@ import { useAuth } from "@/lib/react-query";
 import { useNavbarStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { CartIcon } from "./cart-icon";
+import { CategoryNavigation } from "./category-navigation";
+import { WishlistIcon } from "./wishlist-icon";
 
 export function NavbarHome() {
+    const pathname = usePathname();
     const [isMenuHidden, setIsMenuHidden] = useState(false);
 
-    const isMenuOpen = useNavbarStore((state) => state.isOpen);
-    const setIsMenuOpen = useNavbarStore((state) => state.setIsOpen);
+    const isMenuOpen = useNavbarStore((s) => s.isOpen);
+    const setIsMenuOpen = useNavbarStore((s) => s.setIsOpen);
 
     const { scrollY } = useScroll();
-
     useMotionValueEvent(scrollY, "change", (latest) => {
-        const previous = scrollY.getPrevious() ?? 0;
-
-        if (latest > previous && latest > 150) setIsMenuHidden(true);
-        else setIsMenuHidden(false);
+        const prev = scrollY.getPrevious() ?? 0;
+        setIsMenuHidden(latest > prev && latest > 150);
     });
 
     const { useCurrentUser, useLogout } = useAuth();
     const { data: user } = useCurrentUser();
     const { mutate: logout, isPending: isLoggingOut } = useLogout();
 
+    const linkCls = (href: string) =>
+        cn(
+            "px-3 py-2 text-[15px] font-semibold transition-colors",
+            pathname === href
+                ? "text-green-600"
+                : "text-black hover:text-green-700"
+        );
+
     return (
         <motion.header
-            variants={{
-                visible: {
-                    y: 0,
-                },
-                hidden: {
-                    y: "-100%",
-                },
-            }}
+            variants={{ visible: { y: 0 }, hidden: { y: "-100%" } }}
             animate={isMenuHidden ? "hidden" : "visible"}
-            transition={{
-                duration: 0.35,
-                ease: "easeInOut",
-            }}
-            className="sticky inset-x-0 top-0 z-50 flex h-auto w-full items-center justify-center bg-background"
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="sticky inset-x-0 top-0 z-50 bg-white shadow-sm"
             data-menu-open={isMenuOpen}
         >
             <nav
                 className={cn(
-                    "relative z-10 flex w-full max-w-5xl items-center justify-between gap-5 overflow-hidden p-4 md:px-8 xl:max-w-[100rem]",
+                    // Responsive grid layout
+                    "mx-auto flex w-full max-w-[1380px] items-center justify-between gap-3 px-4 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:gap-4 md:px-6 md:py-3",
                     isMenuOpen && "border-b"
                 )}
             >
-                <Link
-                    href="/"
-                    className="flex items-center gap-2 text-2xl font-bold"
-                >
-                    <p className="text-xl font-bold md:text-2xl">
-                        {siteConfig.name}
-                    </p>
-                </Link>
+                {/* LEFT: LOGO */}
+                <div className="flex items-center">
+                    <Link href="/" className="flex items-center">
+                        <Image
+                            src="/kiweM.png"
+                            alt={siteConfig.name}
+                            width={120}
+                            height={120}
+                            className="h-12 w-[100px] sm:h-14 sm:w-[120px] md:h-16 md:w-[140px]"
+                        />
+                    </Link>
+                </div>
 
-                <div className="flex items-center gap-6">
-                    <ul className="hidden items-center gap-1 sm:flex">
-                        {!!siteConfig.menu.length &&
-                            siteConfig.menu.map((item, index) => (
-                                <li key={index}>
+                {/* CENTER: LINKS (Desktop only) */}
+                <ul className="hidden items-center justify-center gap-5 md:flex">
+                    {/* Home */}
+                    <li>
+                        <Link href="/" className={linkCls("/")}>
+                            Home
+                        </Link>
+                    </li>
+
+                    {/* Shop via CategoryNavigation (kept) */}
+                    <li className="relative">
+                        <CategoryNavigation />
+                    </li>
+                    <li>
+                        <Link
+                            className="text-15px px-2 font-semibold text-black hover:text-green-700"
+                            href="/shop"
+                        >
+                            Shop
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className="text-15px px-2 font-semibold text-black hover:text-green-700"
+                            href="/blog"
+                        >
+                            Blog
+                        </Link>
+                    </li>
+                    {/* Other menu items except 'Shop' to avoid duplication */}
+                    {siteConfig.menu
+                        .filter((item) => item.name !== "Shop")
+                        .map((item) => (
+                            <li key={item.href}>
+                                <Link
+                                    className={linkCls(item.href)}
+                                    href={item.href}
+                                    target={
+                                        item.isExternal ? "_blank" : undefined
+                                    }
+                                    referrerPolicy={
+                                        item.isExternal
+                                            ? "no-referrer"
+                                            : undefined
+                                    }
+                                >
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))}
+                </ul>
+
+                {/* RIGHT: ACTION ICONS */}
+                <div className="flex items-center gap-3 md:ml-auto md:gap-4">
+                    {/* Search (Hidden on mobile) */}
+                    <button
+                        aria-label="Search"
+                        className="hidden h-8 w-8 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 md:inline-flex md:h-12 md:w-12"
+                    >
+                        <Icons.Search className="h-4 w-4 md:h-5 md:w-5" />
+                    </button>
+
+                    {/* Account (Desktop only) */}
+                    {user ? (
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <button className="hidden h-8 w-8 items-center justify-center rounded-full bg-teal-50 hover:bg-teal-100 md:inline-flex md:h-12 md:w-12">
+                                    <Avatar className="h-6 w-6 md:h-8 md:w-8">
+                                        <AvatarImage
+                                            src={user.avatarUrl ?? ""}
+                                            alt={user.firstName}
+                                        />
+                                        <AvatarFallback>
+                                            {user.firstName?.[0] ?? "U"}
+                                        </AvatarFallback>
+                                    </Avatar>
+                                </button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent
+                                align="end"
+                                className="min-w-56"
+                            >
+                                <DropdownMenuLabel className="flex items-center gap-3">
+                                    <Avatar className="h-8 w-8">
+                                        <AvatarImage
+                                            src={user.avatarUrl ?? ""}
+                                            alt={user.firstName}
+                                        />
+                                        <AvatarFallback>
+                                            {user.firstName?.[0] ?? "U"}
+                                        </AvatarFallback>
+                                    </Avatar>
+                                    <span>
+                                        Hello,{" "}
+                                        <span className="font-semibold">
+                                            {user.firstName}
+                                        </span>
+                                    </span>
+                                </DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuGroup>
+                                    {user.role !== "user" && (
+                                        <DropdownMenuItem asChild>
+                                            <Link href="/dashboard">
+                                                <Icons.LayoutDashboard className="h-4 w-4" />
+                                                <span>Dashboard</span>
+                                            </Link>
+                                        </DropdownMenuItem>
+                                    )}
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/account">
+                                            <Icons.User className="h-4 w-4" />
+                                            <span>My Account</span>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/profile">
+                                            <Icons.User2 className="h-4 w-4" />
+                                            <span>Profile</span>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href="/contact">
+                                            <Icons.LifeBuoy className="h-4 w-4" />
+                                            <span>Contact Us</span>
+                                        </Link>
+                                    </DropdownMenuItem>
+                                </DropdownMenuGroup>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem
+                                    disabled={isLoggingOut}
+                                    onClick={() => logout()}
+                                >
+                                    <Icons.LogOut className="h-4 w-4" />
+                                    <span>Log out</span>
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    ) : (
+                        <Link
+                            href="/auth/signin"
+                            className="hidden h-8 w-8 items-center justify-center rounded-full bg-teal-50 hover:bg-teal-100 md:inline-flex md:h-11 md:w-11"
+                            aria-label="Login"
+                        >
+                            <Icons.User className="h-4 w-4 md:h-5 md:w-5" />
+                        </Link>
+                    )}
+
+                    {/* Wishlist */}
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-yellow-100 hover:bg-yellow-200 md:h-12 md:w-12">
+                        <WishlistIcon />
+                    </div>
+
+                    {/* Cart */}
+                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 hover:bg-orange-200 md:h-12 md:w-12">
+                        <CartIcon />
+                    </div>
+
+                    {/* Mobile menu toggle */}
+                    <button
+                        aria-label="Mobile Menu"
+                        aria-pressed={isMenuOpen}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 md:hidden"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
+                        {isMenuOpen ? (
+                            <Icons.X className="h-5 w-5" />
+                        ) : (
+                            <Icons.Menu className="h-5 w-5" />
+                        )}
+                    </button>
+                </div>
+            </nav>
+
+            {/* Mobile Navigation Menu */}
+            {isMenuOpen && (
+                <div className="border-t bg-white md:hidden">
+                    <div className="mx-auto max-w-[1380px] px-4 py-4">
+                        {/* Mobile Search */}
+                        <div className="mb-4">
+                            <button
+                                aria-label="Search"
+                                className="flex w-full items-center gap-3 rounded-lg bg-gray-50 p-3 text-left hover:bg-gray-100"
+                            >
+                                <Icons.Search className="h-5 w-5 text-gray-500" />
+                                <span className="text-gray-500">
+                                    Search products...
+                                </span>
+                            </button>
+                        </div>
+
+                        {/* Mobile Navigation Links */}
+                        <div className="space-y-2">
+                            <Link
+                                href="/"
+                                className={cn(
+                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                    pathname === "/"
+                                        ? "bg-green-50 text-green-600"
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                )}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Home
+                            </Link>
+                            <Link
+                                href="/shop"
+                                className={cn(
+                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                    pathname === "/shop"
+                                        ? "bg-green-50 text-green-600"
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                )}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Shop
+                            </Link>
+                            <Link
+                                href="/blog"
+                                className={cn(
+                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                    pathname === "/blog"
+                                        ? "bg-green-50 text-green-600"
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                )}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Blog
+                            </Link>
+                            {siteConfig.menu
+                                .filter((item) => item.name !== "Shop")
+                                .map((item) => (
                                     <Link
-                                        className="relative rounded-lg p-1.5 px-4 font-semibold transition-all ease-in-out hover:bg-muted"
+                                        key={item.href}
                                         href={item.href}
+                                        className={cn(
+                                            "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                            pathname === item.href
+                                                ? "bg-green-50 text-green-600"
+                                                : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                        )}
                                         target={
                                             item.isExternal
                                                 ? "_blank"
                                                 : undefined
                                         }
                                         referrerPolicy={
-                                            item.isExternal ? "no-referrer" : ""
+                                            item.isExternal
+                                                ? "no-referrer"
+                                                : undefined
                                         }
+                                        onClick={() => setIsMenuOpen(false)}
                                     >
-                                        <span>{item.name}</span>
+                                        {item.name}
                                     </Link>
-                                </li>
-                            ))}
-                    </ul>
+                                ))}
+                        </div>
 
-                    <div className="flex items-center gap-6">
-                        <button
-                            aria-label="Mobile Menu Toggle Button"
-                            aria-pressed={isMenuOpen}
-                            className="sm:hidden"
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        >
-                            <Icons.Menu className="size-6" />
-                        </button>
-
+                        {/* Mobile User Section */}
                         {user ? (
-                            <div className="hidden items-center gap-5 md:flex">
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger asChild>
-                                        <button>
-                                            <Avatar>
-                                                <AvatarImage
-                                                    src={user.avatarUrl ?? ""}
-                                                    alt={user.firstName}
-                                                />
-                                                <AvatarFallback>
-                                                    {user.firstName[0]}
-                                                </AvatarFallback>
-                                            </Avatar>
-
-                                            <span className="sr-only">
-                                                User menu
-                                            </span>
-                                        </button>
-                                    </DropdownMenuTrigger>
-
-                                    <DropdownMenuContent className="min-w-56">
-                                        <DropdownMenuLabel className="flex items-center gap-3">
-                                            <Avatar>
-                                                <AvatarImage
-                                                    src={user.avatarUrl ?? ""}
-                                                    alt={user.firstName}
-                                                />
-                                                <AvatarFallback>
-                                                    {user.firstName[0]}
-                                                </AvatarFallback>
-                                            </Avatar>
-
-                                            <p>
-                                                Hello,{" "}
-                                                <span className="font-semibold">
-                                                    {user.firstName}
-                                                </span>
-                                            </p>
-                                        </DropdownMenuLabel>
-
-                                        <DropdownMenuSeparator />
-
-                                        <DropdownMenuGroup>
-                                            {user.role !== "user" && (
-                                                <DropdownMenuItem asChild>
-                                                    <Link
-                                                        href="/dashboard"
-                                                        prefetch
-                                                    >
-                                                        <Icons.LayoutDashboard className="size-4" />
-                                                        <span>Dashboard</span>
-                                                    </Link>
-                                                </DropdownMenuItem>
-                                            )}
-
-                                            <DropdownMenuItem asChild>
-                                                <Link href="/contact">
-                                                    <Icons.LifeBuoy className="size-4" />
-                                                    <span>Contact Us</span>
-                                                </Link>
-                                            </DropdownMenuItem>
-                                        </DropdownMenuGroup>
-
-                                        <DropdownMenuSeparator />
-
-                                        <DropdownMenuGroup>
-                                            <DropdownMenuItem asChild>
-                                                <Link href="/profile">
-                                                    <Icons.User2 className="size-4" />
-                                                    <span>Profile</span>
-                                                </Link>
-                                            </DropdownMenuItem>
-                                        </DropdownMenuGroup>
-
-                                        <DropdownMenuSeparator />
-
-                                        <DropdownMenuItem
-                                            disabled={isLoggingOut}
-                                            onClick={() => logout()}
-                                        >
-                                            <Icons.LogOut className="size-4" />
-                                            <span>Log out</span>
-                                        </DropdownMenuItem>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
+                            <div className="mt-4 space-y-2 border-t pt-4">
+                                <div className="flex items-center gap-3 px-3 py-2">
+                                    <Avatar className="h-8 w-8">
+                                        <AvatarImage
+                                            src={user.avatarUrl ?? ""}
+                                            alt={user.firstName}
+                                        />
+                                        <AvatarFallback>
+                                            {user.firstName?.[0] ?? "U"}
+                                        </AvatarFallback>
+                                    </Avatar>
+                                    <div>
+                                        <p className="text-sm font-medium text-gray-900">
+                                            {user.firstName} {user.lastName}
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            {user.email}
+                                        </p>
+                                    </div>
+                                </div>
+                                {user.role !== "user" && (
+                                    <Link
+                                        href="/dashboard"
+                                        className="block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        Dashboard
+                                    </Link>
+                                )}
+                                <Link
+                                    href="/account"
+                                    className="block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    My Account
+                                </Link>
+                                <button
+                                    className="block w-full rounded-lg px-3 py-2 text-left text-base font-medium text-red-600 hover:bg-red-50"
+                                    onClick={() => {
+                                        logout();
+                                        setIsMenuOpen(false);
+                                    }}
+                                    disabled={isLoggingOut}
+                                >
+                                    {isLoggingOut
+                                        ? "Logging out..."
+                                        : "Sign out"}
+                                </button>
                             </div>
                         ) : (
-                            <Button
-                                asChild
-                                className="hidden rounded-lg bg-foreground px-8 text-sm shadow-[inset_1px_1px_10px_2px_rgba(0,0,0,0.2),inset_2px_0_0_0_rgba(255,255,255,0.2)] md:flex"
-                            >
-                                <Link href="/auth/signin">Login</Link>
-                            </Button>
+                            <div className="mt-4 border-t pt-4">
+                                <Link
+                                    href="/auth/signin"
+                                    className="block w-full rounded-lg bg-green-600 px-4 py-3 text-center text-base font-medium text-white hover:bg-green-700"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Sign In
+                                </Link>
+                            </div>
                         )}
                     </div>
                 </div>
-            </nav>
+            )}
         </motion.header>
     );
 }

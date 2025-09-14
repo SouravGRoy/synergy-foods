@@ -3,6 +3,7 @@ import { ERROR_MESSAGES } from "@/config/const";
 import { queries } from "@/lib/db/queries";
 import { cache } from "@/lib/redis/methods";
 import { AppError, CResponse, generateSKU, handleError } from "@/lib/utils";
+import { cacheInvalidation } from "@/lib/utils/cache";
 import { Product, updateProductSchema } from "@/lib/validations";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
@@ -78,9 +79,9 @@ export async function PATCH(req: NextRequest, { params }: RouteProps) {
             throw new AppError(ERROR_MESSAGES.NOT_FOUND, "NOT_FOUND");
 
         // Check permissions for sensitive operations
-        if (parsed.verificationStatus && user && user.role !== "admin")
+        if (parsed.verificationStatus && user && !["admin", "mod"].includes(user.role))
             throw new AppError(
-                "Only administrators can change verification status.",
+                "Only administrators and moderators can change verification status.",
                 "FORBIDDEN"
             );
 
@@ -140,7 +141,7 @@ export async function PATCH(req: NextRequest, { params }: RouteProps) {
 
         if (finalIsPublished && finalVerificationStatus !== "approved")
             throw new AppError(
-                "Product must be approved before it can be published.",
+                "Product must be approved before it can be published. Please set the verification status to 'approved' first, or contact an administrator.",
                 "BAD_REQUEST"
             );
 
@@ -220,6 +221,14 @@ export async function PATCH(req: NextRequest, { params }: RouteProps) {
         }
 
         const data = await queries.product.update(id, parsed);
+        
+        // Invalidate related caches
+        await Promise.all([
+            cacheInvalidation.products(),
+            cacheInvalidation.newArrivals(),
+            cacheInvalidation.categories(),
+        ]);
+        
         return CResponse({ data });
     } catch (err) {
         return handleError(err);
@@ -228,6 +237,15 @@ export async function PATCH(req: NextRequest, { params }: RouteProps) {
 
 export async function DELETE(req: NextRequest, { params }: RouteProps) {
     try {
+        // Authentication check
+        const { userId } = await auth();
+        if (!userId)
+            throw new AppError(ERROR_MESSAGES.UNAUTHORIZED, "UNAUTHORIZED");
+
+        const user = await cache.user.get(userId);
+        if (!user || user.role === "user")
+            throw new AppError(ERROR_MESSAGES.FORBIDDEN, "FORBIDDEN");
+
         const { id } = await params;
 
         const existingData = await queries.product.get({
@@ -237,7 +255,13 @@ export async function DELETE(req: NextRequest, { params }: RouteProps) {
         if (!existingData)
             throw new AppError(ERROR_MESSAGES.NOT_FOUND, "NOT_FOUND");
 
-        await Promise.all([queries.product.delete(id), cache.wishlist.drop()]);
+        await Promise.all([
+            queries.product.delete(id), 
+            cache.wishlist.drop(),
+            cacheInvalidation.products(),
+            cacheInvalidation.newArrivals(),
+            cacheInvalidation.categories(),
+        ]);
         return CResponse();
     } catch (err) {
         return handleError(err);

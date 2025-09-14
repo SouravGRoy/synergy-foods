@@ -16,9 +16,12 @@ import { useAuth } from "@/lib/react-query";
 import { SignIn, signInSchema } from "@/lib/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 export function SignInForm() {
+    const [isMounted, setIsMounted] = useState(false);
+
     const form = useForm<SignIn>({
         resolver: zodResolver(signInSchema),
         defaultValues: {
@@ -27,6 +30,10 @@ export function SignInForm() {
         },
     });
 
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     const { useSignIn } = useAuth();
     const { mutateAsync, isPending } = useSignIn();
 
@@ -34,6 +41,42 @@ export function SignInForm() {
         await mutateAsync(values);
         form.reset();
     };
+
+    // Prevent hydration mismatch by not rendering interactive elements until mounted
+    if (!isMounted) {
+        return (
+            <div className="space-y-4">
+                <CardContent className="space-y-4">
+                    <div className="space-y-2">
+                        <div className="text-sm leading-none font-medium">
+                            Email
+                        </div>
+                        <div className="h-9 w-full rounded-md border border-input bg-background"></div>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="text-sm leading-none font-medium">
+                            Password
+                        </div>
+                        <div className="h-9 w-full rounded-md border border-input bg-background"></div>
+                    </div>
+                </CardContent>
+                <CardFooter className="flex-col items-end gap-4">
+                    <div className="h-9 w-full rounded-md bg-primary"></div>
+                    <div className="space-y-1 text-end">
+                        <p className="text-sm">
+                            Don&apos;t have an account?{" "}
+                            <Link
+                                href="/auth/signup"
+                                className="text-accent underline underline-offset-2"
+                            >
+                                Create one here
+                            </Link>
+                        </p>
+                    </div>
+                </CardFooter>
+            </div>
+        );
+    }
 
     return (
         <Form {...form}>

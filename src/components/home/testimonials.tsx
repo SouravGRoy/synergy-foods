@@ -8,7 +8,7 @@ const testimonials = [
     {
         name: "Sarah Chen",
         role: "Environmental Activist",
-        avatar: "https://images.unsplash.com/photo-1494790108755-2616b9f44008?w=80&h=80&fit=crop&crop=face",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         content:
             "Finally, a platform where I can shop with a clear conscience. The transparency about each product&apos;s journey is incredible!",
         rating: 5,
@@ -56,44 +56,12 @@ const stats = [
 
 export function Testimonials({ className, ...props }: GenericProps) {
     return (
-        <section className={cn("py-16 md:py-24", className)} {...props}>
-            {/* Stats Section */}
-            <div className="mb-20">
-                <div className="mb-12 space-y-6 text-center">
-                    <h2 className="text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
-                        Trusted by Thousands
-                    </h2>
-                    <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                        Join a community that values quality, sustainability,
-                        and positive impact.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-                    {stats.map((stat, index) => (
-                        <div
-                            key={index}
-                            className="group space-y-2 text-center"
-                        >
-                            <div className="text-3xl font-bold text-emerald-600 transition-transform duration-300 group-hover:scale-110 md:text-4xl lg:text-5xl">
-                                {stat.value}
-                            </div>
-                            <div className="text-lg font-semibold text-foreground">
-                                {stat.label}
-                            </div>
-                            <p className="text-sm text-muted-foreground">
-                                {stat.description}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
+        <section className={cn("py-4 md:py-10", className)} {...props}>
             {/* Testimonials Section */}
-            <div className="space-y-12">
-                <div className="space-y-6 text-center">
-                    <h3 className="text-2xl font-bold text-foreground md:text-3xl">
-                        What Our Customers Say
+            <div className="flex flex-col items-start justify-start space-y-8">
+                <div className="space-y-3">
+                    <h3 className="text-2xl font-bold text-foreground md:text-4xl">
+                        Our Customers love us
                     </h3>
                     <p className="mx-auto max-w-xl text-muted-foreground">
                         Real stories from people who&apos;ve made the switch to
@@ -132,9 +100,10 @@ export function Testimonials({ className, ...props }: GenericProps) {
                                 <div className="flex items-center space-x-4">
                                     <div className="relative size-12 overflow-hidden rounded-full ring-2 ring-emerald-100 transition-all duration-300 group-hover:ring-emerald-200">
                                         <Image
+                                            height={48}
+                                            width={48}
                                             src={testimonial.avatar}
                                             alt={testimonial.name}
-                                            fill
                                             className="object-cover"
                                         />
                                     </div>
@@ -161,23 +130,6 @@ export function Testimonials({ className, ...props }: GenericProps) {
                             </div>
                         </div>
                     ))}
-                </div>
-
-                {/* Call to action */}
-                <div className="pt-8 text-center">
-                    <p className="mb-4 text-muted-foreground">
-                        Ready to join thousands of satisfied customers?
-                    </p>
-                    <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                        <button className="inline-flex items-center rounded-lg border border-emerald-600 px-6 py-3 text-sm font-medium text-emerald-600 transition-colors duration-200 hover:bg-emerald-50">
-                            Read All Reviews
-                            <Icons.ChevronRight className="ml-2 size-4" />
-                        </button>
-                        <button className="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-emerald-700">
-                            Start Shopping
-                            <Icons.Heart className="ml-2 size-4" />
-                        </button>
-                    </div>
                 </div>
             </div>
         </section>

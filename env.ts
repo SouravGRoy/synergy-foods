@@ -24,6 +24,12 @@ export const env = createEnv({
             .optional()
             .default("false")
             .transform((val) => val === "true" || val === "1"),
+
+        // Stripe server-side keys
+        STRIPE_SECRET_KEY: z.string().min(1, "STRIPE_SECRET_KEY is required"),
+        STRIPE_WEBHOOK_SECRET: z
+            .string()
+            .min(1, "STRIPE_WEBHOOK_SECRET is required"),
     },
     client: {
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z
@@ -40,6 +46,11 @@ export const env = createEnv({
             .string()
             .url("NEXT_PUBLIC_DEPLOYMENT_URL must be a valid URL")
             .optional(),
+
+        // Stripe client-side keys
+        NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z
+            .string()
+            .min(1, "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is required"),
     },
     runtimeEnv: {
         CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
@@ -48,10 +59,14 @@ export const env = createEnv({
         REDIS_URL: process.env.REDIS_URL,
         UPLOADTHING_TOKEN: process.env.UPLOADTHING_TOKEN,
         IS_API_AUTHENTICATED: process.env.IS_API_AUTHENTICATED,
+        STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+        STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
 
         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
             process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
         NEXT_PUBLIC_BACKEND_URL: process.env.NEXT_PUBLIC_BACKEND_URL,
         NEXT_PUBLIC_DEPLOYMENT_URL: process.env.NEXT_PUBLIC_DEPLOYMENT_URL,
+        NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
+            process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
     },
 });

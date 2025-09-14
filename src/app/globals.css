@@ -116,8 +116,8 @@ button {
     --muted: oklch(87.302% 0.0001 271.152);
     --muted-foreground: oklch(0.556 0 0);
 
-    --accent: oklch(58.707% 0.11703 250.491);
-    --accent-foreground: oklch(100% 0.00011 271.152);
+    --accent: oklch(0.94 0 0);
+    --accent-foreground: oklch(0.205 0 0);
 
     --destructive: oklch(0.577 0.245 27.325);
     --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -147,6 +147,15 @@ button {
     --sidebar-ring: oklch(0.708 0 0);
     --background: oklch(99.107% 0.00011 271.152);
     --foreground: oklch(0.145 0 0);
+
+    --font-inter: var(--font-inter);
+    --font-roboto: var(--font-roboto);
+    --font-open-sans: var(--font-open-sans);
+    --font-lato: var(--font-lato);
+    --font-montserrat: var(--font-montserrat);
+    --font-poppins: var(--font-poppins);
+    --font-playfair-display: var(--font-playfair-display);
+    --font-merriweather: var(--font-merriweather);
 }
 
 .dark {
@@ -168,7 +177,7 @@ button {
     --muted: oklch(0.269 0 0);
     --muted-foreground: oklch(0.708 0 0);
 
-    --accent: oklch(0.269 0 0);
+    --accent: oklch(0.32 0 0);
     --accent-foreground: oklch(0.985 0 0);
 
     --destructive: oklch(0.704 0.191 22.216);
@@ -253,7 +262,7 @@ h3.tiptap-heading + h2.tiptap-heading {
 }
 
 .rfm-marquee-container {
-    @apply bg-primary py-2 text-primary-foreground;
+    @apply bg-rose-200 py-2 text-white;
 }
 
 .rfm-child {

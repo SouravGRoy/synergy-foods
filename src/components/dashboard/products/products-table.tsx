@@ -1,6 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { DataTable, DataTableToolbar } from "@/components/ui/data-table";
 import {
@@ -31,11 +32,7 @@ import {
     DEFAULT_PAGINATION_PAGE,
 } from "@/config/const";
 import { useProduct } from "@/lib/react-query";
-import {
-    convertCentToDollar,
-    convertValueToLabel,
-    formatPriceTag,
-} from "@/lib/utils";
+import { convertValueToLabel, formatPriceTag } from "@/lib/utils";
 import { FullProduct } from "@/lib/validations";
 import {
     ColumnDef,
@@ -46,8 +43,10 @@ import {
     VisibilityState,
 } from "@tanstack/react-table";
 import { format } from "date-fns";
+import { RefreshCw } from "lucide-react";
 import { parseAsInteger, useQueryState } from "nuqs";
 import { useMemo, useState } from "react";
+import { toast } from "sonner";
 import { ProductAction } from "./product-action";
 
 interface PageProps {
@@ -104,10 +103,7 @@ const columns: ColumnDef<TableProduct>[] = [
             const data = row.original;
 
             if (!data.productHasVariants) {
-                const price = formatPriceTag(
-                    convertCentToDollar(data.price ?? 0),
-                    true
-                );
+                const price = formatPriceTag(data.price ?? 0, true);
 
                 return <span>{price}</span>;
             }
@@ -115,14 +111,8 @@ const columns: ColumnDef<TableProduct>[] = [
             const minPriceRaw = Math.min(...data.variants.map((x) => x.price));
             const maxPriceRaw = Math.max(...data.variants.map((x) => x.price));
 
-            const minPrice = formatPriceTag(
-                convertCentToDollar(minPriceRaw),
-                true
-            );
-            const maxPrice = formatPriceTag(
-                convertCentToDollar(maxPriceRaw),
-                true
-            );
+            const minPrice = formatPriceTag(minPriceRaw, true);
+            const maxPrice = formatPriceTag(maxPriceRaw, true);
 
             if (minPriceRaw === maxPriceRaw) return <span>{minPrice}</span>;
             return (
@@ -226,9 +216,7 @@ const columns: ColumnDef<TableProduct>[] = [
 
                                             <TableCell>
                                                 {formatPriceTag(
-                                                    convertCentToDollar(
-                                                        variant.price
-                                                    ),
+                                                    variant.price,
                                                     true
                                                 )}
                                             </TableCell>
@@ -285,6 +273,23 @@ const columns: ColumnDef<TableProduct>[] = [
         },
     },
     {
+        accessorKey: "isMarketed",
+        header: "Marketed",
+        cell: ({ row }) => {
+            const data = row.original;
+            return data.isMarketed ? (
+                <Badge
+                    variant="default"
+                    className="bg-green-100 text-green-800 hover:bg-green-200"
+                >
+                    Featured
+                </Badge>
+            ) : (
+                <span className="text-muted-foreground">—</span>
+            );
+        },
+    },
+    {
         accessorKey: "verificationStatus",
         header: "Status",
         cell: ({ row }) => {
@@ -338,17 +343,32 @@ export function ProductsTable({ initialData }: PageProps) {
     );
     const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
-    const { usePaginate } = useProduct();
+    const { usePaginate, useClearCache } = useProduct();
     const {
         data: dataRaw,
         isPending,
         isFetching,
+        refetch,
     } = usePaginate({
         limit,
         page,
         search,
         initialData,
     });
+
+    const clearCache = useClearCache();
+
+    const handleRefresh = async () => {
+        try {
+            // Clear the cache and refetch data
+            clearCache();
+            await refetch();
+            toast.success("Products refreshed successfully");
+        } catch (error) {
+            console.error("Error refreshing products:", error);
+            toast.error("Failed to refresh products");
+        }
+    };
 
     const handleSearchChange = (query: string) => {
         setSearch(query);
@@ -413,6 +433,27 @@ export function ProductsTable({ initialData }: PageProps) {
                     onSearchChange={handleSearchChange}
                     searchDebounce={500}
                 />
+
+                {/* Add refresh button */}
+                <div className="flex items-center justify-between px-2 py-4">
+                    <div className="flex items-center space-x-2">
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={handleRefresh}
+                            disabled={isPending || isFetching}
+                            className="h-8 px-2 lg:px-3"
+                        >
+                            <RefreshCw className="mr-2 h-4 w-4" />
+                            Refresh
+                        </Button>
+                        {(isPending || isFetching) && (
+                            <span className="text-sm text-muted-foreground">
+                                Loading...
+                            </span>
+                        )}
+                    </div>
+                </div>
 
                 <DataTable.Content
                     columns={columns}

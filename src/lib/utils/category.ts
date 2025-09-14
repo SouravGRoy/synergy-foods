@@ -106,17 +106,17 @@ export function generateCategoryMetaDescription(
     productType?: ProductType
 ): string {
     let description = `Shop ${category.name}`;
-    
+
     if (subcategory) {
         description += ` - ${subcategory.name}`;
     }
-    
+
     if (productType) {
         description += ` - ${productType.name}`;
     }
-    
+
     description += " at Synergy Foods. Find the best products with competitive prices and fast delivery.";
-    
+
     return description;
 }
 
@@ -129,10 +129,10 @@ export function getCategoryPath(
     productType?: ProductType
 ): string {
     const parts = [];
-    
+
     if (category) parts.push(category.name);
     if (subcategory) parts.push(subcategory.name);
     if (productType) parts.push(productType.name);
-    
+
     return parts.join(" > ");
 }

@@ -38,11 +38,11 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
+import { PRODUCT_VERIFICATION_STATUSES } from "@/config/const";
 import { useMediaItem, useProduct } from "@/lib/react-query";
 import {
     cn,
-    convertCentToDollar,
-    convertDollarToCent,
+    convertValueToLabel,
     generateSKU,
     sanitizeHtml,
 } from "@/lib/utils";
@@ -121,9 +121,9 @@ export function ProductManageForm({
             productHasVariants: product?.productHasVariants ?? false,
 
             // PRICING
-            price: +convertCentToDollar(product?.price ?? 0),
-            compareAtPrice: +convertCentToDollar(product?.compareAtPrice ?? 0),
-            costPerItem: +convertCentToDollar(product?.costPerItem ?? 0),
+            price: product?.price ?? 0, // Use AED value directly
+            compareAtPrice: product?.compareAtPrice ?? 0, // Use AED value directly
+            costPerItem: product?.costPerItem ?? 0, // Use AED value directly
 
             // INVENTORY
             nativeSku: product?.nativeSku ?? generateSKU(),
@@ -144,11 +144,9 @@ export function ProductManageForm({
             variants:
                 product?.variants.map((variant) => ({
                     ...variant,
-                    price: +convertCentToDollar(variant.price),
-                    compareAtPrice: +convertCentToDollar(
-                        variant.compareAtPrice ?? 0
-                    ),
-                    costPerItem: +convertCentToDollar(variant.costPerItem ?? 0),
+                    price: variant.price ?? 0, // Use AED value directly
+                    compareAtPrice: variant.compareAtPrice ?? 0, // Use AED value directly
+                    costPerItem: variant.costPerItem ?? 0, // Use AED value directly
                 })) ?? [],
 
             // SEO
@@ -160,12 +158,16 @@ export function ProductManageForm({
             isActive: product?.isActive ?? true,
             isAvailable: product?.isAvailable ?? true,
             isPublished: product?.isPublished ?? false,
+            isMarketed: product?.isMarketed ?? false,
             lastReviewedAt: product?.lastReviewedAt ?? null,
             publishedAt: product?.publishedAt ?? null,
+            marketedAt: product?.marketedAt ?? null,
             rejectedAt: product?.rejectedAt ?? null,
             rejectionReason: product?.rejectionReason ?? "",
             uploaderId: product?.uploaderId ?? user.id,
-            verificationStatus: user.role === "admin" ? "approved" : "pending",
+            verificationStatus:
+                product?.verificationStatus ??
+                (user.role === "admin" ? "approved" : "pending"),
         },
     });
 
@@ -236,26 +238,14 @@ export function ProductManageForm({
                     onSubmit={form.handleSubmit((values) => {
                         values = {
                             ...values,
-                            price: values.price
-                                ? convertDollarToCent(values.price)
-                                : null,
-                            compareAtPrice: values.compareAtPrice
-                                ? convertDollarToCent(values.compareAtPrice)
-                                : null,
-                            costPerItem: values.costPerItem
-                                ? convertDollarToCent(values.costPerItem)
-                                : null,
+                            price: values.price || null, // Store AED as entered
+                            compareAtPrice: values.compareAtPrice || null, // Store AED as entered
+                            costPerItem: values.costPerItem || null, // Store AED as entered
                             variants: values.variants.map((variant) => ({
                                 ...variant,
-                                price: convertDollarToCent(variant.price),
-                                compareAtPrice: variant.compareAtPrice
-                                    ? convertDollarToCent(
-                                          variant.compareAtPrice
-                                      )
-                                    : null,
-                                costPerItem: variant.costPerItem
-                                    ? convertDollarToCent(variant.costPerItem)
-                                    : null,
+                                price: variant.price || 0, // Store AED as entered
+                                compareAtPrice: variant.compareAtPrice || null, // Store AED as entered
+                                costPerItem: variant.costPerItem || null, // Store AED as entered
                             })),
                         };
 
@@ -1302,6 +1292,63 @@ export function ProductManageForm({
                             </div>
                         </CardContent>
                     </Card>
+
+                    {/* Product Status - Moderator/Admin Only */}
+                    {["admin", "mod"].includes(user.role) && (
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Product Status</CardTitle>
+                            </CardHeader>
+
+                            <CardContent className="space-y-4 p-4 md:p-6">
+                                <FormField
+                                    control={form.control}
+                                    name="verificationStatus"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>
+                                                Verification Status
+                                            </FormLabel>
+
+                                            <Select
+                                                value={field.value}
+                                                onValueChange={field.onChange}
+                                                disabled={isPending}
+                                            >
+                                                <FormControl>
+                                                    <SelectTrigger>
+                                                        <SelectValue placeholder="Select verification status" />
+                                                    </SelectTrigger>
+                                                </FormControl>
+
+                                                <SelectContent>
+                                                    {PRODUCT_VERIFICATION_STATUSES.map(
+                                                        (status) => (
+                                                            <SelectItem
+                                                                key={status}
+                                                                value={status}
+                                                            >
+                                                                {convertValueToLabel(
+                                                                    status
+                                                                )}
+                                                            </SelectItem>
+                                                        )
+                                                    )}
+                                                </SelectContent>
+                                            </Select>
+
+                                            <div className="text-sm text-muted-foreground">
+                                                Products must be approved before
+                                                they can be published.
+                                            </div>
+
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                            </CardContent>
+                        </Card>
+                    )}
 
                     <Button
                         type="submit"

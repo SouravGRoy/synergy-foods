@@ -13,53 +13,107 @@ import {
     generateSKU,
     handleError,
 } from "@/lib/utils";
+// Production optimizations - import directly from utils files
+import {
+    sanitizeString,
+    sanitizeNumber,
+} from "@/lib/utils/sanitization";
+import {
+    withRateLimit,
+    apiRateLimiter,
+} from "@/lib/utils/rate-limit";
+import {
+    withCors,
+    corsConfigs,
+} from "@/lib/utils/cors";
+import {
+    withCache,
+    cacheConfigs,
+    cacheInvalidation,
+} from "@/lib/utils/cache";
 import { createProductSchema, Product } from "@/lib/validations";
 import { auth } from "@clerk/nextjs/server";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+async function getProductsHandler(req: NextRequest): Promise<NextResponse> {
     try {
         const { searchParams } = new URL(req.url);
 
-        const limit = searchParams.get("limit")
-            ? parseInt(searchParams.get("limit") as string)
-            : DEFAULT_PRODUCT_PAGINATION_LIMIT;
-        const page = searchParams.get("page")
-            ? parseInt(searchParams.get("page") as string)
-            : DEFAULT_PRODUCT_PAGINATION_PAGE;
-        const search = searchParams.get("search") || undefined;
-        const minPrice = searchParams.get("minPrice")
-            ? parseInt(searchParams.get("minPrice") as string)
+        // Sanitize query parameters
+        const limit = sanitizeNumber(searchParams.get("limit")) ?? DEFAULT_PRODUCT_PAGINATION_LIMIT;
+        const page = sanitizeNumber(searchParams.get("page")) ?? DEFAULT_PRODUCT_PAGINATION_PAGE;
+        const search = searchParams.get("search") ? sanitizeString(searchParams.get("search")!) : undefined;
+        const minPrice = sanitizeNumber(searchParams.get("minPrice"));
+        const maxPrice = sanitizeNumber(searchParams.get("maxPrice"));
+        const categoryId = searchParams.get("categoryId") ? sanitizeString(searchParams.get("categoryId")!) : undefined;
+        const subcategoryId = searchParams.get("subcategoryId") ? sanitizeString(searchParams.get("subcategoryId")!) : undefined;
+        const productTypeId = searchParams.get("productTypeId") ? sanitizeString(searchParams.get("productTypeId")!) : undefined;
+        const slug = searchParams.get("slug") ? sanitizeString(searchParams.get("slug")!) : undefined;
+        
+        // Boolean parameters with validation
+        const isActive = searchParams.get("isActive") === "true" ? true : 
+                        searchParams.get("isActive") === "false" ? false : undefined;
+        const isAvailable = searchParams.get("isAvailable") === "true" ? true :
+                           searchParams.get("isAvailable") === "false" ? false : undefined;
+        const isPublished = searchParams.get("isPublished") === "true" ? true :
+                           searchParams.get("isPublished") === "false" ? false : undefined;
+        const isDeleted = searchParams.get("isDeleted") === "true" ? true :
+                         searchParams.get("isDeleted") === "false" ? false : undefined;
+        
+        // Enum validation
+        const verificationStatusParam = searchParams.get("verificationStatus");
+        const validStatuses = ["pending", "approved", "rejected"];
+        const verificationStatus = verificationStatusParam && validStatuses.includes(verificationStatusParam) 
+            ? verificationStatusParam as Product["verificationStatus"] 
             : undefined;
-        const maxPrice = searchParams.get("maxPrice")
-            ? parseInt(searchParams.get("maxPrice") as string)
-            : undefined;
-        const categoryId = searchParams.get("categoryId") || undefined;
-        const subcategoryId = searchParams.get("subcategoryId") || undefined;
-        const productTypeId = searchParams.get("productTypeId") || undefined;
-        const isActive = searchParams.get("isActive")
-            ? searchParams.get("isActive") === "true"
-            : undefined;
-        const isAvailable = searchParams.get("isAvailable")
-            ? searchParams.get("isAvailable") === "true"
-            : undefined;
-        const isPublished = searchParams.get("isPublished")
-            ? searchParams.get("isPublished") === "true"
-            : undefined;
-        const isDeleted = searchParams.get("isDeleted")
-            ? searchParams.get("isDeleted") === "true"
-            : undefined;
-        const verificationStatus = searchParams.get("verificationStatus")
-            ? (searchParams.get(
-                  "verificationStatus"
-              ) as Product["verificationStatus"])
-            : undefined;
-        const sortBy = searchParams.get("sortBy")
-            ? (searchParams.get("sortBy") as "price" | "createdAt")
-            : undefined;
-        const sortOrder = searchParams.get("sortOrder")
-            ? (searchParams.get("sortOrder") as "asc" | "desc")
-            : undefined;
+            
+        // Sort validation
+        const sortByParam = searchParams.get("sortBy");
+        
+        // Map frontend sort values to backend values
+        const mapSortBy = (frontendSort: string) => {
+            switch (frontendSort) {
+                case "popularity":
+                case "newest":
+                    return "createdAt";
+                case "name":
+                    return "createdAt"; // Since we don't have a name field, use createdAt
+                case "price_asc":
+                case "price_desc":
+                    return "price";
+                default:
+                    return "createdAt";
+            }
+        };
+        
+        // Map frontend sort values to sort order
+        const mapSortOrder = (frontendSort: string) => {
+            switch (frontendSort) {
+                case "price_asc":
+                    return "asc";
+                case "price_desc":
+                    return "desc";
+                case "name":
+                    return "asc";
+                case "popularity":
+                case "newest":
+                default:
+                    return "desc";
+            }
+        };
+        
+        const validSortBy = ["price", "createdAt", "marketedAt"];
+        const sortBy = sortByParam 
+            ? mapSortBy(sortByParam)
+            : "createdAt";
+            
+        const sortOrderParam = searchParams.get("sortOrder");
+        const validSortOrder = ["asc", "desc"];
+        const sortOrder = sortOrderParam && validSortOrder.includes(sortOrderParam)
+            ? sortOrderParam as "asc" | "desc"
+            : sortByParam 
+                ? mapSortOrder(sortByParam)
+                : "desc";
 
         const data = await queries.product.paginate({
             limit,
@@ -85,7 +139,22 @@ export async function GET(req: NextRequest) {
     }
 }
 
-export async function POST(req: NextRequest) {
+// Apply production optimizations to GET handler
+export const GET = withCors(
+    withCache(
+        async (req: NextRequest) => {
+            // Apply rate limiting
+            const rateLimitResponse = await withRateLimit(req, apiRateLimiter);
+            if (rateLimitResponse) return rateLimitResponse;
+            
+            return getProductsHandler(req);
+        },
+        cacheConfigs.products
+    ),
+    corsConfigs.public
+);
+
+async function createProductsHandler(req: NextRequest): Promise<NextResponse> {
     try {
         if (env.IS_API_AUTHENTICATED) {
             const { userId } = await auth();
@@ -185,9 +254,28 @@ export async function POST(req: NextRequest) {
         });
 
         const data = await queries.product.batch(productsWithSkus);
+        
+        // Invalidate related caches
+        await Promise.all([
+            cacheInvalidation.products(),
+            cacheInvalidation.newArrivals(),
+            cacheInvalidation.categories(),
+        ]);
 
         return CResponse({ message: "CREATED", data });
     } catch (err) {
         return handleError(err);
     }
 }
+
+// Apply production optimizations to POST handler
+export const POST = withCors(
+    async (req: NextRequest) => {
+        // Apply rate limiting for creation operations
+        const rateLimitResponse = await withRateLimit(req, apiRateLimiter);
+        if (rateLimitResponse) return rateLimitResponse;
+        
+        return createProductsHandler(req);
+    },
+    corsConfigs.authenticated
+);

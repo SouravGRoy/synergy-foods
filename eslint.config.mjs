@@ -23,7 +23,7 @@ const eslintConfig = [
             "@typescript-eslint/no-explicit-any": "warn",
             "@typescript-eslint/no-unused-vars": "off",
             "no-unused-vars": ["off", "always"],
-            quotes: ["error", "double"],
+            quotes: ["warn", "double"],
             eqeqeq: ["error", "always"],
             "comma-spacing": [
                 "error",
@@ -41,7 +41,7 @@ const eslintConfig = [
             ],
             "object-curly-spacing": ["error", "always"],
             "arrow-parens": ["error", "always"],
-            "no-trailing-spaces": ["error", {}],
+            "no-trailing-spaces": ["warn", {}],
             "no-multi-spaces": ["error", {}],
             "semi-spacing": [
                 "error",

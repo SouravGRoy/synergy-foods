@@ -1,0 +1,16 @@
+{
+  "name": "B2C Marketplace",
+  "short_name": "Marketplace",
+  "description": "A modern B2C marketplace application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}

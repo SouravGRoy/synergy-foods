@@ -1,6 +1,6 @@
 "use client";
 
-import { 
+import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
@@ -8,8 +8,8 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Category, Subcategory, ProductType } from "@/lib/validations";
 import { generateCategoryBreadcrumbs } from "@/lib/utils/category";
+import { Category, ProductType, Subcategory } from "@/lib/validations";
 import { Fragment } from "react";
 
 interface CategoryBreadcrumbProps {
@@ -25,10 +25,17 @@ export function CategoryBreadcrumb({
     productType,
     currentPage,
 }: CategoryBreadcrumbProps) {
-    const breadcrumbs = generateCategoryBreadcrumbs(category, subcategory, productType);
-    
+    const breadcrumbs = generateCategoryBreadcrumbs(
+        category,
+        subcategory,
+        productType
+    );
+
     // Add current page if provided and different from the last breadcrumb
-    if (currentPage && currentPage !== breadcrumbs[breadcrumbs.length - 1]?.label) {
+    if (
+        currentPage &&
+        currentPage !== breadcrumbs[breadcrumbs.length - 1]?.label
+    ) {
         breadcrumbs.push({ label: currentPage, href: "#" });
     }
 
@@ -39,14 +46,18 @@ export function CategoryBreadcrumb({
                     <Fragment key={breadcrumb.href}>
                         <BreadcrumbItem>
                             {index === breadcrumbs.length - 1 ? (
-                                <BreadcrumbPage>{breadcrumb.label}</BreadcrumbPage>
+                                <BreadcrumbPage>
+                                    {breadcrumb.label}
+                                </BreadcrumbPage>
                             ) : (
                                 <BreadcrumbLink href={breadcrumb.href}>
                                     {breadcrumb.label}
                                 </BreadcrumbLink>
                             )}
                         </BreadcrumbItem>
-                        {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
+                        {index < breadcrumbs.length - 1 && (
+                            <BreadcrumbSeparator />
+                        )}
                     </Fragment>
                 ))}
             </BreadcrumbList>

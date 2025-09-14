@@ -3,4 +3,5 @@ import _axios from "axios";
 
 export const axios = _axios.create({
     baseURL: env.NEXT_PUBLIC_BACKEND_URL,
+    withCredentials: true, // Include cookies for authentication
 });

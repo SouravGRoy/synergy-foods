@@ -3,7 +3,8 @@ import {
     DEFAULT_PRODUCT_PAGINATION_PAGE,
 } from "@/config/const";
 import { cache } from "@/lib/redis/methods";
-import { convertDollarToCent } from "@/lib/utils";
+import { AppError } from "@/lib/utils";
+import { Redis } from "@upstash/redis";
 import {
     CreateProduct,
     FullProduct,
@@ -65,6 +66,7 @@ class ProductQuery {
         isActive,
         isAvailable,
         isPublished,
+        isMarketed,
         isDeleted,
         verificationStatus,
         sortBy = "createdAt",
@@ -81,9 +83,10 @@ class ProductQuery {
         isActive?: boolean;
         isAvailable?: boolean;
         isPublished?: boolean;
+        isMarketed?: boolean;
         isDeleted?: boolean;
         verificationStatus?: Product["verificationStatus"];
-        sortBy?: "price" | "createdAt";
+        sortBy?: "price" | "createdAt" | "marketedAt";
         sortOrder?: "asc" | "desc";
     }) {
         const searchQuery = !!search?.length
@@ -96,12 +99,12 @@ class ProductQuery {
         minPrice = !!minPrice
             ? minPrice < 0
                 ? 0
-                : convertDollarToCent(minPrice)
+                : minPrice // No conversion needed for AED
             : null;
         maxPrice = !!maxPrice
             ? maxPrice > 10000
                 ? null
-                : convertDollarToCent(maxPrice)
+                : maxPrice // No conversion needed for AED
             : null;
 
         const filters = [
@@ -137,6 +140,9 @@ class ProductQuery {
             isPublished !== undefined
                 ? eq(products.isPublished, isPublished)
                 : undefined,
+            isMarketed !== undefined
+                ? eq(products.isMarketed, isMarketed)
+                : undefined,
             isDeleted !== undefined
                 ? eq(products.isDeleted, isDeleted)
                 : undefined,
@@ -151,6 +157,20 @@ class ProductQuery {
                 ? eq(products.verificationStatus, verificationStatus)
                 : undefined,
         ];
+
+        // Map sortBy values to actual column references
+        const getSortColumn = (sortBy: string) => {
+            switch (sortBy) {
+                case "price":
+                    return products.price;
+                case "createdAt":
+                    return products.createdAt;
+                case "marketedAt":
+                    return products.marketedAt;
+                default:
+                    return products.createdAt;
+            }
+        };
 
         const data = await db.query.products.findMany({
             with: {
@@ -167,8 +187,8 @@ class ProductQuery {
             orderBy: searchQuery
                 ? [
                       sortOrder === "asc"
-                          ? asc(products[sortBy])
-                          : desc(products[sortBy]),
+                          ? asc(getSortColumn(sortBy))
+                          : desc(getSortColumn(sortBy)),
                       desc(sql`ts_rank(
                         setweight(to_tsvector('english', ${products.title}), 'A') ||
                         setweight(to_tsvector('english', ${products.description}), 'B'),
@@ -177,8 +197,8 @@ class ProductQuery {
                   ]
                 : [
                       sortOrder === "asc"
-                          ? asc(products[sortBy])
-                          : desc(products[sortBy]),
+                          ? asc(getSortColumn(sortBy))
+                          : desc(getSortColumn(sortBy)),
                   ],
             extras: {
                 count: db
@@ -305,9 +325,17 @@ class ProductQuery {
 
     async batch(values: (CreateProduct & { slug: string })[]) {
         const data = await db.transaction(async (tx) => {
+            // Convert numeric fields to strings for database storage
+            const processedProducts = values.map((value) => ({
+                ...value,
+                price: value.price?.toString() ?? null,
+                compareAtPrice: value.compareAtPrice?.toString() ?? null,
+                costPerItem: value.costPerItem?.toString() ?? null,
+            }));
+
             const newProducts = await tx
                 .insert(products)
-                .values(values)
+                .values(processedProducts)
                 .returning()
                 .then((res) => res);
 
@@ -321,6 +349,9 @@ class ProductQuery {
                 value.variants.map((variant) => ({
                     ...variant,
                     productId: newProducts[index].id,
+                    price: variant.price?.toString() ?? null,
+                    compareAtPrice: variant.compareAtPrice?.toString() ?? null,
+                    costPerItem: variant.costPerItem?.toString() ?? null,
                 }))
             );
 
@@ -351,12 +382,18 @@ class ProductQuery {
 
     async update(id: string, values: UpdateProduct) {
         const data = await db.transaction(async (tx) => {
+            // Convert numeric fields to strings for database storage
+            const processedValues = {
+                ...values,
+                updatedAt: new Date(),
+                price: values.price !== undefined ? (values.price?.toString() ?? null) : undefined,
+                compareAtPrice: values.compareAtPrice !== undefined ? (values.compareAtPrice?.toString() ?? null) : undefined,
+                costPerItem: values.costPerItem !== undefined ? (values.costPerItem?.toString() ?? null) : undefined,
+            };
+
             const updatedProduct = await tx
                 .update(products)
-                .set({
-                    ...values,
-                    updatedAt: new Date(),
-                })
+                .set(processedValues)
                 .where(eq(products.id, id))
                 .returning()
                 .then((res) => res[0]);
@@ -416,7 +453,12 @@ class ProductQuery {
                 variantsToBeAdded.length &&
                     tx
                         .insert(productVariants)
-                        .values(variantsToBeAdded)
+                        .values(variantsToBeAdded.map((variant) => ({
+                            ...variant,
+                            price: variant.price?.toString() ?? null,
+                            compareAtPrice: variant.compareAtPrice?.toString() ?? null,
+                            costPerItem: variant.costPerItem?.toString() ?? null,
+                        })))
                         .returning(),
                 ...optionsToBeUpdated.map((option) =>
                     tx
@@ -432,7 +474,12 @@ class ProductQuery {
                 ...variantsToBeUpdated.map((variant) =>
                     tx
                         .update(productVariants)
-                        .set(variant)
+                        .set({
+                            ...variant,
+                            price: variant.price?.toString() ?? null,
+                            compareAtPrice: variant.compareAtPrice?.toString() ?? null,
+                            costPerItem: variant.costPerItem?.toString() ?? null,
+                        })
                         .where(
                             and(
                                 eq(productVariants.productId, id),
@@ -496,6 +543,63 @@ class ProductQuery {
         return data;
     }
 
+    // Update marketing status with business logic
+    async updateMarketingStatus(id: string, isMarketed: boolean) {
+        const data = await db.transaction(async (tx) => {
+            // Get current product status
+            const currentProduct = await tx.query.products.findFirst({
+                where: eq(products.id, id),
+            });
+
+            if (!currentProduct) {
+                throw new AppError("Product not found", "NOT_FOUND");
+            }
+
+            // Business rule: Auto-publish when marketing
+            const updateData: any = {
+                isMarketed,
+                updatedAt: new Date(),
+            };
+
+            if (isMarketed) {
+                // Auto-publish when marketing
+                if (!currentProduct.isPublished) {
+                    updateData.isPublished = true;
+                    updateData.publishedAt = new Date();
+                }
+                updateData.marketedAt = new Date();
+            } else {
+                // When unmarking, set marketedAt to null
+                updateData.marketedAt = null;
+            }
+
+            const updatedProduct = await tx
+                .update(products)
+                .set(updateData)
+                .where(eq(products.id, id))
+                .returning()
+                .then((res) => res[0]);
+
+            return updatedProduct;
+        });
+
+        return data;
+    }
+
+    // Get count of currently marketed products (for 10 product limit)
+    async getMarketedCount() {
+        const data = await db.$count(
+            products,
+            and(
+                eq(products.isMarketed, true),
+                eq(products.isDeleted, false),
+                eq(products.isActive, true)
+            )
+        );
+
+        return +data || 0;
+    }
+
     async stock(
         values: {
             productId: string;
@@ -544,17 +648,165 @@ class ProductQuery {
         return data;
     }
 
+    // New Arrivals - Get latest products with optimized query
+    async getNewArrivals({
+        limit = 10,
+        categoryId,
+        subcategoryId,
+        productTypeId,
+    }: {
+        limit?: number;
+        categoryId?: string;
+        subcategoryId?: string;
+        productTypeId?: string;
+    } = {}) {
+        // Use optimized query but return proper FullProduct structure
+        const conditions = [
+            eq(products.isActive, true),
+            eq(products.isPublished, true),
+            eq(products.isAvailable, true),
+            eq(products.isDeleted, false),
+            eq(products.verificationStatus, "approved"),
+        ];
+
+        if (categoryId) conditions.push(eq(products.categoryId, categoryId));
+        if (subcategoryId) conditions.push(eq(products.subcategoryId, subcategoryId));
+        if (productTypeId) conditions.push(eq(products.productTypeId, productTypeId));
+
+        const data = await db.query.products.findMany({
+            with: {
+                uploader: true,
+                variants: {
+                    limit: 1, // Only get first variant for performance
+                },
+                category: true,
+                subcategory: true,
+                productType: true,
+                options: {
+                    limit: 3, // Limit options for performance
+                },
+            },
+            where: and(...conditions),
+            limit,
+            orderBy: desc(products.createdAt),
+        });
+
+        // Get media items efficiently
+        const mediaIds = new Set<string>();
+        for (const product of data) {
+            // Only get first 2 media items for homepage cards
+            product.media.slice(0, 2).forEach((media) => mediaIds.add(media.id));
+            product.variants.forEach((variant) => {
+                if (variant.image) mediaIds.add(variant.image);
+            });
+        }
+
+        const mediaItems = await cache.mediaItem.scan(Array.from(mediaIds));
+        const mediaMap = new Map(mediaItems.map((item) => [item.id, item]));
+
+        const enhanced = data.map((product) => ({
+            ...product,
+            media: product.media.slice(0, 2).map((media) => ({
+                ...media,
+                mediaItem: mediaMap.get(media.id),
+            })),
+            variants: product.variants.map((variant) => ({
+                ...variant,
+                mediaItem: variant.image ? mediaMap.get(variant.image) : null,
+            })),
+        }));
+
+        const parsed = fullProductSchema.array().parse(enhanced);
+
+        return {
+            data: parsed,
+            items: data.length,
+            pages: 1,
+        };
+    }
+
+    // Marketed Products - Get products marked for marketing with optimized query
+    async getMarketedProducts({
+        limit = 10,
+        categoryId,
+        subcategoryId,
+        productTypeId,
+    }: {
+        limit?: number;
+        categoryId?: string;
+        subcategoryId?: string;
+        productTypeId?: string;
+    } = {}) {
+        // Use optimized query but return proper FullProduct structure
+        const conditions = [
+            eq(products.isActive, true),
+            eq(products.isPublished, true),
+            eq(products.isAvailable, true),
+            eq(products.isDeleted, false),
+            eq(products.verificationStatus, "approved"),
+            eq(products.isMarketed, true),
+        ];
+
+        if (categoryId) conditions.push(eq(products.categoryId, categoryId));
+        if (subcategoryId) conditions.push(eq(products.subcategoryId, subcategoryId));
+        if (productTypeId) conditions.push(eq(products.productTypeId, productTypeId));
+
+        const data = await db.query.products.findMany({
+            with: {
+                uploader: true,
+                variants: {
+                    limit: 1, // Only get first variant for performance
+                },
+                category: true,
+                subcategory: true,
+                productType: true,
+                options: {
+                    limit: 3, // Limit options for performance
+                },
+            },
+            where: and(...conditions),
+            limit,
+            orderBy: desc(products.marketedAt),
+        });
+
+        // Get media items efficiently
+        const mediaIds = new Set<string>();
+        for (const product of data) {
+            // Only get first 2 media items for homepage cards
+            product.media.slice(0, 2).forEach((media) => mediaIds.add(media.id));
+            product.variants.forEach((variant) => {
+                if (variant.image) mediaIds.add(variant.image);
+            });
+        }
+
+        const mediaItems = await cache.mediaItem.scan(Array.from(mediaIds));
+        const mediaMap = new Map(mediaItems.map((item) => [item.id, item]));
+
+        const enhanced = data.map((product) => ({
+            ...product,
+            media: product.media.slice(0, 2).map((media) => ({
+                ...media,
+                mediaItem: mediaMap.get(media.id),
+            })),
+            variants: product.variants.map((variant) => ({
+                ...variant,
+                mediaItem: variant.image ? mediaMap.get(variant.image) : null,
+            })),
+        }));
+
+        const parsed = fullProductSchema.array().parse(enhanced);
+
+        return {
+            data: parsed,
+            items: data.length,
+            pages: 1,
+        };
+    }
+
     async delete(id: string) {
+        // Hard delete - completely remove from database
         const data = await db
-            .update(products)
-            .set({
-                isDeleted: true,
-                isActive: false,
-                isPublished: false,
-                isAvailable: false,
-                deletedAt: new Date(),
-                updatedAt: new Date(),
-            })
+            .delete(products)
             .where(eq(products.id, id))
             .returning()
             .then((res) => res[0]);

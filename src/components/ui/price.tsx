@@ -1,7 +1,52 @@
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { cn, formatPriceTag } from "@/lib/utils";
 import { ClassValue } from "clsx";
 import * as React from "react";
+
+interface PriceInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    currency?: string;
+    currencySymbol?: string;
+    classNames?: {
+        outerWrapper?: ClassValue;
+        innerWrapper?: ClassValue;
+        input?: ClassValue;
+    };
+}
+
+interface PriceProps extends React.HTMLAttributes<HTMLSpanElement> {
+    value: number; // Price in AED
+    showCurrency?: boolean;
+    keepDecimals?: boolean;
+}
+
+export function Price({
+    value,
+    showCurrency = true,
+    keepDecimals = true,
+    className,
+    ...props
+}: PriceProps) {
+    const [isClient, setIsClient] = React.useState(false);
+
+    React.useEffect(() => {
+        setIsClient(true);
+    }, []);
+
+    // Prevent hydration mismatch by showing a placeholder during SSR
+    if (!isClient) {
+        return (
+            <span className={cn("font-medium", className)} {...props}>
+                --
+            </span>
+        );
+    }
+
+    return (
+        <span className={cn("font-medium", className)} {...props}>
+            {formatPriceTag(value, keepDecimals)}
+        </span>
+    );
+}
 
 interface PriceInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     currency?: string;

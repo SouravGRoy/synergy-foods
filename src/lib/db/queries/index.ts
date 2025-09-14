@@ -9,8 +9,11 @@ import { mediaItemQueries } from "./media-item";
 import { productQueries } from "./product";
 import { userQueries } from "./user";
 import { wishlistQueries } from "./wishlist";
+import { bannerQueries } from "./banner";
+
 
 export const queries = {
+    banner: bannerQueries,
     address: addressQueries,
     cart: cartQueries,
     category: categoryQueries,

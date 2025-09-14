@@ -8,3 +8,5 @@ export * from "./product";
 export * from "./response";
 export * from "./user";
 export * from "./wishlist";
+export * from "./banner";
+

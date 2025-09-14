@@ -6,36 +6,38 @@ import { Input } from "@/components/ui/input";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const footerLinks = {
-    shop: [
-        { name: "New Arrivals", href: "/shop?sort=newest" },
-        { name: "Best Sellers", href: "/shop?sort=popular" },
-        { name: "Sale", href: "/shop?on_sale=true" },
-        { name: "Gift Cards", href: "/gift-cards" },
+// Move footer links outside component to ensure stability
+const FOOTER_LINKS = {
+    products: [
+        { name: "Fresh Fruits", href: "/products/fruits" },
+        { name: "Vegetables", href: "/products/vegetables" },
+        { name: "Grains & Pulses", href: "/products/grains" },
+        { name: "Spices & Herbs", href: "/products/spices" },
     ],
     company: [
         { name: "About Us", href: "/about" },
-        { name: "Our Impact", href: "/impact" },
+        { name: "Our Farms", href: "/farms" },
         { name: "Careers", href: "/careers" },
-        { name: "Press", href: "/press" },
+        { name: "News & Updates", href: "/news" },
     ],
     support: [
-        { name: "Help Center", href: "/help" },
-        { name: "Size Guide", href: "/size-guide" },
-        { name: "Shipping Info", href: "/shipping" },
-        { name: "Returns", href: "/returns" },
+        { name: "My Account", href: "/account" },
+        { name: "Contact Us", href: "/contact" },
+        { name: "Shipping & Delivery", href: "/shipping" },
+        { name: "FAQs", href: "/faq" },
+        { name: "Wholesale Inquiries", href: "/wholesale" },
     ],
     legal: [
         { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "/terms" },
-        { name: "Cookie Policy", href: "/cookies" },
-        { name: "Sustainability", href: "/sustainability" },
+        { name: "Terms & Conditions", href: "/terms" },
+        { name: "Food Safety Policy", href: "/safety" },
+        { name: "Certifications", href: "/certifications" },
     ],
-};
+} as const;
 
-const socialLinks = [
+const SOCIAL_LINKS = [
     {
         name: "Twitter",
         href: siteConfig.links?.Twitter || "#",
@@ -51,40 +53,81 @@ const socialLinks = [
         href: siteConfig.links?.Youtube || "#",
         icon: Icons.Youtube,
     },
-    {
-        name: "Github",
-        href: siteConfig.links?.Github || "#",
-        icon: Icons.Github,
-    },
-];
+] as const;
 
 export function Footer({ className, ...props }: GenericProps) {
     const [email, setEmail] = useState("");
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     const handleSubscribe = (e: React.FormEvent) => {
         e.preventDefault();
         if (email) {
-            // Handle newsletter subscription here
             setIsSubscribed(true);
             setEmail("");
             setTimeout(() => setIsSubscribed(false), 3000);
         }
     };
 
+    // Prevent hydration mismatch by not rendering interactive elements until mounted
+    if (!isMounted) {
+        return (
+            <footer
+                className={cn("bg-green-900 text-white", className)}
+                {...props}
+            >
+                {/* Newsletter Section */}
+                <div className="border-b border-gray-800">
+                    <div className="mx-auto px-4 py-12 md:px-8 xl:max-w-[100rem]">
+                        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-bold md:text-3xl">
+                                    Stay Updated on Fresh Food & Trade News
+                                </h3>
+                                <p className="text-gray-300 md:text-lg">
+                                    Get the latest updates on fresh produce,
+                                    market trends, and exclusive deals directly
+                                    to your inbox.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4">
+                                <div className="flex gap-3">
+                                    <div className="h-9 flex-1 rounded-md border border-gray-700 bg-gray-800 px-3 py-1 text-white placeholder:text-gray-400"></div>
+                                    <div className="h-9 rounded-md bg-emerald-600 px-6"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Rest of footer content will be added here */}
+                <div className="mx-auto px-4 py-12 md:px-8 xl:max-w-[100rem]">
+                    <div className="text-center text-gray-400">
+                        Loading footer content...
+                    </div>
+                </div>
+            </footer>
+        );
+    }
+
     return (
-        <footer className={cn("bg-gray-900 text-white", className)} {...props}>
+        <footer className={cn("bg-green-900 text-white", className)} {...props}>
             {/* Newsletter Section */}
             <div className="border-b border-gray-800">
                 <div className="mx-auto px-4 py-12 md:px-8 xl:max-w-[100rem]">
                     <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
                         <div className="space-y-4">
                             <h3 className="text-2xl font-bold md:text-3xl">
-                                Stay Updated on Sustainable Fashion
+                                Stay Updated on Fresh Food & Trade News
                             </h3>
                             <p className="text-gray-300 md:text-lg">
-                                Get the latest news on eco-friendly products,
-                                sustainability tips, and exclusive offers.
+                                Get the latest updates on seasonal produce, food
+                                safety, and exclusive offers from our global
+                                trading network.
                             </p>
                         </div>
 
@@ -137,10 +180,10 @@ export function Footer({ className, ...props }: GenericProps) {
                                 </h2>
                             </Link>
                             <p className="leading-relaxed text-gray-300">
-                                Discover sustainable fashion that makes a
-                                difference. Every purchase supports
-                                environmental initiatives and ethical
-                                manufacturing.
+                                Supplying fresh, organic, and ethically sourced
+                                food worldwide. Trusted by wholesalers,
+                                retailers, and restaurants for quality and
+                                reliability.
                             </p>
                         </div>
 
@@ -150,11 +193,11 @@ export function Footer({ className, ...props }: GenericProps) {
                                 Follow Us
                             </h4>
                             <div className="flex gap-3">
-                                {socialLinks.map((social, index) => {
+                                {SOCIAL_LINKS.map((social, socialIndex) => {
                                     const IconComponent = social.icon;
                                     return (
                                         <Link
-                                            key={index}
+                                            key={`social-${socialIndex}-${social.name}`}
                                             href={social.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -169,14 +212,14 @@ export function Footer({ className, ...props }: GenericProps) {
                         </div>
                     </div>
 
-                    {/* Shop Links */}
+                    {/* Products Links */}
                     <div className="space-y-4">
                         <h4 className="text-sm font-semibold tracking-wide text-gray-200 uppercase">
-                            Shop
+                            Products
                         </h4>
                         <ul className="space-y-3">
-                            {footerLinks.shop.map((link, index) => (
-                                <li key={index}>
+                            {FOOTER_LINKS.products.map((link, linkIndex) => (
+                                <li key={`products-${linkIndex}-${link.href}`}>
                                     <Link
                                         href={link.href}
                                         className="text-gray-300 transition-colors duration-200 hover:text-emerald-400"
@@ -194,8 +237,8 @@ export function Footer({ className, ...props }: GenericProps) {
                             Company
                         </h4>
                         <ul className="space-y-3">
-                            {footerLinks.company.map((link, index) => (
-                                <li key={index}>
+                            {FOOTER_LINKS.company.map((link, linkIndex) => (
+                                <li key={`company-${linkIndex}-${link.href}`}>
                                     <Link
                                         href={link.href}
                                         className="text-gray-300 transition-colors duration-200 hover:text-emerald-400"
@@ -213,8 +256,8 @@ export function Footer({ className, ...props }: GenericProps) {
                             Support
                         </h4>
                         <ul className="space-y-3">
-                            {footerLinks.support.map((link, index) => (
-                                <li key={index}>
+                            {FOOTER_LINKS.support.map((link, linkIndex) => (
+                                <li key={`support-${linkIndex}-${link.href}`}>
                                     <Link
                                         href={link.href}
                                         className="text-gray-300 transition-colors duration-200 hover:text-emerald-400"
@@ -232,8 +275,8 @@ export function Footer({ className, ...props }: GenericProps) {
                             Legal
                         </h4>
                         <ul className="space-y-3">
-                            {footerLinks.legal.map((link, index) => (
-                                <li key={index}>
+                            {FOOTER_LINKS.legal.map((link, linkIndex) => (
+                                <li key={`legal-${linkIndex}-${link.href}`}>
                                     <Link
                                         href={link.href}
                                         className="text-gray-300 transition-colors duration-200 hover:text-emerald-400"
@@ -260,14 +303,14 @@ export function Footer({ className, ...props }: GenericProps) {
                             <p>
                                 Made with{" "}
                                 <Icons.Heart className="inline size-4 text-red-500" />{" "}
-                                for a sustainable future
+                                passion for global food excellence
                             </p>
                         </div>
 
                         <div className="flex items-center gap-4 text-sm text-gray-400">
                             <div className="flex items-center gap-2">
                                 <Icons.Heart className="size-4 text-emerald-500" />
-                                <span>Carbon Neutral Shipping</span>
+                                <span>Certified Quality & Safe Trading</span>
                             </div>
                         </div>
                     </div>

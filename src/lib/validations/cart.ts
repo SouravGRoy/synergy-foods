@@ -9,10 +9,12 @@ import {
 
 export const cartSchema = z.object({
     id: idSchema,
-    userId: generateIdSchema({
-        required_error: "User ID is required",
-        invalid_type_error: "User ID must be a string",
-    }),
+    userId: z
+        .string({
+            required_error: "User ID is required",
+            invalid_type_error: "User ID must be a string",
+        })
+        .min(1, "User ID is required"),
     productId: generateIdSchema({
         required_error: "Product ID is required",
         invalid_type_error: "Product ID must be a string",
@@ -50,8 +52,18 @@ export const cartSchema = z.object({
 export const createCartSchema = cartSchema.pick({
     userId: true,
     productId: true,
-    variantId: true,
     quantity: true,
+}).extend({
+    variantId: z.preprocess(
+        convertEmptyStringToNull,
+        z
+            .string({
+                invalid_type_error: "Variant ID must be a string",
+            })
+            .uuid("Variant ID is invalid")
+            .nullable()
+            .optional()
+    ),
 });
 
 export const updateCartSchema = createCartSchema

@@ -13,7 +13,8 @@ export function useMediaItem() {
 
     const { startUpload } = useUploadThing("mediaUploader", {
         onUploadError: (e) => {
-            toast.error(e.message);
+            console.error("UploadThing error:", e, e.cause);
+            toast.error(`Upload failed: ${e.message}`);
         },
     });
 
@@ -26,7 +27,7 @@ export function useMediaItem() {
             queryKey: ["media-items"],
             queryFn: async () => {
                 const response =
-                    await axios.get<ResponseData<T>>("/media-items");
+                    await axios.get<ResponseData<T>>("/api/media-items");
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
                 return response.data.data;
@@ -55,7 +56,7 @@ export function useMediaItem() {
 
                 const values: CreateMediaItem[] = res.map((item) => ({
                     name: item.name,
-                    url: item.ufsUrl,
+                    url: item.url,
                     type: item.type,
                     size: item.size,
                     uploaderId,
@@ -63,7 +64,7 @@ export function useMediaItem() {
                 }));
 
                 const response = await axios.post<ResponseData<MediaItem[]>>(
-                    "/media-items",
+                    "/api/media-items",
                     values
                 );
                 if (!response.data.success)

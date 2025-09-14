@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { axios } from "../axios";
@@ -15,6 +15,7 @@ import {
 
 export function useProduct() {
     const router = useRouter();
+    const queryClient = useQueryClient();
 
     const usePaginate = <
         T extends {
@@ -80,7 +81,7 @@ export function useProduct() {
                 sortOrder,
             ],
             queryFn: async () => {
-                const response = await axios.get<ResponseData<T>>("/products", {
+                const response = await axios.get<ResponseData<T>>("/api/products", {
                     params: {
                         limit,
                         page,
@@ -101,7 +102,26 @@ export function useProduct() {
                 });
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
-                return response.data.data;
+                
+                // Transform data to match ProductListing interface
+                const responseData = response.data.data;
+                if (!responseData) {
+                    return { data: [], items: 0, pages: 0 } as unknown as T;
+                }
+                
+                const transformedData = {
+                    ...responseData,
+                    data: responseData.data?.map((product: any) => ({
+                        ...product,
+                        name: product.title, // Map title to name for UI consistency
+                        images:
+                            product.media
+                                ?.map((m: any) => m.mediaItem?.url)
+                                .filter((url: string) => Boolean(url)) || [],
+                    })) || []
+                } as unknown as T;
+                
+                return transformedData;
             },
             staleTime: 1000,
             refetchOnWindowFocus: false,
@@ -118,7 +138,7 @@ export function useProduct() {
             },
             mutationFn: async (values: CreateProduct[]) => {
                 const response = await axios.post<ResponseData<Product[]>>(
-                    "/products",
+                    "/api/products",
                     values
                 );
                 if (!response.data.success)
@@ -127,6 +147,10 @@ export function useProduct() {
             },
             onSuccess: (_, __, { toastId }) => {
                 toast.success("Product added!", { id: toastId });
+                // Invalidate all product-related queries including new arrivals
+                queryClient.invalidateQueries({ queryKey: ["products"] });
+                // Force refetch new arrivals since new products should appear there
+                queryClient.refetchQueries({ queryKey: ["products", "new-arrivals"] });
                 router.refresh();
             },
             onError: (err, _, ctx) => {
@@ -148,16 +172,26 @@ export function useProduct() {
                 id: string;
                 values: UpdateProduct;
             }) => {
+                console.log("Updating product with ID:", id);
+                console.log("Update values:", values);
+                console.log("PATCH URL:", `/api/products/${id}`);
+                
                 const response = await axios.patch<ResponseData<Product>>(
-                    `/products/${id}`,
+                    `/api/products/${id}`,
                     values
                 );
+                
+                console.log("Update response:", response);
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
                 return response.data.data;
             },
             onSuccess: (_, __, { toastId }) => {
                 toast.success("Product updated!", { id: toastId });
+                // Invalidate all product-related queries including new arrivals
+                queryClient.invalidateQueries({ queryKey: ["products"] });
+                // Force refetch new arrivals immediately
+                queryClient.refetchQueries({ queryKey: ["products", "new-arrivals"] });
                 router.refresh();
             },
             onError: (err, _, ctx) => {
@@ -166,5 +200,189 @@ export function useProduct() {
         });
     };
 
-    return { usePaginate, useCreate, useUpdate };
+    const useNewArrivals = <
+        T extends {
+            data: FullProduct[];
+            items: number;
+            pages: number;
+        },
+    >(input: {
+        limit?: number;
+        categoryId?: string;
+        subcategoryId?: string;
+        productTypeId?: string;
+        enabled?: boolean;
+        initialData?: T;
+    } = {}) => {
+        const {
+            limit = 10,
+            categoryId,
+            subcategoryId,
+            productTypeId,
+            enabled = true,
+            ...rest
+        } = input;
+
+        return useQuery({
+            queryKey: [
+                "products",
+                "new-arrivals", 
+                limit,
+                categoryId,
+                subcategoryId,
+                productTypeId,
+            ],
+            queryFn: async () => {
+                const response = await axios.get<ResponseData<T>>("/api/products/new-arrivals", {
+                    params: {
+                        limit,
+                        categoryId,
+                        subcategoryId,
+                        productTypeId,
+                    },
+                });
+                if (!response.data.success)
+                    throw new Error(response.data.longMessage);
+                return response.data.data;
+            },
+            staleTime: 1000 * 60 * 5, // 5 minutes cache
+            refetchOnWindowFocus: false, // Don't refetch on window focus
+            refetchOnMount: false, // Don't always refetch when component mounts
+            retry: 1, // Reduce retries
+            enabled,
+            ...rest,
+        });
+    };
+
+    const useMarketedProducts = <
+        T extends {
+            data: FullProduct[];
+            items: number;
+            pages: number;
+        },
+    >(input: {
+        limit?: number;
+        categoryId?: string;
+        subcategoryId?: string;
+        productTypeId?: string;
+        enabled?: boolean;
+        initialData?: T;
+    } = {}) => {
+        const {
+            limit = 10,
+            categoryId,
+            subcategoryId,
+            productTypeId,
+            enabled = true,
+            ...rest
+        } = input;
+
+        return useQuery({
+            queryKey: [
+                "products",
+                "marketed", 
+                limit,
+                categoryId,
+                subcategoryId,
+                productTypeId,
+            ],
+            queryFn: async () => {
+                const response = await axios.get<ResponseData<T>>("/api/products/marketed", {
+                    params: {
+                        limit: Math.min(limit, 10), // Max 10 as per business rule
+                        categoryId,
+                        subcategoryId,
+                        productTypeId,
+                    },
+                });
+                if (!response.data.success)
+                    throw new Error(response.data.longMessage);
+                return response.data.data;
+            },
+            staleTime: 1000 * 60 * 5, // 5 minutes cache
+            refetchOnWindowFocus: false, // Don't refetch on window focus
+            refetchOnMount: false, // Don't always refetch when component mounts
+            retry: 1, // Reduce retries
+            enabled,
+            ...rest,
+        });
+    };
+
+    const useUpdateMarketingStatus = () => {
+        return useMutation({
+            onMutate: () => {
+                const toastId = toast.loading("Updating marketing status...");
+                return { toastId };
+            },
+            mutationFn: async ({ id, isMarketed }: { id: string; isMarketed: boolean }) => {
+                const response = await axios.patch<ResponseData<Product>>(
+                    `/api/products/${id}/marketing`,
+                    { isMarketed }
+                );
+                if (!response.data.success)
+                    throw new Error(response.data.longMessage);
+                return response.data.data;
+            },
+            onSuccess: (data, variables, { toastId }) => {
+                const action = variables.isMarketed ? "marketed" : "unmarked";
+                toast.success(`Product ${action} successfully!`, { id: toastId });
+                // Invalidate all product-related queries
+                queryClient.invalidateQueries({ queryKey: ["products"] });
+                // Force refetch marketed products
+                queryClient.refetchQueries({ queryKey: ["products", "marketed"] });
+                // Force refetch new arrivals since marketing auto-publishes
+                queryClient.refetchQueries({ queryKey: ["products", "new-arrivals"] });
+                router.refresh();
+            },
+            onError: (err, _, ctx) => {
+                return handleClientError(err, ctx?.toastId);
+            },
+        });
+    };
+
+    const useDelete = () => {
+        return useMutation({
+            onMutate: () => {
+                const toastId = toast.loading("Deleting product...");
+                return { toastId };
+            },
+            mutationFn: async (id: string) => {
+                const response = await axios.delete<ResponseData<Product>>(
+                    `/api/products/${id}`
+                );
+                if (!response.data.success)
+                    throw new Error(response.data.longMessage);
+                return response.data.data;
+            },
+            onSuccess: (_, __, { toastId }) => {
+                toast.success("Product deleted!", { id: toastId });
+                // Invalidate all product-related queries
+                queryClient.invalidateQueries({ queryKey: ["products"] });
+                // Force refetch new arrivals since deleted products should be removed
+                queryClient.refetchQueries({ queryKey: ["products", "new-arrivals"] });
+                router.refresh();
+            },
+            onError: (err, _, ctx) => {
+                return handleClientError(err, ctx?.toastId);
+            },
+        });
+    };
+
+    const useClearCache = () => {
+        return () => {
+            queryClient.clear();
+            toast.success("Cache cleared!");
+        };
+    };
+
+    return { 
+        usePaginate, 
+        useCreate, 
+        useUpdate, 
+        useDelete, 
+        useNewArrivals, 
+        useMarketedProducts,
+        useUpdateMarketingStatus,
+        useClearCache 
+    };
 }

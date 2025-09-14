@@ -17,7 +17,7 @@ export function useCategory() {
             queryKey: ["category", "scan"],
             queryFn: async () => {
                 const response =
-                    await axios.get<ResponseData<T>>("/categories");
+                    await axios.get<ResponseData<T>>("/api/categories");
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
                 return response.data.data;
@@ -37,7 +37,7 @@ export function useCategory() {
             queryKey: ["category", "get", id],
             queryFn: async () => {
                 const response = await axios.get<ResponseData<T>>(
-                    `/categories/${id}`
+                    `/api/categories/${id}`
                 );
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
@@ -60,7 +60,7 @@ export function useSubcategory() {
             queryKey: ["subcategory", "scan"],
             queryFn: async () => {
                 const response =
-                    await axios.get<ResponseData<T>>("/subcategories");
+                    await axios.get<ResponseData<T>>("/api/subcategories");
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
                 return response.data.data;
@@ -84,7 +84,7 @@ export function useSubcategory() {
             queryKey: ["subcategory", "get", id],
             queryFn: async () => {
                 const response = await axios.get<ResponseData<T>>(
-                    `/subcategories/${id}`
+                    `/api/subcategories/${id}`
                 );
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
@@ -107,7 +107,7 @@ export function useProductType() {
             queryKey: ["productType", "scan"],
             queryFn: async () => {
                 const response =
-                    await axios.get<ResponseData<T>>("/product-types");
+                    await axios.get<ResponseData<T>>("/api/product-types");
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);
                 return response.data.data;
@@ -127,7 +127,7 @@ export function useProductType() {
             queryKey: ["productType", "get", id],
             queryFn: async () => {
                 const response = await axios.get<ResponseData<T>>(
-                    `/product-types/${id}`
+                    `/api/product-types/${id}`
                 );
                 if (!response.data.success)
                     throw new Error(response.data.longMessage);

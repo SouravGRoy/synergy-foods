@@ -5,12 +5,16 @@ import { NextResponse } from "next/server";
 import { toast } from "sonner";
 import { twMerge } from "tailwind-merge";
 import { ZodError } from "zod";
+import { placeholderImage } from "./utils/image-placeholder";
 import {
     ProductOption,
     ProductVariant,
     ProductVariantGroup,
     ResponseMessages,
 } from "./validations";
+
+// Export image utilities
+export * from "./utils/image";
 
 export function wait(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -223,23 +227,36 @@ export function generateCustomCacheKey(
 }
 
 export function convertDollarToCent(dollar: number) {
-    return Math.round(dollar * 100);
+    // For AED, we don't need to convert to fils (cents)
+    // Store the value as entered (whole AED units)
+    return Math.round(dollar);
 }
 
 export function convertCentToDollar(cent: number) {
-    return +(cent / 100).toFixed(2);
+    // For AED, return the value as-is since we're not using fils
+    return cent;
 }
 
 export function formatPriceTag(price: number, keepDeciamls = false) {
-    return new Intl.NumberFormat("en-IN", {
+    return new Intl.NumberFormat("en-AE", {
         style: "currency",
-        currency: "INR",
+        currency: "AED",
         minimumFractionDigits: keepDeciamls ? 2 : 0,
     }).format(price);
 }
 
 export function generateUploadThingUrl(key: string) {
     return `https://x6bo3x9qkp.ufs.sh/f/${key}`;
+}
+
+export function getImageUrl(imageUrl?: string | null): string {
+    if (!imageUrl) return placeholderImage;
+    
+    // If it's already a full URL, return as is
+    if (imageUrl.startsWith('http')) return imageUrl;
+    
+    // Otherwise, assume it's a key and generate the full URL
+    return generateUploadThingUrl(imageUrl);
 }
 
 export function generateSKU(
@@ -351,3 +368,13 @@ export function getUrlFromString(str: string) {
 export function sanitizeHtml(html: string) {
     return html.replace(/<[^>]*>?/gm, "");
 }
+
+export function getUploadThingFileKey(url: string) {
+    const split = url.split("/").filter(Boolean);
+    return split[split.length - 1];
+}
+
+// Export production optimization utilities
+export * from './utils/sanitization';
+export * from './utils/cors';
+// Note: rate-limit, cache, and user-sync are server-only and should be imported directly where needed

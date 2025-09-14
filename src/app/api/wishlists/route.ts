@@ -2,6 +2,7 @@ import { ERROR_MESSAGES } from "@/config/const";
 import { queries } from "@/lib/db/queries";
 import { cache } from "@/lib/redis/methods";
 import { AppError, CResponse, handleError } from "@/lib/utils";
+import { ensureUserExists } from "@/lib/utils/user-sync";
 import { createWishlistSchema } from "@/lib/validations";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest } from "next/server";
@@ -12,6 +13,9 @@ export async function GET(req: NextRequest) {
         const { userId } = await auth();
         if (!userId)
             throw new AppError(ERROR_MESSAGES.UNAUTHORIZED, "UNAUTHORIZED");
+
+        // Ensure user exists in database
+        await ensureUserExists(userId);
 
         const { searchParams } = new URL(req.url);
 
@@ -33,6 +37,9 @@ export async function POST(req: NextRequest) {
         const { userId } = await auth();
         if (!userId)
             throw new AppError(ERROR_MESSAGES.UNAUTHORIZED, "UNAUTHORIZED");
+
+        // Ensure user exists in database
+        await ensureUserExists(userId);
 
         const body = await req.json();
         const parsed = createWishlistSchema.parse(body);
@@ -75,6 +82,9 @@ export async function DELETE(req: NextRequest) {
         if (!userId)
             throw new AppError(ERROR_MESSAGES.UNAUTHORIZED, "UNAUTHORIZED");
 
+        // Ensure user exists in database
+        await ensureUserExists(userId);
+
         const { searchParams } = new URL(req.url);
 
         const uId = searchParams.get("userId");
@@ -112,6 +122,9 @@ export async function PATCH(req: NextRequest) {
         const { userId } = await auth();
         if (!userId)
             throw new AppError(ERROR_MESSAGES.UNAUTHORIZED, "UNAUTHORIZED");
+
+        // Ensure user exists in database
+        await ensureUserExists(userId);
 
         const body = await req.json();
         const parsed = z

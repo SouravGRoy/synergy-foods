@@ -4,7 +4,18 @@ import { ClientProvider, ServerProvider } from "@/components/providers";
 import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
 import { cn, getAbsoluteURL } from "@/lib/utils";
-import { dmsans, rubik } from "./font";
+import {
+    dmsans,
+    inter,
+    lato,
+    merriweather,
+    montserrat,
+    openSans,
+    playfairDisplay,
+    poppins,
+    roboto,
+    rubik,
+} from "./font";
 
 export const viewport: Viewport = {
     themeColor: [
@@ -68,7 +79,7 @@ export const metadata: Metadata = {
                 type: "image/x-icon",
             },
             {
-                url: "/favicon-96x96.png",
+                url: "/",
                 sizes: "96x96",
                 type: "image/png",
             },
@@ -84,7 +95,18 @@ export default function RootLayout({ children }: LayoutProps) {
         <html
             lang="en"
             suppressHydrationWarning
-            className={cn(dmsans.variable, rubik.variable)}
+            className={cn(
+                dmsans.variable,
+                rubik.variable,
+                inter.variable,
+                roboto.variable,
+                openSans.variable,
+                lato.variable,
+                montserrat.variable,
+                poppins.variable,
+                playfairDisplay.variable,
+                merriweather.variable
+            )}
         >
             <ServerProvider>
                 <body

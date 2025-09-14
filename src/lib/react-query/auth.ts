@@ -15,6 +15,10 @@ import { axios } from "../axios";
 import { handleClientError, wait } from "../utils";
 import { CachedUser, ResponseData, SignIn, SignUp } from "../validations";
 
+// Global cache to prevent multiple API calls
+const globalUserCache: { [userId: string]: CachedUser } = {};
+const globalUserPromises: { [userId: string]: Promise<CachedUser> } = {};
+
 export function useAuth() {
     const router = useRouter();
 
@@ -24,18 +28,57 @@ export function useAuth() {
     const useCurrentUser = ({
         initialData,
     }: { initialData?: CachedUser } = {}) => {
+        const { userId } = useClerkAuth();
         return useQuery({
-            queryKey: ["user", "me"],
+            queryKey: ["user", userId], // Use same pattern as other components
             queryFn: async () => {
-                const response =
-                    await axios.get<ResponseData<CachedUser>>("/users/me");
-                if (!response.data.success)
-                    throw new Error(response.data.longMessage);
-                if (!response.data.data)
-                    throw new Error(ERROR_MESSAGES.NOT_FOUND);
-                return response.data.data;
+                if (!userId) throw new Error("No user ID");
+                
+                // Return cached data immediately if available
+                if (globalUserCache[userId]) {
+                    console.log("🔍 RETURNING CACHED USER DATA - UserId:", userId);
+                    return globalUserCache[userId];
+                }
+                
+                // If there's already a pending request, wait for it
+                if (userId in globalUserPromises) {
+                    console.log("🔍 WAITING FOR EXISTING REQUEST - UserId:", userId);
+                    return globalUserPromises[userId];
+                }
+                
+                console.log("🔍 MAKING NEW API REQUEST - UserId:", userId, "Stack:", new Error().stack?.split('\n')[2]);
+                
+                // Create and cache the promise
+                globalUserPromises[userId] = (async () => {
+                    try {
+                        const response = await axios.get<ResponseData<CachedUser>>("/api/users/me");
+                        if (!response.data.success)
+                            throw new Error(response.data.longMessage);
+                        if (!response.data.data)
+                            throw new Error(ERROR_MESSAGES.NOT_FOUND);
+                        
+                        // Cache the result
+                        globalUserCache[userId] = response.data.data;
+                        return response.data.data;
+                    } finally {
+                        // Clean up the promise
+                        delete globalUserPromises[userId];
+                    }
+                })();
+                
+                return globalUserPromises[userId];
             },
-            initialData,
+            initialData: initialData || (userId ? globalUserCache[userId] : undefined),
+            initialDataUpdatedAt: (initialData || (userId && globalUserCache[userId])) ? Date.now() : undefined,
+            enabled: !!userId, // Only run when userId is available
+            staleTime: Infinity, // Never consider data stale - only refetch manually
+            gcTime: 1000 * 60 * 60, // 1 hour cache time
+            refetchOnWindowFocus: false, // Don't refetch on every focus
+            refetchInterval: false, // No automatic polling
+            refetchOnMount: false, // Don't always refetch on mount
+            refetchOnReconnect: false, // Don't refetch on network reconnect
+            retry: false, // Don't retry failed requests automatically
+            networkMode: 'always', // Always use cache when available
         });
     };
 

@@ -10,6 +10,7 @@ import { useNavbarStore } from "@/lib/store";
 import { cn, convertValueToLabel } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { CategoryMobileNavigation } from "./category-mobile-navigation";
 
 export function NavbarMob({ className, ...props }: GenericProps) {
     const isMenuOpen = useNavbarStore((state) => state.isOpen);
@@ -50,11 +51,12 @@ export function NavbarMob({ className, ...props }: GenericProps) {
             aria-label="Mobile Menu"
             data-menu-open={isMenuOpen}
             className={cn(
-                "fixed inset-x-0 z-40",
+                "fixed inset-x-0 z-50",
                 "overflow-hidden p-4",
-                "transition-all duration-500 ease-in-out",
+                "transition-all duration-300 ease-in-out",
                 "h-0 data-[menu-open=true]:h-screen",
-                "-top-1/2 bottom-0 data-[menu-open=true]:top-0",
+                "top-0 opacity-0 data-[menu-open=true]:opacity-100",
+                "pointer-events-none data-[menu-open=true]:pointer-events-auto",
                 "md:hidden",
                 className
             )}
@@ -62,8 +64,9 @@ export function NavbarMob({ className, ...props }: GenericProps) {
             {...props}
         >
             <div
-                className="mt-20 space-y-4 rounded-2xl bg-card p-4 py-6 drop-shadow-md backdrop-blur-sm"
+                className="relative mt-20 h-full max-h-[calc(100vh-6rem)] scale-95 transform space-y-4 overflow-y-auto rounded-2xl bg-card p-4 py-6 drop-shadow-md backdrop-blur-sm transition-transform duration-300 ease-in-out data-[menu-open=true]:scale-100"
                 ref={navListRef}
+                data-menu-open={isMenuOpen}
             >
                 {!!user && (
                     <>
@@ -72,15 +75,18 @@ export function NavbarMob({ className, ...props }: GenericProps) {
                                 <Avatar className="size-9">
                                     <AvatarImage
                                         src={user.avatarUrl || ""}
-                                        alt={user.firstName}
+                                        alt={user.firstName || "User"}
                                     />
                                     <AvatarFallback>
-                                        {user.firstName[0]}
+                                        {user.firstName?.[0] ||
+                                            user.email?.[0] ||
+                                            "U"}
                                     </AvatarFallback>
                                 </Avatar>
 
                                 <p className="text-sm">
-                                    {user.firstName} {user.lastName}
+                                    {user.firstName || user.email}{" "}
+                                    {user.lastName || ""}
                                 </p>
                             </div>
 
@@ -120,31 +126,39 @@ export function NavbarMob({ className, ...props }: GenericProps) {
                 )}
 
                 <ul>
-                    {siteConfig.menu.map((item, index, arr) => {
-                        const Icon = Icons[item.icon];
+                    <CategoryMobileNavigation
+                        onLinkClick={() => setIsMenuOpen(false)}
+                    />
 
-                        return (
-                            <li key={index} aria-label="Mobile Menu Item">
-                                <Link
-                                    href={item.href}
-                                    className="flex items-center justify-between gap-2 text-foreground"
-                                    target={
-                                        item.isExternal ? "_blank" : "_self"
-                                    }
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    <span>{item.name}</span>
-                                    <Icon className="size-5" />
-                                </Link>
+                    {siteConfig.menu
+                        .filter((item) => item.name !== "Shop") // Remove static Shop link since we have CategoryMobileNavigation
+                        .map((item, index, filteredArr) => {
+                            const Icon = Icons[item.icon];
 
-                                {(user ? index !== arr.length - 1 : true) && (
-                                    <div className="py-4">
-                                        <Separator />
-                                    </div>
-                                )}
-                            </li>
-                        );
-                    })}
+                            return (
+                                <li key={index} aria-label="Mobile Menu Item">
+                                    <Link
+                                        href={item.href}
+                                        className="flex items-center justify-between gap-2 text-foreground"
+                                        target={
+                                            item.isExternal ? "_blank" : "_self"
+                                        }
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        <span>{item.name}</span>
+                                        <Icon className="size-5" />
+                                    </Link>
+
+                                    {(user
+                                        ? index !== filteredArr.length - 1
+                                        : true) && (
+                                        <div className="py-4">
+                                            <Separator />
+                                        </div>
+                                    )}
+                                </li>
+                            );
+                        })}
                 </ul>
 
                 {user ? (

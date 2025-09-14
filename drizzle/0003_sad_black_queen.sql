@@ -1,0 +1,1 @@
+ALTER TABLE "categories" ALTER COLUMN "commission_rate" SET NOT NULL;

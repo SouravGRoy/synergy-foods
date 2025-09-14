@@ -9,14 +9,19 @@ import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {
     try {
+        console.log('Categories API called');
         const { searchParams } = new URL(req.url);
         const activeOnly = searchParams.get("active") !== "false";
-        
-        const data = activeOnly 
-            ? await cache.category.scan() 
+
+        console.log('Fetching categories with activeOnly:', activeOnly);
+        const data = activeOnly
+            ? await cache.category.scan()
             : await queries.category.scanAll();
+        
+        console.log('Categories data fetched:', data.length, 'items');
         return CResponse({ data });
     } catch (err) {
+        console.error('Categories API error:', err);
         return handleError(err);
     }
 }

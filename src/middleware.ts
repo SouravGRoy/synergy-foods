@@ -23,6 +23,7 @@ export default clerkMiddleware(async (auth, req) => {
             return NextResponse.redirect(new URL("/", url));
 
         if (url.pathname.startsWith("/dashboard")) {
+            // Simple auth check - role checking will be done in components
             if (url.pathname === "/dashboard")
                 return NextResponse.redirect(
                     new URL("/dashboard/products", url)

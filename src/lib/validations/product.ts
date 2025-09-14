@@ -84,9 +84,17 @@ export const productSchema = z.object({
         required_error: "Published status is required",
         invalid_type_error: "Published status must be a boolean",
     }),
+    isMarketed: z.boolean({
+        required_error: "Marketed status is required",
+        invalid_type_error: "Marketed status must be a boolean",
+    }),
     publishedAt: generateDateSchema({
         required_error: "Published at is required",
         invalid_type_error: "Published at must be a date",
+    }).nullable(),
+    marketedAt: generateDateSchema({
+        required_error: "Marketed at is required",
+        invalid_type_error: "Marketed at must be a date",
     }).nullable(),
     media: productMediaSchema.array().default([]),
     productHasVariants: z.boolean({

@@ -1,5 +1,5 @@
 import { fullUserSchema } from "@/lib/validations/user";
-import { ilike } from "drizzle-orm";
+import { eq, ilike } from "drizzle-orm";
 import { db } from "..";
 import { users } from "../schemas";
 
@@ -44,14 +44,33 @@ class UserQuery {
         };
     }
 
-    async get(id: string) {
-        const user = await db.query.users.findFirst({
+  async get(id: string) {
+        const data = await db.query.users.findFirst({
             where: (f, o) => o.eq(f.id, id),
             with: { addresses: true },
         });
-        if (!user) return null;
+        if (!data) return null;
 
-        return fullUserSchema.parse(user);
+        return fullUserSchema.parse(data);
+    }
+
+    async update(id: string, values: Partial<typeof users.$inferInsert>) {
+        const [data] = await db
+            .update(users)
+            .set(values)
+            .where(eq(users.id, id))
+            .returning();
+
+        if (!data) return null;
+        
+        // Fetch the complete user with addresses after update
+        const updatedUser = await db.query.users.findFirst({
+            where: (f, o) => o.eq(f.id, id),
+            with: { addresses: true },
+        });
+        
+        if (!updatedUser) return null;
+        return fullUserSchema.parse(updatedUser);
     }
 }
 

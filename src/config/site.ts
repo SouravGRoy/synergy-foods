@@ -1,13 +1,13 @@
 import { getAbsoluteURL } from "@/lib/utils";
 
 export const siteConfig: SiteConfig = {
-    name: "B2C Marketplace",
+    name: "Synergy Food Trading",
     description:
         "A platform for buying and selling digital products and services.",
     longDescription:
-        "B2C Marketplace is a comprehensive platform designed to facilitate the buying and selling of digital products and services. Our marketplace connects freelancers with clients, providing a seamless experience for managing projects, payments, and communication.",
+        "Synergy Food Trading is a comprehensive platform designed to facilitate the buying and selling of digital products and services. Our marketplace connects freelancers with clients, providing a seamless experience for managing projects, payments, and communication.",
     keywords: [
-        "B2C Marketplace",
+        "Synergy Food Trading",
         "digital products",
         "digital services",
         "freelancers",
@@ -18,8 +18,8 @@ export const siteConfig: SiteConfig = {
     ],
     category: "Marketplace",
     developer: {
-        name: "DRVGO",
-        url: "https://itsdrvgo.me/",
+        name: "kiwie",
+        url: "https://www.linkedin.com/in/sourob-guha-roy-0a2ba621a/",
     },
     og: {
         url: getAbsoluteURL("/og.webp"),
@@ -41,7 +41,7 @@ export const siteConfig: SiteConfig = {
             icon: "Store",
         },
         {
-            name: "Support",
+            name: "Contact",
             href: "/support",
             icon: "LifeBuoy",
         },

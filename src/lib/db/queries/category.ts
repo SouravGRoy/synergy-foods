@@ -133,6 +133,14 @@ class SubcategoryQuery {
         }));
     }
 
+    async scanActive(categoryId?: string) {
+        return this.scan(categoryId, true);
+    }
+
+    async scanAll(categoryId?: string) {
+        return this.scan(categoryId, false);
+    }
+
     async get({
         id,
         slug,
@@ -256,6 +264,26 @@ class ProductTypeQuery {
         });
 
         return data;
+    }
+
+    async scanActive({
+        categoryId,
+        subcategoryId,
+    }: {
+        categoryId?: string;
+        subcategoryId?: string;
+    } = {}) {
+        return this.scan({ categoryId, subcategoryId, activeOnly: true });
+    }
+
+    async scanAll({
+        categoryId,
+        subcategoryId,
+    }: {
+        categoryId?: string;
+        subcategoryId?: string;
+    } = {}) {
+        return this.scan({ categoryId, subcategoryId, activeOnly: false });
     }
 
     async get({
@@ -398,7 +426,7 @@ class CategoryRequestQuery {
     async approve(id: string, reviewerId: string, reviewNote?: string) {
         return this.update(id, {
             status: "approved",
-            reviewNote,
+            reviewNote: reviewNote || null,
             reviewerId,
         });
     }
@@ -406,7 +434,7 @@ class CategoryRequestQuery {
     async reject(id: string, reviewerId: string, reviewNote?: string) {
         return this.update(id, {
             status: "rejected",
-            reviewNote,
+            reviewNote: reviewNote || null,
             reviewerId,
         });
     }
