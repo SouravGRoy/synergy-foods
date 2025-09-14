@@ -1,20 +1,15 @@
 import { env } from "@/../env";
 import _axios from "axios";
 
-// Create dynamic base URL that works for both localhost and dev tunnels
+// Create dynamic base URL that works for both localhost and all Vercel deployments
 const getBaseURL = () => {
-    // In production or when NEXT_PUBLIC_BACKEND_URL is set, use it
-    if (env.NEXT_PUBLIC_BACKEND_URL) {
-        return env.NEXT_PUBLIC_BACKEND_URL;
-    }
-    
-    // For development, use relative URLs to work with both localhost and tunnels
+    // Always use relative URLs in browser to avoid CORS issues
     if (typeof window !== "undefined") {
         return window.location.origin;
     }
     
-    // Fallback for SSR
-    return "http://localhost:3000";
+    // For SSR, use the environment variable if available, otherwise localhost
+    return env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
 };
 
 export const axios = _axios.create({
