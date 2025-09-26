@@ -805,13 +805,11 @@ class ProductQuery {
 
     async delete(id: string) {
         // Hard delete - completely remove from database
-        const data = await db
+        const result = await db
             .delete(products)
-            .where(eq(products.id, id))
-            .returning()
-            .then((res) => res[0]);
+            .where(eq(products.id, id));
 
-        return data;
+        return { success: true, deletedId: id };
     }
 }
 
