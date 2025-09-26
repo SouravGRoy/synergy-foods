@@ -237,32 +237,69 @@ export async function PATCH(req: NextRequest, { params }: RouteProps) {
 
 export async function DELETE(req: NextRequest, { params }: RouteProps) {
     try {
+        console.log("DELETE request started");
+        
         // Authentication check
         const { userId } = await auth();
+        console.log("User ID:", userId);
         if (!userId)
             throw new AppError(ERROR_MESSAGES.UNAUTHORIZED, "UNAUTHORIZED");
 
         const user = await cache.user.get(userId);
+        console.log("User role:", user?.role);
         if (!user || user.role === "user")
             throw new AppError(ERROR_MESSAGES.FORBIDDEN, "FORBIDDEN");
 
-        const { id } = await params;
+        const resolvedParams = await params;
+        const { id } = resolvedParams;
+        console.log("Product ID to delete:", id);
 
-        const existingData = await queries.product.get({
-            id,
-            isDeleted: false,
-        });
+        console.log("Looking up product with ID:", id);
+        
+        let existingData;
+        try {
+            existingData = await queries.product.get({
+                id,
+                isDeleted: false,
+            });
+            console.log("Product found:", existingData ? "Yes" : "No");
+        } catch (error) {
+            console.error("Error getting product:", error);
+            throw error;
+        }
+        
         if (!existingData)
             throw new AppError(ERROR_MESSAGES.NOT_FOUND, "NOT_FOUND");
 
-        await Promise.all([
-            queries.product.delete(id), 
-            cache.wishlist.drop(),
-            cacheInvalidation.products(),
-            cacheInvalidation.newArrivals(),
-            cacheInvalidation.categories(),
-        ]);
-        return CResponse();
+        console.log("Starting product deletion for ID:", id);
+
+        try {
+            // Soft delete the product (mark as deleted)
+            console.log("Soft deleting product...");
+            const deletedProduct = await queries.product.delete(id);
+            console.log("Product soft deletion successful:", deletedProduct);
+
+            // Then cache invalidation
+            console.log("Invalidating caches...");
+            await Promise.all([
+                cache.wishlist.drop(),
+                cacheInvalidation.products(),
+                cacheInvalidation.newArrivals(),
+                cacheInvalidation.categories(),
+            ]);
+            console.log("Cache invalidation successful");
+
+            console.log("Product deletion completed successfully");
+            return CResponse({ 
+                data: { 
+                    message: "Product successfully deleted",
+                    product: deletedProduct 
+                } 
+            });
+        } catch (error) {
+            console.error("Error during product deletion:", error);
+            throw error;
+        }
     } catch (err) {
         return handleError(err);
     }

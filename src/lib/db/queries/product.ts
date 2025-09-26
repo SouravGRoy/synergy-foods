@@ -804,12 +804,25 @@ class ProductQuery {
     }
 
     async delete(id: string) {
-        // Hard delete - completely remove from database
+        // Soft delete - mark as deleted instead of removing from database
+        // This preserves referential integrity for order history
         const result = await db
-            .delete(products)
-            .where(eq(products.id, id));
+            .update(products)
+            .set({
+                isDeleted: true,
+                deletedAt: sql`now()`,
+                isActive: false,
+                isAvailable: false,
+                isPublished: false,
+            })
+            .where(eq(products.id, id))
+            .returning({
+                id: products.id,
+                title: products.title,
+                isDeleted: products.isDeleted,
+            });
 
-        return { success: true, deletedId: id };
+        return result[0];
     }
 }
 

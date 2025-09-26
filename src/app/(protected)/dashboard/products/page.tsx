@@ -76,6 +76,7 @@ async function ProductsFetch({ searchParams }: PageProps) {
         limit,
         page,
         search,
+        isDeleted: false, // Only show non-deleted products
     });
 
     return <ProductsTable initialData={data} />;
