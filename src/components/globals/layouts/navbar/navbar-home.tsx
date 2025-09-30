@@ -1,5 +1,6 @@
 "use client";
 
+import { SearchModal } from "@/components/globals/search/search-modal";
 import { Icons } from "@/components/icons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -22,12 +23,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { CartIcon } from "./cart-icon";
+import { CategoryMobileNavigation } from "./category-mobile-navigation";
 import { CategoryNavigation } from "./category-navigation";
 import { WishlistIcon } from "./wishlist-icon";
 
 export function NavbarHome() {
     const pathname = usePathname();
     const [isMenuHidden, setIsMenuHidden] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     const isMenuOpen = useNavbarStore((s) => s.isOpen);
     const setIsMenuOpen = useNavbarStore((s) => s.setIsOpen);
@@ -136,6 +139,7 @@ export function NavbarHome() {
                     <button
                         aria-label="Search"
                         className="hidden h-8 w-8 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 md:inline-flex md:h-12 md:w-12"
+                        onClick={() => setIsSearchOpen(true)}
                     >
                         <Icons.Search className="h-4 w-4 md:h-5 md:w-5" />
                     </button>
@@ -254,13 +258,14 @@ export function NavbarHome() {
 
             {/* Mobile Navigation Menu */}
             {isMenuOpen && (
-                <div className="border-t bg-white md:hidden">
+                <div className="max-h-[80vh] overflow-y-auto border-t bg-white md:hidden">
                     <div className="mx-auto max-w-[1380px] px-4 py-4">
                         {/* Mobile Search */}
                         <div className="mb-4">
                             <button
                                 aria-label="Search"
                                 className="flex w-full items-center gap-3 rounded-lg bg-gray-50 p-3 text-left hover:bg-gray-100"
+                                onClick={() => setIsSearchOpen(true)}
                             >
                                 <Icons.Search className="h-5 w-5 text-gray-500" />
                                 <span className="text-gray-500">
@@ -268,74 +273,6 @@ export function NavbarHome() {
                                 </span>
                             </button>
                         </div>
-
-                        {/* Mobile Navigation Links */}
-                        <div className="space-y-2">
-                            <Link
-                                href="/"
-                                className={cn(
-                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-                                    pathname === "/"
-                                        ? "bg-green-50 text-green-600"
-                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                )}
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Home
-                            </Link>
-                            <Link
-                                href="/shop"
-                                className={cn(
-                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-                                    pathname === "/shop"
-                                        ? "bg-green-50 text-green-600"
-                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                )}
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Shop
-                            </Link>
-                            <Link
-                                href="/blog"
-                                className={cn(
-                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-                                    pathname === "/blog"
-                                        ? "bg-green-50 text-green-600"
-                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                )}
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Blog
-                            </Link>
-                            {siteConfig.menu
-                                .filter((item) => item.name !== "Shop")
-                                .map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        className={cn(
-                                            "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-                                            pathname === item.href
-                                                ? "bg-green-50 text-green-600"
-                                                : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                        )}
-                                        target={
-                                            item.isExternal
-                                                ? "_blank"
-                                                : undefined
-                                        }
-                                        referrerPolicy={
-                                            item.isExternal
-                                                ? "no-referrer"
-                                                : undefined
-                                        }
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))}
-                        </div>
-
                         {/* Mobile User Section */}
                         {user ? (
                             <div className="mt-4 space-y-2 border-t pt-4">
@@ -398,9 +335,86 @@ export function NavbarHome() {
                                 </Link>
                             </div>
                         )}
+                        {/* Mobile Navigation Links */}
+                        <div className="space-y-2">
+                            <Link
+                                href="/"
+                                className={cn(
+                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                    pathname === "/"
+                                        ? "bg-green-50 text-green-600"
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                )}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Home
+                            </Link>
+
+                            {/* Category Navigation for Mobile */}
+                            <CategoryMobileNavigation
+                                onLinkClick={() => setIsMenuOpen(false)}
+                            />
+                            <Link
+                                href="/shop"
+                                className={cn(
+                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                    pathname === "/shop"
+                                        ? "bg-green-50 text-green-600"
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                )}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Shop
+                            </Link>
+                            <Link
+                                href="/blog"
+                                className={cn(
+                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                    pathname === "/blog"
+                                        ? "bg-green-50 text-green-600"
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                )}
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                Blog
+                            </Link>
+                            {siteConfig.menu
+                                .filter((item) => item.name !== "Shop")
+                                .map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className={cn(
+                                            "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                                            pathname === item.href
+                                                ? "bg-green-50 text-green-600"
+                                                : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                        )}
+                                        target={
+                                            item.isExternal
+                                                ? "_blank"
+                                                : undefined
+                                        }
+                                        referrerPolicy={
+                                            item.isExternal
+                                                ? "no-referrer"
+                                                : undefined
+                                        }
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ))}
+                        </div>
                     </div>
                 </div>
             )}
+
+            {/* Search Modal */}
+            <SearchModal
+                isOpen={isSearchOpen}
+                onClose={() => setIsSearchOpen(false)}
+            />
         </motion.header>
     );
 }

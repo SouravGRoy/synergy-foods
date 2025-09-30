@@ -1,12 +1,17 @@
 "use client";
 
-import { Icons } from "@/components/icons";
-import { Separator } from "@/components/ui/separator";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useCategories } from "@/hooks/use-categories";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronRight, Package } from "lucide-react";
+import { ChevronDown, Package } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface CategoryMobileNavigationProps {
     onLinkClick?: () => void;
@@ -15,206 +20,118 @@ interface CategoryMobileNavigationProps {
 export function CategoryMobileNavigation({
     onLinkClick,
 }: CategoryMobileNavigationProps) {
-    const { categories, isLoading } = useCategories();
-    const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-        new Set()
-    );
-    const [expandedSubcategories, setExpandedSubcategories] = useState<
-        Set<string>
-    >(new Set());
+    const { categories, isLoading, error } = useCategories();
+    const pathname = usePathname();
 
-    const toggleCategory = (categoryId: string) => {
-        const newExpanded = new Set(expandedCategories);
-        if (newExpanded.has(categoryId)) {
-            newExpanded.delete(categoryId);
-            // Also collapse all subcategories in this category
-            const categorySubcategoryIds =
-                categories
-                    .find((cat) => cat.id === categoryId)
-                    ?.subcategories?.map((sub) => sub.id) || [];
-            categorySubcategoryIds.forEach((id) => {
-                const newExpandedSub = new Set(expandedSubcategories);
-                newExpandedSub.delete(id);
-                setExpandedSubcategories(newExpandedSub);
-            });
-        } else {
-            newExpanded.add(categoryId);
-        }
-        setExpandedCategories(newExpanded);
-    };
-
-    const toggleSubcategory = (subcategoryId: string) => {
-        const newExpanded = new Set(expandedSubcategories);
-        if (newExpanded.has(subcategoryId)) {
-            newExpanded.delete(subcategoryId);
-        } else {
-            newExpanded.add(subcategoryId);
-        }
-        setExpandedSubcategories(newExpanded);
-    };
+    const getLinkClassName = (href: string) =>
+        cn(
+            "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
+            pathname === href
+                ? "bg-green-50 text-green-600"
+                : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+        );
 
     if (isLoading) {
         return (
-            <li className="animate-pulse">
-                <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                        <Package className="h-5 w-5" />
-                        <span>Categories</span>
-                    </div>
-                    <ChevronDown className="h-4 w-4" />
+            <div className="animate-pulse rounded-lg px-3 py-2">
+                <div className="flex items-center gap-2">
+                    <Package className="h-5 w-5 text-gray-400" />
+                    <span className="text-gray-400">Loading categories...</span>
                 </div>
-            </li>
+            </div>
         );
     }
 
-    if (!categories.length) {
+    if (error || !categories.length) {
         return (
-            <li>
-                <Link
-                    href="/shop"
-                    className="flex items-center justify-between gap-2 text-foreground"
-                    onClick={onLinkClick}
-                >
-                    <span>Shop</span>
-                    <Package className="size-5" />
-                </Link>
-            </li>
+            <Link
+                href="/shop"
+                className={getLinkClassName("/shop")}
+                onClick={onLinkClick}
+            >
+                All Products
+            </Link>
         );
     }
 
     return (
         <>
             {/* All Products Link */}
-            <li>
-                <Link
-                    href="/shop"
-                    className="flex items-center justify-between gap-2 text-foreground"
-                    onClick={onLinkClick}
-                >
-                    <span>All Products</span>
-                    <Package className="size-5" />
-                </Link>
-                <div className="py-4">
-                    <Separator />
-                </div>
-            </li>
+            <Link
+                href="/shop"
+                className={
+                    getLinkClassName("/shop") + " rounded-2xl bg-blue-200"
+                }
+                onClick={onLinkClick}
+            >
+                All Products
+            </Link>
 
-            {/* Categories */}
+            {/* Categories with Dropdown */}
             {categories.map((category) => (
-                <li key={category.id}>
-                    <div className="space-y-2">
-                        {/* Category Header */}
-                        <div className="flex items-center justify-between">
-                            <Link
-                                href={`/shop/categories/${category.slug}`}
-                                className="flex-1 font-medium text-foreground"
-                                onClick={onLinkClick}
-                            >
-                                {category.name}
-                            </Link>
-                            {category.subcategories &&
-                                category.subcategories.length > 0 && (
-                                    <button
-                                        onClick={() =>
-                                            toggleCategory(category.id)
-                                        }
-                                        className="p-1 text-foreground/70 transition-colors hover:text-foreground"
-                                        aria-label={`Toggle ${category.name} subcategories`}
-                                    >
-                                        <ChevronDown
-                                            className={cn(
-                                                "h-4 w-4 transition-transform duration-200",
-                                                expandedCategories.has(
-                                                    category.id
-                                                ) && "rotate-180"
-                                            )}
-                                        />
-                                    </button>
+                <div key={category.id}>
+                    {category.subcategories &&
+                    category.subcategories.length > 0 ? (
+                        <DropdownMenu>
+                            <DropdownMenuTrigger
+                                className={cn(
+                                    "flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-base font-medium transition-colors",
+                                    pathname.startsWith(
+                                        `/shop/categories/${category.slug}`
+                                    )
+                                        ? "bg-green-50 text-green-600"
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
                                 )}
-                        </div>
+                            >
+                                <span>{category.name}</span>
+                                <ChevronDown className="h-4 w-4" />
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent
+                                className="w-56"
+                                align="start"
+                                side="right"
+                            >
+                                {/* View All Category */}
+                                <DropdownMenuItem asChild>
+                                    <Link
+                                        href={`/shop/categories/${category.slug}`}
+                                        onClick={onLinkClick}
+                                    >
+                                        <Package className="mr-2 h-4 w-4" />
+                                        View All {category.name}
+                                    </Link>
+                                </DropdownMenuItem>
 
-                        {/* Subcategories */}
-                        {expandedCategories.has(category.id) &&
-                            category.subcategories && (
-                                <div className="relative z-10 ml-4 space-y-2 border-l border-foreground/20 pl-4">
-                                    {category.subcategories.map(
-                                        (subcategory) => (
-                                            <div
-                                                key={subcategory.id}
-                                                className="space-y-2"
-                                            >
-                                                {/* Subcategory Header */}
-                                                <div className="flex items-center justify-between">
-                                                    <Link
-                                                        href={`/shop/categories/${category.slug}/${subcategory.slug}`}
-                                                        className="flex-1 text-sm text-foreground/90"
-                                                        onClick={onLinkClick}
-                                                    >
-                                                        {subcategory.name}
-                                                    </Link>
-                                                    {subcategory.productTypes &&
-                                                        subcategory.productTypes
-                                                            .length > 0 && (
-                                                            <button
-                                                                onClick={() =>
-                                                                    toggleSubcategory(
-                                                                        subcategory.id
-                                                                    )
-                                                                }
-                                                                className="p-1 text-foreground/50 transition-colors hover:text-foreground/70"
-                                                                aria-label={`Toggle ${subcategory.name} product types`}
-                                                            >
-                                                                <ChevronRight
-                                                                    className={cn(
-                                                                        "h-3 w-3 transition-transform duration-200",
-                                                                        expandedSubcategories.has(
-                                                                            subcategory.id
-                                                                        ) &&
-                                                                            "rotate-90"
-                                                                    )}
-                                                                />
-                                                            </button>
-                                                        )}
-                                                </div>
+                                <DropdownMenuSeparator />
 
-                                                {/* Product Types */}
-                                                {expandedSubcategories.has(
-                                                    subcategory.id
-                                                ) &&
-                                                    subcategory.productTypes && (
-                                                        <div className="relative z-10 ml-4 space-y-1 border-l border-foreground/10 pl-4">
-                                                            {subcategory.productTypes.map(
-                                                                (
-                                                                    productType
-                                                                ) => (
-                                                                    <Link
-                                                                        key={
-                                                                            productType.id
-                                                                        }
-                                                                        href={`/shop/categories/${category.slug}/${subcategory.slug}/${productType.slug}`}
-                                                                        className="block text-xs text-foreground/70 transition-colors hover:text-foreground"
-                                                                        onClick={
-                                                                            onLinkClick
-                                                                        }
-                                                                    >
-                                                                        {
-                                                                            productType.name
-                                                                        }
-                                                                    </Link>
-                                                                )
-                                                            )}
-                                                        </div>
-                                                    )}
-                                            </div>
-                                        )
-                                    )}
-                                </div>
+                                {/* Subcategories */}
+                                {category.subcategories.map((subcategory) => (
+                                    <DropdownMenuItem
+                                        key={subcategory.id}
+                                        asChild
+                                    >
+                                        <Link
+                                            href={`/shop/categories/${category.slug}/${subcategory.slug}`}
+                                            onClick={onLinkClick}
+                                        >
+                                            {subcategory.name}
+                                        </Link>
+                                    </DropdownMenuItem>
+                                ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    ) : (
+                        <Link
+                            href={`/shop/categories/${category.slug}`}
+                            className={getLinkClassName(
+                                `/shop/categories/${category.slug}`
                             )}
-                    </div>
-                    <div className="py-4">
-                        <Separator />
-                    </div>
-                </li>
+                            onClick={onLinkClick}
+                        >
+                            {category.name}
+                        </Link>
+                    )}
+                </div>
             ))}
         </>
     );
