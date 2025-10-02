@@ -1,5 +1,4 @@
 import { ProductsTable } from "@/components/dashboard/products";
-import { GeneralShell } from "@/components/globals/layouts";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,7 +27,7 @@ interface PageProps {
 
 export default function Page({ searchParams }: PageProps) {
     return (
-        <GeneralShell>
+        <div className="space-y-6">
             <div className="flex flex-col items-center justify-between gap-2 md:flex-row">
                 <div>
                     <h1 className="text-2xl font-bold">Products</h1>
@@ -48,7 +47,7 @@ export default function Page({ searchParams }: PageProps) {
             <Suspense>
                 <ProductsFetch searchParams={searchParams} />
             </Suspense>
-        </GeneralShell>
+        </div>
     );
 }
 

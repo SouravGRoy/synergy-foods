@@ -3,6 +3,7 @@ export * from "./cart";
 export * from "./category";
 export * from "./delivery";
 export * from "./media-item";
+export * from "./notification";
 export * from "./order";
 export * from "./product";
 export * from "./user";

@@ -135,20 +135,20 @@ export function NavbarHome() {
 
                 {/* RIGHT: ACTION ICONS */}
                 <div className="flex items-center gap-3 md:ml-auto md:gap-4">
-                    {/* Search (Hidden on mobile) */}
+                    {/* Search */}
                     <button
                         aria-label="Search"
-                        className="hidden h-8 w-8 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 md:inline-flex md:h-12 md:w-12"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 md:h-12 md:w-12"
                         onClick={() => setIsSearchOpen(true)}
                     >
                         <Icons.Search className="h-4 w-4 md:h-5 md:w-5" />
                     </button>
 
-                    {/* Account (Desktop only) */}
+                    {/* User Account - Mobile & Desktop */}
                     {user ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <button className="hidden h-8 w-8 items-center justify-center rounded-full bg-teal-50 hover:bg-teal-100 md:inline-flex md:h-12 md:w-12">
+                                <button className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-teal-50 hover:bg-teal-100 md:h-12 md:w-12">
                                     <Avatar className="h-6 w-6 md:h-8 md:w-8">
                                         <AvatarImage
                                             src={user.avatarUrl ?? ""}
@@ -174,12 +174,14 @@ export function NavbarHome() {
                                             {user.firstName?.[0] ?? "U"}
                                         </AvatarFallback>
                                     </Avatar>
-                                    <span>
-                                        Hello,{" "}
-                                        <span className="font-semibold">
-                                            {user.firstName}
-                                        </span>
-                                    </span>
+                                    <div>
+                                        <p className="text-sm font-medium text-gray-900">
+                                            {user.firstName} {user.lastName}
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            {user.email}
+                                        </p>
+                                    </div>
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
@@ -203,12 +205,6 @@ export function NavbarHome() {
                                             <span>Profile</span>
                                         </Link>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem asChild>
-                                        <Link href="/contact">
-                                            <Icons.LifeBuoy className="h-4 w-4" />
-                                            <span>Contact Us</span>
-                                        </Link>
-                                    </DropdownMenuItem>
                                 </DropdownMenuGroup>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem
@@ -223,7 +219,7 @@ export function NavbarHome() {
                     ) : (
                         <Link
                             href="/auth/signin"
-                            className="hidden h-8 w-8 items-center justify-center rounded-full bg-teal-50 hover:bg-teal-100 md:inline-flex md:h-11 md:w-11"
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-teal-50 hover:bg-teal-100 md:h-11 md:w-11"
                             aria-label="Login"
                         >
                             <Icons.User className="h-4 w-4 md:h-5 md:w-5" />
@@ -260,81 +256,6 @@ export function NavbarHome() {
             {isMenuOpen && (
                 <div className="max-h-[80vh] overflow-y-auto border-t bg-white md:hidden">
                     <div className="mx-auto max-w-[1380px] px-4 py-4">
-                        {/* Mobile Search */}
-                        <div className="mb-4">
-                            <button
-                                aria-label="Search"
-                                className="flex w-full items-center gap-3 rounded-lg bg-gray-50 p-3 text-left hover:bg-gray-100"
-                                onClick={() => setIsSearchOpen(true)}
-                            >
-                                <Icons.Search className="h-5 w-5 text-gray-500" />
-                                <span className="text-gray-500">
-                                    Search products...
-                                </span>
-                            </button>
-                        </div>
-                        {/* Mobile User Section */}
-                        {user ? (
-                            <div className="mt-4 space-y-2 border-t pt-4">
-                                <div className="flex items-center gap-3 px-3 py-2">
-                                    <Avatar className="h-8 w-8">
-                                        <AvatarImage
-                                            src={user.avatarUrl ?? ""}
-                                            alt={user.firstName}
-                                        />
-                                        <AvatarFallback>
-                                            {user.firstName?.[0] ?? "U"}
-                                        </AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <p className="text-sm font-medium text-gray-900">
-                                            {user.firstName} {user.lastName}
-                                        </p>
-                                        <p className="text-xs text-gray-500">
-                                            {user.email}
-                                        </p>
-                                    </div>
-                                </div>
-                                {user.role !== "user" && (
-                                    <Link
-                                        href="/dashboard"
-                                        className="block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        Dashboard
-                                    </Link>
-                                )}
-                                <Link
-                                    href="/account"
-                                    className="block rounded-lg px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    My Account
-                                </Link>
-                                <button
-                                    className="block w-full rounded-lg px-3 py-2 text-left text-base font-medium text-red-600 hover:bg-red-50"
-                                    onClick={() => {
-                                        logout();
-                                        setIsMenuOpen(false);
-                                    }}
-                                    disabled={isLoggingOut}
-                                >
-                                    {isLoggingOut
-                                        ? "Logging out..."
-                                        : "Sign out"}
-                                </button>
-                            </div>
-                        ) : (
-                            <div className="mt-4 border-t pt-4">
-                                <Link
-                                    href="/auth/signin"
-                                    className="block w-full rounded-lg bg-green-600 px-4 py-3 text-center text-base font-medium text-white hover:bg-green-700"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Sign In
-                                </Link>
-                            </div>
-                        )}
                         {/* Mobile Navigation Links */}
                         <div className="space-y-2">
                             <Link
@@ -354,57 +275,20 @@ export function NavbarHome() {
                             <CategoryMobileNavigation
                                 onLinkClick={() => setIsMenuOpen(false)}
                             />
+
+                            {/* Contact Link */}
                             <Link
-                                href="/shop"
+                                href="/contact"
                                 className={cn(
-                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-                                    pathname === "/shop"
+                                    "block rounded-lg bg-red-400 px-3 py-2 text-base font-medium text-white transition-colors hover:bg-red-500",
+                                    pathname === "/contact"
                                         ? "bg-green-50 text-green-600"
-                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
+                                        : "text-white hover:bg-red-500 hover:text-white"
                                 )}
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                Shop
+                                Contact
                             </Link>
-                            <Link
-                                href="/blog"
-                                className={cn(
-                                    "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-                                    pathname === "/blog"
-                                        ? "bg-green-50 text-green-600"
-                                        : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                )}
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Blog
-                            </Link>
-                            {siteConfig.menu
-                                .filter((item) => item.name !== "Shop")
-                                .map((item) => (
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        className={cn(
-                                            "block rounded-lg px-3 py-2 text-base font-medium transition-colors",
-                                            pathname === item.href
-                                                ? "bg-green-50 text-green-600"
-                                                : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                                        )}
-                                        target={
-                                            item.isExternal
-                                                ? "_blank"
-                                                : undefined
-                                        }
-                                        referrerPolicy={
-                                            item.isExternal
-                                                ? "no-referrer"
-                                                : undefined
-                                        }
-                                        onClick={() => setIsMenuOpen(false)}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))}
                         </div>
                     </div>
                 </div>

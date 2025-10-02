@@ -72,6 +72,21 @@ class UserQuery {
         if (!updatedUser) return null;
         return fullUserSchema.parse(updatedUser);
     }
+
+    async getAdminUsers() {
+        const data = await db.query.users.findMany({
+            where: (f, o) => o.or(o.eq(f.role, "admin"), o.eq(f.role, "mod")),
+            columns: {
+                id: true,
+                firstName: true,
+                lastName: true,
+                email: true,
+                role: true,
+            },
+        });
+
+        return data;
+    }
 }
 
 export const userQueries = new UserQuery();

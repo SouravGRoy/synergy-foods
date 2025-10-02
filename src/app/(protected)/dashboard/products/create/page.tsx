@@ -1,5 +1,4 @@
 import { ProductManageForm } from "@/components/globals/forms";
-import { GeneralShell } from "@/components/globals/layouts";
 import { cache } from "@/lib/redis/methods";
 import { auth } from "@clerk/nextjs/server";
 import { Metadata } from "next";
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
     return (
-        <GeneralShell>
+        <div className="space-y-6">
             <div className="flex flex-col justify-between gap-2 md:flex-row">
                 <div className="text-center md:text-start">
                     <h1 className="text-2xl font-bold">Create Product</h1>
@@ -26,7 +25,7 @@ export default function Page() {
             <Suspense>
                 <ProductFetch />
             </Suspense>
-        </GeneralShell>
+        </div>
     );
 }
 

@@ -1,5 +1,4 @@
 import { ProductManageForm } from "@/components/globals/forms";
-import { GeneralShell } from "@/components/globals/layouts";
 import { queries } from "@/lib/db/queries";
 import { cache } from "@/lib/redis/methods";
 import { FullProduct, fullProductSchema } from "@/lib/validations";
@@ -32,7 +31,7 @@ export default async function Page({ params }: PageProps) {
     const { id } = await params;
 
     return (
-        <GeneralShell>
+        <div className="space-y-6">
             <div className="flex flex-col justify-between gap-2 md:flex-row">
                 <div className="text-center md:text-start">
                     <h1 className="text-2xl font-bold">Edit Product</h1>
@@ -45,7 +44,7 @@ export default async function Page({ params }: PageProps) {
             <Suspense fallback={<div>Loading...</div>}>
                 <ProductEditFetch id={id} />
             </Suspense>
-        </GeneralShell>
+        </div>
     );
 }
 

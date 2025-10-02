@@ -6,6 +6,7 @@ import {
     subcategoryQueries,
 } from "./category";
 import { mediaItemQueries } from "./media-item";
+import { notificationQueries } from "./notification";
 import { productQueries } from "./product";
 import { userQueries } from "./user";
 import { wishlistQueries } from "./wishlist";
@@ -20,6 +21,7 @@ export const queries = {
     productType: productTypeQueries,
     subcategory: subcategoryQueries,
     mediaItem: mediaItemQueries,
+    notification: notificationQueries,
     product: productQueries,
     user: userQueries,
     wishlist: wishlistQueries,
