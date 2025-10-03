@@ -11,12 +11,12 @@ interface DashboardLayoutProps {
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
     return (
         <RoleGuard allowedRoles={["mod", "admin"]} fallbackPath="/">
-            <div className="flex max-h-screen min-h-screen bg-gradient-to-br from-slate-50 to-slate-100/50">
+            <div className="flex h-screen bg-gradient-to-br from-slate-50 to-slate-100/50">
                 {/* Sidebar */}
                 <DashboardSidebar />
 
                 {/* Main Content Area */}
-                <div className="flex min-h-0 flex-1 flex-col">
+                <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
                     {/* Header */}
                     <DashboardHeader />
 

@@ -92,7 +92,7 @@ export function CategoryManagement({
                 onValueChange={setActiveTab}
                 className="w-full"
             >
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                     <TabsList className="grid w-full max-w-md grid-cols-3">
                         <TabsTrigger value="categories">Categories</TabsTrigger>
                         <TabsTrigger value="subcategories">
@@ -103,7 +103,7 @@ export function CategoryManagement({
                         </TabsTrigger>
                     </TabsList>
 
-                    <div className="flex gap-2">
+                    <div className="flex shrink-0 gap-2">
                         {activeTab === "categories" && (
                             <Button onClick={() => setShowCreateCategory(true)}>
                                 <Plus className="mr-2 h-4 w-4" />

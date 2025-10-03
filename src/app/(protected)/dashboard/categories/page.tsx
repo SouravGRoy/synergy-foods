@@ -26,8 +26,8 @@ export default async function CategoriesPage() {
     ]);
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <div className="mb-8">
+        <div className="space-y-6">
+            <div>
                 <h1 className="text-3xl font-bold">Categories Management</h1>
                 <p className="mt-2 text-muted-foreground">
                     Manage your marketplace categories, subcategories, and
