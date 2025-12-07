@@ -156,16 +156,11 @@ export function DynamicBannerCarousel({
                 <div className="absolute top-4 right-4 z-10 rounded bg-black/50 px-3 py-1 text-xs text-white">
                     {banners.length > 0
                         ? `${banners.length} banners`
-                        : "Fallback banners"}
+                        : "banners"}
                 </div>
             )}
 
             {/* Error indicator */}
-            {error && (
-                <div className="absolute top-4 left-4 z-10 rounded bg-red-600/70 px-3 py-1 text-xs text-white">
-                    Banner API error - using fallbacks
-                </div>
-            )}
 
             <Carousel
                 opts={{
