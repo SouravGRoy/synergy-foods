@@ -1,0 +1,1019 @@
+TimeUTC,timestampInMs,requestPath,requestMethod,requestQueryString,responseStatusCode,requestId,requestUserAgent,level,environment,branch,vercelCache,type,function,host,deploymentDomain,deploymentId,durationMs,region,maxMemoryUsed,memorySize,message,projectId,traceId,sessionId,invocationId,instanceId,concurrency
+2026-01-12 17:42:05,1768239725323,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239725177-8bc3426c5ae9,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:05,1768239725323,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239725177-8bc3426c5ae9,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:05,1768239725177,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239725177-8bc3426c5ae9,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,15,iad1,277,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSYQK9S597RZZV2G3NZTJ,43F6L7aHTzbW,1
+2026-01-12 17:42:05,1768239725177,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239725177-8bc3426c5ae9,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,10,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSYKWQ3TZCCT2B62W1HNT,0Un1QWfsUZ4k,1
+2026-01-12 17:42:05,1768239725051,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724834-801da17917ec,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:05,1768239725055,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724834-801da17917ec,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:04,1768239724834,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724834-801da17917ec,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,16,iad1,276,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSYF9QN5B24CTGDEYK0WX,43F6L7aHTzbW,1
+2026-01-12 17:42:04,1768239724834,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724834-801da17917ec,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,42,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSY9PS7Z2HQ294JBDJKHX,0Un1QWfsUZ4k,1
+2026-01-12 17:42:04,1768239724640,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724426-1814b7c3be74,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:04,1768239724644,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724426-1814b7c3be74,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:04,1768239724426,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724426-1814b7c3be74,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,20,iad1,275,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSY25MS9YQGFZDHC6ZT1J,43F6L7aHTzbW,1
+2026-01-12 17:42:04,1768239724426,synergyfoodtrading.com/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,mqpkn-1768239724426-1814b7c3be74,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,10,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSXWQAMCHJZRPR759M7TY,0Un1QWfsUZ4k,1
+2026-01-12 17:42:04,1768239724003,synergyfoodtrading.com/,GET,,,c7fkr-1768239723804-a7badab32b0e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:04,1768239724005,synergyfoodtrading.com/,GET,,,c7fkr-1768239723804-a7badab32b0e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:42:03,1768239723804,synergyfoodtrading.com/,GET,,,c7fkr-1768239723804-a7badab32b0e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,22,iad1,274,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSXE6DGZ9A2HDASBWSBQ0,43F6L7aHTzbW,1
+2026-01-12 17:42:03,1768239723804,synergyfoodtrading.com/,GET,,,c7fkr-1768239723804-a7badab32b0e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,48,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSX9HCDJYV0FY2VV5E4VG,0Un1QWfsUZ4k,1
+2026-01-12 17:41:49,1768239709624,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709459-600412b699bb,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:49,1768239709632,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709459-600412b699bb,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:49,1768239709459,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709459-600412b699bb,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,24,iad1,272,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSFCX40JE9K741M2M0CMB,43F6L7aHTzbW,1
+2026-01-12 17:41:49,1768239709459,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709459-600412b699bb,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,12,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSF8SC85QBYWHD41SGGB8,0Un1QWfsUZ4k,1
+2026-01-12 17:41:49,1768239709327,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709169-99778e1f2305,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:49,1768239709333,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709169-99778e1f2305,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:49,1768239709169,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709169-99778e1f2305,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,20,iad1,271,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSF3QE7YMF3DDRP339S27,43F6L7aHTzbW,1
+2026-01-12 17:41:49,1768239709169,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239709169-99778e1f2305,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,12,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSEZN4X9FBWAG76YGJ03Y,0Un1QWfsUZ4k,1
+2026-01-12 17:41:48,1768239708991,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239708827-86a37101a332,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:48,1768239708996,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239708827-86a37101a332,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:48,1768239708827,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239708827-86a37101a332,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,24,iad1,271,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSES5A2Z5Z8D43919VJ36,43F6L7aHTzbW,1
+2026-01-12 17:41:48,1768239708827,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,zpj7d-1768239708827-86a37101a332,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,15,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSEN0667YB62KA5QCV7Q5,0Un1QWfsUZ4k,1
+2026-01-12 17:41:47,1768239707596,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,xzc9b-1768239706959-b3cdb681f4b1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:47,1768239707638,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,xzc9b-1768239706959-b3cdb681f4b1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:41:46,1768239706959,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,xzc9b-1768239706959-b3cdb681f4b1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,296,iad1,267,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSD7E6DHE65Z4MPWNH9C6,43F6L7aHTzbW,1
+2026-01-12 17:41:46,1768239706959,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,xzc9b-1768239706959-b3cdb681f4b1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,67,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMSCTK1J1FMGYBW65V360G,0Un1QWfsUZ4k,1
+2026-01-12 17:40:38,1768239638876,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4rmvg-1768239638760-ae9b3d9115bf,vercel-favicon/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:38,1768239638884,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4rmvg-1768239638760-ae9b3d9115bf,vercel-favicon/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:38,1768239638760,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4rmvg-1768239638760-ae9b3d9115bf,vercel-favicon/1.0,,production,main,,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,10,sfo1,131,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQA7FMPZM6VC90F80WGD1,Zhf8w8vBkMj9,1
+2026-01-12 17:40:38,1768239638760,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4rmvg-1768239638760-ae9b3d9115bf,vercel-favicon/1.0,,production,main,,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,27,iad1,294,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQAA8YJTVQ5Y40G91E4GN,vEeoFKUKdjXS,1
+2026-01-12 17:40:38,1768239638166,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,,tpn5w-1768239638081-5f856c86ab58,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:38,1768239638169,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,,tpn5w-1768239638081-5f856c86ab58,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:38,1768239638081,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,,tpn5w-1768239638081-5f856c86ab58,vercel-screenshot/1.0,,production,main,,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,14,sfo1,131,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ9J7JJ8DEMWKZ69XBPEC,Zhf8w8vBkMj9,1
+2026-01-12 17:40:38,1768239638081,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,,tpn5w-1768239638081-5f856c86ab58,vercel-screenshot/1.0,,production,main,,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,17,iad1,293,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ9M3JSR66FNTMAJNBYBG,vEeoFKUKdjXS,1
+2026-01-12 17:40:37,1768239637920,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,gjlzj-1768239637825-1d9b555bb16b,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637924,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,gjlzj-1768239637825-1d9b555bb16b,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637825,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,gjlzj-1768239637825-1d9b555bb16b,vercel-screenshot/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,17,iad1,293,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ9CB6J41Q9507PNSP3DJ,vEeoFKUKdjXS,1
+2026-01-12 17:40:37,1768239637825,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/_next/data/sg5ibfQzVGzEfqUSNhX4d/index.json,HEAD,,500,gjlzj-1768239637825-1d9b555bb16b,vercel-screenshot/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,13,sfo1,130,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ9A87DWXQ4QQH18HXBPC,Zhf8w8vBkMj9,1
+2026-01-12 17:40:37,1768239637814,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4jnhq-1768239637694-ee9e9f763bca,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637820,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4jnhq-1768239637694-ee9e9f763bca,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637694,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4jnhq-1768239637694-ee9e9f763bca,vercel-screenshot/1.0,,production,main,,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,14,sfo1,129,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ964E4RXQN1A9XTK143R,Zhf8w8vBkMj9,1
+2026-01-12 17:40:37,1768239637694,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,4jnhq-1768239637694-ee9e9f763bca,vercel-screenshot/1.0,,production,main,,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,47,iad1,302,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ98674EJVMNXEYDSY33M,vEeoFKUKdjXS,1
+2026-01-12 17:40:37,1768239637680,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,g4clr-1768239637510-1f4bcdc70c65,vercel-favicon/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637692,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,g4clr-1768239637510-1f4bcdc70c65,vercel-favicon/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637510,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,g4clr-1768239637510-1f4bcdc70c65,vercel-favicon/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,35,iad1,308,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ94QZ28EW2G5Z9P0B2FD,vEeoFKUKdjXS,1
+2026-01-12 17:40:37,1768239637510,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,500,g4clr-1768239637510-1f4bcdc70c65,vercel-favicon/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,10,sfo1,127,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ92H7CJS42SA4YZF1S4H,Zhf8w8vBkMj9,1
+2026-01-12 17:40:37,1768239637353,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,w6tp5-1768239637155-9bed56ad454b,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637394,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,w6tp5-1768239637155-9bed56ad454b,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637155,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,w6tp5-1768239637155-9bed56ad454b,vercel-screenshot/1.0,,production,main,,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,55,iad1,312,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ8TFVMNCHJKRNKJ3HDXF,0LVYukZjy9gE,1
+2026-01-12 17:40:37,1768239637155,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,w6tp5-1768239637155-9bed56ad454b,vercel-screenshot/1.0,,production,main,,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,11,sfo1,127,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ8RT1RTS15VR2GGR9WTC,Zhf8w8vBkMj9,1
+2026-01-12 17:40:37,1768239637321,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,vq5zp-1768239636203-ba3763def65d,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:37,1768239637403,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,vq5zp-1768239636203-ba3763def65d,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:36,1768239636203,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,vq5zp-1768239636203-ba3763def65d,vercel-screenshot/1.0,,production,main,,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,14,sfo1,127,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ7TZ780JRF460ZCFPMJY,Zhf8w8vBkMj9,1
+2026-01-12 17:40:36,1768239636203,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,vq5zp-1768239636203-ba3763def65d,vercel-screenshot/1.0,,production,main,,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,1026,iad1,308,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ7XB3NCMQE7Q0BJS69SG,vEeoFKUKdjXS,1
+2026-01-12 17:40:36,1768239636633,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,s5h2z-1768239635884-c6887495c8b0,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:36,1768239636716,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,s5h2z-1768239635884-c6887495c8b0,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:40:35,1768239635884,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,s5h2z-1768239635884-c6887495c8b0,vercel-screenshot/1.0,,production,main,,serverless,/,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,622,iad1,312,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ7S7VN1BE0K5S4E4V6T5,0LVYukZjy9gE,1
+2026-01-12 17:40:35,1768239635884,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app/,GET,,,s5h2z-1768239635884-c6887495c8b0,vercel-screenshot/1.0,,production,main,,middleware,src/middleware,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-1qy4gy49u-souravs-projects-8a61e4e5.vercel.app,dpl_E2bhFHaWhZ3BRrj2iYawe9NopdTW,60,sfo1,127,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMQ7J0F78Q8CNMFNB3PZ9G,Zhf8w8vBkMj9,1
+2026-01-12 17:37:37,1768239457957,synergyfoodtrading.com/,GET,,500,c9868-1768239456860-7c38661f86a6,Mozilla/5.0 (compatible; Qwantbot/1.0_3453297; +https://help.qwant.com/bot/),error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:37:37,1768239457960,synergyfoodtrading.com/,GET,,500,c9868-1768239456860-7c38661f86a6,Mozilla/5.0 (compatible; Qwantbot/1.0_3453297; +https://help.qwant.com/bot/),error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:37:36,1768239456860,synergyfoodtrading.com/,GET,,500,c9868-1768239456860-7c38661f86a6,Mozilla/5.0 (compatible; Qwantbot/1.0_3453297; +https://help.qwant.com/bot/),,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,569,fra1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMHRR16EWNXP20GCDGBTHB,yApu3hRi5b7n,1
+2026-01-12 17:37:36,1768239456860,synergyfoodtrading.com/,GET,,500,c9868-1768239456860-7c38661f86a6,Mozilla/5.0 (compatible; Qwantbot/1.0_3453297; +https://help.qwant.com/bot/),,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,15,iad1,272,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMHSMHJEYPX9K90ZW3KV1B,7MnQ0zKDEkJv,1
+2026-01-12 17:35:27,1768239327466,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,gjsx8-1768239327307-6a221d44cb76,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:27,1768239327469,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,gjsx8-1768239327307-6a221d44cb76,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:27,1768239327307,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,gjsx8-1768239327307-6a221d44cb76,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,13,iad1,272,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDT6K6T0D0AGGCGXD8BRT,7MnQ0zKDEkJv,1
+2026-01-12 17:35:27,1768239327307,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,gjsx8-1768239327307-6a221d44cb76,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,9,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDT2NFBCHV7F7BEF9JWH4,CIu0yF2SSCCO,1
+2026-01-12 17:35:27,1768239327076,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326898-5c93ba565cac,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:27,1768239327078,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326898-5c93ba565cac,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:26,1768239326898,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326898-5c93ba565cac,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,12,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDSNNE2SZEM3BWN37TEG3,CIu0yF2SSCCO,1
+2026-01-12 17:35:26,1768239326898,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326898-5c93ba565cac,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,13,iad1,272,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDSS6Z8WVS828WX1T9Y16,7MnQ0zKDEkJv,1
+2026-01-12 17:35:26,1768239326690,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326537-3f63155de154,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:26,1768239326692,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326537-3f63155de154,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:26,1768239326537,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326537-3f63155de154,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,10,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDSACP8JTGRK6ER78TC27,CIu0yF2SSCCO,1
+2026-01-12 17:35:26,1768239326537,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,pdzdl-1768239326537-3f63155de154,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,13,iad1,272,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDSEFKD4KK5JR8NMEKHBP,7MnQ0zKDEkJv,1
+2026-01-12 17:35:26,1768239326219,synergyfoodtrading.com/,GET,,500,pdzdl-1768239326042-98f7ae417ebc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:26,1768239326223,synergyfoodtrading.com/,GET,,500,pdzdl-1768239326042-98f7ae417ebc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:35:26,1768239326042,synergyfoodtrading.com/,GET,,500,pdzdl-1768239326042-98f7ae417ebc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,14,iad1,270,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDRZT3MV5KF1WVJXRX65D,7MnQ0zKDEkJv,1
+2026-01-12 17:35:26,1768239326042,synergyfoodtrading.com/,GET,,500,pdzdl-1768239326042-98f7ae417ebc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,43,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMDRV4PMZM1K6NM64GTR8A,CIu0yF2SSCCO,1
+2026-01-12 17:34:22,1768239262480,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,csblr-1768239262328-e4bfa8843cfd,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:22,1768239262484,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,csblr-1768239262328-e4bfa8843cfd,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:22,1768239262328,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,csblr-1768239262328-e4bfa8843cfd,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,14,iad1,270,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBTQYNYNYVBF41XG26VH6,7MnQ0zKDEkJv,1
+2026-01-12 17:34:22,1768239262328,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,csblr-1768239262328-e4bfa8843cfd,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBTKXB4G7E2AF9R5NEFVN,CIu0yF2SSCCO,1
+2026-01-12 17:34:22,1768239262155,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,7x5rf-1768239261997-d163b88b0b8d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:22,1768239262159,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,7x5rf-1768239261997-d163b88b0b8d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:21,1768239261997,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,7x5rf-1768239261997-d163b88b0b8d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,19,iad1,271,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBTDP52J1S51FHH8T9RA6,7MnQ0zKDEkJv,1
+2026-01-12 17:34:21,1768239261997,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,7x5rf-1768239261997-d163b88b0b8d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBT9Q83WK9JYSYYD8F47J,CIu0yF2SSCCO,1
+2026-01-12 17:34:21,1768239261857,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,c7fkr-1768239261699-7f2e1b1775e3,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:21,1768239261860,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,c7fkr-1768239261699-7f2e1b1775e3,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:21,1768239261699,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,c7fkr-1768239261699-7f2e1b1775e3,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,22,iad1,270,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBT43PAEXYBDWYFE2BXFB,7MnQ0zKDEkJv,1
+2026-01-12 17:34:21,1768239261699,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,c7fkr-1768239261699-7f2e1b1775e3,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,10,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBT0CPVVBGTMX2PS14NP4,CIu0yF2SSCCO,1
+2026-01-12 17:34:21,1768239261345,synergyfoodtrading.com/,GET,,500,pn5gm-1768239261188-0c82f2b3c11c,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:21,1768239261349,synergyfoodtrading.com/,GET,,500,pn5gm-1768239261188-0c82f2b3c11c,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:21,1768239261188,synergyfoodtrading.com/,GET,,500,pn5gm-1768239261188-0c82f2b3c11c,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,13,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBSGBN4DKF6ASC6PXSMWR,CIu0yF2SSCCO,1
+2026-01-12 17:34:21,1768239261188,synergyfoodtrading.com/,GET,,500,pn5gm-1768239261188-0c82f2b3c11c,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,16,iad1,270,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBSMDQZR4053V0RMD68Q9,7MnQ0zKDEkJv,1
+2026-01-12 17:34:15,1768239255999,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239255855-8999d2564320,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:16,1768239256003,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239255855-8999d2564320,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:15,1768239255855,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239255855-8999d2564320,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBM9M2Y24Y51BP4SAF6JT,CIu0yF2SSCCO,1
+2026-01-12 17:34:15,1768239255855,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239255855-8999d2564320,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,16,iad1,270,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBMD7E4ZMTZQVVPZ50RJG,7MnQ0zKDEkJv,1
+2026-01-12 17:34:15,1768239255694,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x6r24-1768239255525-c5479f09b5cc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:15,1768239255708,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x6r24-1768239255525-c5479f09b5cc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:15,1768239255525,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x6r24-1768239255525-c5479f09b5cc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,34,iad1,270,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBM33E86WY12D48VKVHTD,7MnQ0zKDEkJv,1
+2026-01-12 17:34:15,1768239255525,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x6r24-1768239255525-c5479f09b5cc,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,9,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBKZF7018K3EZ65E390YH,CIu0yF2SSCCO,1
+2026-01-12 17:34:15,1768239255285,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,r6fs9-1768239255110-074450bc2a95,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:15,1768239255288,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,r6fs9-1768239255110-074450bc2a95,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:15,1768239255110,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,r6fs9-1768239255110-074450bc2a95,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBKJF410XB53E9E7C7J67,CIu0yF2SSCCO,1
+2026-01-12 17:34:15,1768239255110,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,r6fs9-1768239255110-074450bc2a95,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,38,iad1,270,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBKPJJSDPPXH56EFHATZ7,7MnQ0zKDEkJv,1
+2026-01-12 17:34:14,1768239254748,synergyfoodtrading.com/,GET,,500,r6fs9-1768239254487-a16e2a8a4591,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:14,1768239254763,synergyfoodtrading.com/,GET,,500,r6fs9-1768239254487-a16e2a8a4591,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:34:14,1768239254487,synergyfoodtrading.com/,GET,,500,r6fs9-1768239254487-a16e2a8a4591,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBJZ0W9KV04G15ADAKANG,CIu0yF2SSCCO,1
+2026-01-12 17:34:14,1768239254487,synergyfoodtrading.com/,GET,,500,r6fs9-1768239254487-a16e2a8a4591,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,125,iad1,279,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMBK2NNJSZHM3C903N0FH9,7MnQ0zKDEkJv,1
+2026-01-12 17:33:59,1768239239913,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239239758-db3f54921452,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:59,1768239239918,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239239758-db3f54921452,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:59,1768239239758,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239239758-db3f54921452,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,17,iad1,278,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB4PMS39YNZG0M8DYTT4Y,7MnQ0zKDEkJv,1
+2026-01-12 17:33:59,1768239239758,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,wd54s-1768239239758-db3f54921452,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB4JMM2EDCZBMM0E9QY0J,CIu0yF2SSCCO,1
+2026-01-12 17:33:59,1768239239514,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239367-1fdd4b8b0c18,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:59,1768239239518,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239367-1fdd4b8b0c18,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:59,1768239239367,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239367-1fdd4b8b0c18,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,24,iad1,277,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB49Z4S95B9BWBNNYRBQC,7MnQ0zKDEkJv,1
+2026-01-12 17:33:59,1768239239367,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239367-1fdd4b8b0c18,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,10,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB46CA5NMYCS8WJVM7ETE,CIu0yF2SSCCO,1
+2026-01-12 17:33:59,1768239239243,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239054-3bb892f0c11d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:59,1768239239243,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239054-3bb892f0c11d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:59,1768239239054,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239054-3bb892f0c11d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,20,iad1,275,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB417Q2MFRWV4JFDMZJ41,7MnQ0zKDEkJv,1
+2026-01-12 17:33:59,1768239239054,synergyfoodtrading.com/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,6qlbg-1768239239054-3bb892f0c11d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,13,bom1,125,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB3WP4Q686MNXT9TQF2MC,CIu0yF2SSCCO,1
+2026-01-12 17:33:58,1768239238579,synergyfoodtrading.com/,GET,,500,6qlbg-1768239238417-1696bcce4edf,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:58,1768239238584,synergyfoodtrading.com/,GET,,500,6qlbg-1768239238417-1696bcce4edf,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:58,1768239238417,synergyfoodtrading.com/,GET,,500,6qlbg-1768239238417-1696bcce4edf,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,19,iad1,275,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB3CHJRZ9X3E78KF9DZTF,7MnQ0zKDEkJv,1
+2026-01-12 17:33:58,1768239238417,synergyfoodtrading.com/,GET,,500,6qlbg-1768239238417-1696bcce4edf,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,14,bom1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB38VWNM7V2W0EQ9CMAAZ,CIu0yF2SSCCO,1
+2026-01-12 17:33:55,1768239235296,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2z9g8-1768239235146-1fdcbc7a424d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:55,1768239235305,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2z9g8-1768239235146-1fdcbc7a424d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:55,1768239235146,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2z9g8-1768239235146-1fdcbc7a424d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,23,iad1,272,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB06A5VEZCT548VRJ57X8,7MnQ0zKDEkJv,1
+2026-01-12 17:33:55,1768239235146,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2z9g8-1768239235146-1fdcbc7a424d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMB02K414KQDRA9C35SYA3,CIu0yF2SSCCO,1
+2026-01-12 17:33:55,1768239235018,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,srmkj-1768239234857-625d6175a29b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:55,1768239235025,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,srmkj-1768239234857-625d6175a29b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:54,1768239234857,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,srmkj-1768239234857-625d6175a29b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,22,iad1,271,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAZXHNMS7ZAARNZE4VSV8,7MnQ0zKDEkJv,1
+2026-01-12 17:33:54,1768239234857,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,,srmkj-1768239234857-625d6175a29b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAZSEP1ZSJ1MC8P8CBPA7,CIu0yF2SSCCO,1
+2026-01-12 17:33:54,1768239234715,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x8fnt-1768239234540-9d02ad9ed446,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:54,1768239234721,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x8fnt-1768239234540-9d02ad9ed446,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:54,1768239234540,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x8fnt-1768239234540-9d02ad9ed446,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,24,iad1,271,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAZKGJZMNSSF8N0JSTSSM,7MnQ0zKDEkJv,1
+2026-01-12 17:33:54,1768239234540,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,x8fnt-1768239234540-9d02ad9ed446,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,11,bom1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAZFGZD57WYGXYTG00P3Q,CIu0yF2SSCCO,1
+2026-01-12 17:33:53,1768239233673,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,s45c4-1768239233084-1b61ac80f00b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:53,1768239233715,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,s45c4-1768239233084-1b61ac80f00b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:53,1768239233084,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,s45c4-1768239233084-1b61ac80f00b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,300,iad1,265,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAYD01CYMBAB21TZDS6K0,7MnQ0zKDEkJv,1
+2026-01-12 17:33:53,1768239233084,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,s45c4-1768239233084-1b61ac80f00b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,12,bom1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAY25PQ91Z2CBGEPTFJFE,CIu0yF2SSCCO,1
+2026-01-12 17:33:45,1768239225086,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,k87ds-1768239223355-aced8a052f1b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/products/new-arrivals'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:45,1768239225181,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,k87ds-1768239223355-aced8a052f1b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/products/new-arrivals'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:45,1768239225188,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,k87ds-1768239223355-aced8a052f1b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Unhandled Rejection: Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at /opt/rust/nodejs.js:2:13531
+    at Function.dn (/opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (/opt/rust/nodejs.js:2:13501)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:45,1768239225189,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,k87ds-1768239223355-aced8a052f1b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",fatal,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,Node.js process exited with exit status: 128. The logs above can help with debugging the issue.,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:43,1768239223355,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,k87ds-1768239223355-aced8a052f1b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,15,bom1,123,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAMV9HYJZWCXSSEXXH163,CIu0yF2SSCCO,1
+2026-01-12 17:33:43,1768239223355,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,k87ds-1768239223355-aced8a052f1b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/products/new-arrivals,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,839,iad1,266,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAN87HB8Z447KZ7NXEZHH,Ntg8kFYcKb5E,1
+2026-01-12 17:33:44,1768239224378,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,nmdsr-1768239223352-f40c26ef0b6b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/banners'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:44,1768239224469,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,nmdsr-1768239223352-f40c26ef0b6b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/banners'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:44,1768239224676,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,nmdsr-1768239223352-f40c26ef0b6b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Unhandled Rejection: Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at /opt/rust/nodejs.js:2:13531
+    at Function.dn (/opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (/opt/rust/nodejs.js:2:13501)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:44,1768239224676,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,nmdsr-1768239223352-f40c26ef0b6b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",fatal,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,Node.js process exited with exit status: 128. The logs above can help with debugging the issue.,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:33:43,1768239223352,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,nmdsr-1768239223352-f40c26ef0b6b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,63,bom1,123,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAMS16GSF62E3R9GRXV6J,CIu0yF2SSCCO,1
+2026-01-12 17:33:43,1768239223352,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,nmdsr-1768239223352-f40c26ef0b6b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/banners,synergyfoodtrading.com,synergyfoodtrading.com,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,650,iad1,293,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESMAN6DJHT58BTBC0SYBEJZ,Bd4NPfLMw9tF,1
+2026-01-12 17:31:21,1768239081486,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239081386-da2317949ec3,vercel-favicon/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:21,1768239081490,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239081386-da2317949ec3,vercel-favicon/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:21,1768239081386,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239081386-da2317949ec3,vercel-favicon/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,17,iad1,293,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM69Z5GTX60DQ2N6HRSE83,7mhyHRjgIAlA,1
+2026-01-12 17:31:21,1768239081386,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239081386-da2317949ec3,vercel-favicon/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,10,sfo1,128,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM69XC0JSEBBDDBQ843560,LApfK6XqOdCE,1
+2026-01-12 17:31:20,1768239080354,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,4vgdn-1768239080263-29c1fde598c2,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:20,1768239080358,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,4vgdn-1768239080263-29c1fde598c2,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:20,1768239080263,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,4vgdn-1768239080263-29c1fde598c2,vercel-screenshot/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,17,iad1,293,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68WGRKGSW7ZHBBNP9G1E,7mhyHRjgIAlA,1
+2026-01-12 17:31:20,1768239080263,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,4vgdn-1768239080263-29c1fde598c2,vercel-screenshot/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,13,sfo1,128,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68TEZBT0F7P8115DXCKX,LApfK6XqOdCE,1
+2026-01-12 17:31:20,1768239080325,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2p5r5-1768239080229-722d183f944c,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:20,1768239080335,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2p5r5-1768239080229-722d183f944c,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:20,1768239080229,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2p5r5-1768239080229-722d183f944c,vercel-screenshot/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,34,iad1,303,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68V4HDERH75BZXS5YDXD,7mhyHRjgIAlA,1
+2026-01-12 17:31:20,1768239080229,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/_next/data/SMaRwUdPZf4e2QrCDJcBC/index.json,HEAD,,500,2p5r5-1768239080229-722d183f944c,vercel-screenshot/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,12,sfo1,127,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68SA8Q28465M2T4R06C5,LApfK6XqOdCE,1
+2026-01-12 17:31:20,1768239080292,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239080192-ec9af814033f,vercel-favicon/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:20,1768239080309,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239080192-ec9af814033f,vercel-favicon/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:20,1768239080192,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239080192-ec9af814033f,vercel-favicon/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,47,iad1,276,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68T0PRNEPX9EGWWSTN08,bxeZAmCU5WHv,1
+2026-01-12 17:31:20,1768239080192,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,7cwr2-1768239080192-ec9af814033f,vercel-favicon/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,12,sfo1,126,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68R6JF1T4SAK3XACD20T,LApfK6XqOdCE,1
+2026-01-12 17:31:19,1768239079995,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,5pklx-1768239079853-ac0c30126268,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:20,1768239080002,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,5pklx-1768239079853-ac0c30126268,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:19,1768239079853,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,5pklx-1768239079853-ac0c30126268,vercel-screenshot/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,28,iad1,276,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68GNG78019KCKFS9S8GY,bxeZAmCU5WHv,1
+2026-01-12 17:31:19,1768239079853,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,5pklx-1768239079853-ac0c30126268,vercel-screenshot/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,10,sfo1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM68EYWKAW9FW9BSA47EVQ,LApfK6XqOdCE,1
+2026-01-12 17:31:19,1768239079702,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,wb97w-1768239079512-728402dafc94,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:19,1768239079718,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,wb97w-1768239079512-728402dafc94,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:19,1768239079512,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,wb97w-1768239079512-728402dafc94,vercel-screenshot/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,40,iad1,311,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM6880QZ4TENMWADF79BN1,7mhyHRjgIAlA,1
+2026-01-12 17:31:19,1768239079512,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,500,wb97w-1768239079512-728402dafc94,vercel-screenshot/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,12,sfo1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM6863JCB3YD1SYZFVAJ5Q,LApfK6XqOdCE,1
+2026-01-12 17:31:19,1768239079657,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,206,9vcx9-1768239078476-2e324e161333,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:19,1768239079741,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,206,9vcx9-1768239078476-2e324e161333,vercel-screenshot/1.0,error,production,main,MISS,serverless,/500,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:18,1768239078476,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,206,9vcx9-1768239078476-2e324e161333,vercel-screenshot/1.0,,production,main,MISS,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,12,sfo1,124,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM67604C9G6MC62EFN5RDW,LApfK6XqOdCE,1
+2026-01-12 17:31:18,1768239078476,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,206,9vcx9-1768239078476-2e324e161333,vercel-screenshot/1.0,,production,main,MISS,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,945,iad1,269,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM677PK37BGB3DKZM5XN66,bxeZAmCU5WHv,1
+2026-01-12 17:31:19,1768239079000,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,,rhqqv-1768239078288-58663c561261,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:19,1768239079081,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,,rhqqv-1768239078288-58663c561261,vercel-screenshot/1.0,error,production,main,,serverless,,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,,,,,"Error: require() of ES Module /var/task/node_modules/@exodus/bytes/encoding-lite.js from /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js not supported.
+Instead change the require of encoding-lite.js in /var/task/node_modules/html-encoding-sniffer/lib/html-encoding-sniffer.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13531)
+    at Function.dn (../../opt/rust/nodejs.js:2:13909)
+    at Ye.e.<computed>.Je._load (../../opt/rust/nodejs.js:2:13501) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:31:18,1768239078288,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,,rhqqv-1768239078288-58663c561261,vercel-screenshot/1.0,,production,main,,middleware,src/middleware,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,53,sfo1,123,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM670HWJDRKWK7D8F1MAQ6,LApfK6XqOdCE,1
+2026-01-12 17:31:18,1768239078288,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app/,GET,,,rhqqv-1768239078288-58663c561261,vercel-screenshot/1.0,,production,main,,serverless,/,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,synergy-foods-trading-iky1bpnw8-souravs-projects-8a61e4e5.vercel.app,dpl_4UzWncVLRW7P4sne3zToJ12DfGmv,621,iad1,311,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM676TBFHYTCNQ436GKETT,7mhyHRjgIAlA,1
+2026-01-12 17:28:25,1768238905648,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238905505-eb6bbfe8e160,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",info,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Cache hit for all banner types: banners:location:home:all-types,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:25,1768238905505,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238905505-eb6bbfe8e160,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,13,bom1,109,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0Y54A7R851FWECM8H0PZ,orVb66gzanIi,1
+2026-01-12 17:28:25,1768238905505,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238905505-eb6bbfe8e160,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,16,iad1,264,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0Y8WMG1M0ES04Q7GRRN4,jZrxuW2kXzdt,1
+2026-01-12 17:28:25,1768238905356,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238905200-59b34710ebce,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",info,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Cache hit for all banner types: banners:location:home:all-types,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:25,1768238905200,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238905200-59b34710ebce,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,19,bom1,109,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0XVKB0WJ22RQWR7FJK7G,orVb66gzanIi,1
+2026-01-12 17:28:25,1768238905200,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238905200-59b34710ebce,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,11,iad1,263,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0XZVRA76S46SJJD4SBZ1,jZrxuW2kXzdt,1
+2026-01-12 17:28:24,1768238904984,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238904832-5cc14326d91d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",info,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Cache hit for all banner types: banners:location:home:all-types,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:24,1768238904832,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238904832-5cc14326d91d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,31,bom1,108,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0XG3ZZ0J1DGVG4FQRF29,orVb66gzanIi,1
+2026-01-12 17:28:24,1768238904832,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238904832-5cc14326d91d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,11,iad1,263,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0XM6NSD7SDD4N2GZ7YQ0,jZrxuW2kXzdt,1
+2026-01-12 17:28:24,1768238904705,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238904496-bc7647666eb1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",info,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Cache hit for all banner types: banners:location:home:all-types,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:24,1768238904496,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238904496-bc7647666eb1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,15,bom1,107,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0X68A1B6PAJX400FJNA9,orVb66gzanIi,1
+2026-01-12 17:28:24,1768238904496,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238904496-bc7647666eb1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,17,iad1,263,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0XB86JZEAPBYRZ1ZSNN4,jZrxuW2kXzdt,1
+2026-01-12 17:28:21,1768238901827,synergyfoodtrading.com/,GET,,304,kgtjq-1768238901827-f623bd3de5f8,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,14,bom1,110,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TJ5NZ8YSH6DS8S1PAZT,Z5qhBnMmEOa8,1
+2026-01-12 17:28:21,1768238901827,synergyfoodtrading.com/,GET,,304,kgtjq-1768238901827-f623bd3de5f8,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,28,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901827,synergyfoodtrading.com/cart,GET,_rsc=tujbn,304,gh6ql-1768238901827-bab03956138e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,507,bom1,107,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TJ9PTYMC59E48XR18KR,orVb66gzanIi,1
+2026-01-12 17:28:21,1768238901827,synergyfoodtrading.com/cart,GET,_rsc=tujbn,304,gh6ql-1768238901827-bab03956138e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/cart,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,457,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/auth/signin,GET,_rsc=tujbn,304,x2jz7-1768238901638-dc55015a764d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,517,bom1,106,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TCGWY3724PDNV206XWT,UzJbbFkLlhUy,1
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/auth/signin,GET,_rsc=tujbn,304,x2jz7-1768238901638-dc55015a764d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/auth/signin,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,639,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/wishlist,GET,_rsc=tujbn,304,x2jz7-1768238901638-8c54ddb93d26,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,525,bom1,107,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TCCHY4EFBKBV55NJVDW,F0iCU1bLGyDw,1
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/wishlist,GET,_rsc=tujbn,304,x2jz7-1768238901638-8c54ddb93d26,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/wishlist,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,633,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/blog,GET,_rsc=tujbn,304,kgtjq-1768238901638-bc51827875e0,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,17,bom1,109,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TCF8JYMX8T5S4T7B7KA,Z5qhBnMmEOa8,1
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/blog,GET,_rsc=tujbn,304,kgtjq-1768238901638-bc51827875e0,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/blog,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,141,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/support,GET,_rsc=tujbn,304,4pbzz-1768238901638-98598a0f3974,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,466,bom1,107,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TCF8JYMX8T5S1G0GBM5,9QuHWT24tu5R,1
+2026-01-12 17:28:21,1768238901638,synergyfoodtrading.com/support,GET,_rsc=tujbn,304,4pbzz-1768238901638-98598a0f3974,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/support,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,604,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901636,synergyfoodtrading.com/shop,GET,_rsc=tujbn,200,v5s7d-1768238901636-f49d0813881a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,504,bom1,107,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TD5TFZ8BVVCHE27M9HD,pNaJfAvh5XcK,1
+2026-01-12 17:28:21,1768238901636,synergyfoodtrading.com/shop,GET,_rsc=tujbn,200,v5s7d-1768238901636-f49d0813881a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/shop.rsc,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,452,iad1,260,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0V4AWFE6VJMQ7FDZ1HPX,8IT9nyplcvIF,1
+2026-01-12 17:28:21,1768238901636,synergyfoodtrading.com/,GET,,304,4pbzz-1768238901636-53dde19da15b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,15,bom1,109,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TCGWY3724PDNYFK3Y5A,Z5qhBnMmEOa8,1
+2026-01-12 17:28:21,1768238901636,synergyfoodtrading.com/,GET,,304,4pbzz-1768238901636-53dde19da15b,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,118,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903452,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,djmrw-1768238901622-a8068fd92c4a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/banners'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903498,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,djmrw-1768238901622-a8068fd92c4a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/banners'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903504,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,djmrw-1768238901622-a8068fd92c4a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Unhandled Rejection: Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at /opt/rust/nodejs.js:2:13529
+    at Function.dn (/opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (/opt/rust/nodejs.js:2:13499)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903505,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,djmrw-1768238901622-a8068fd92c4a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",fatal,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Node.js process exited with exit status: 128. The logs above can help with debugging the issue.,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901622,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,djmrw-1768238901622-a8068fd92c4a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,528,bom1,106,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TBWYY6N23SVKREWQNEJ,UbsenepiWMjo,1
+2026-01-12 17:28:21,1768238901622,synergyfoodtrading.com/api/banners,GET,isPaginated=false&location=homepage,500,djmrw-1768238901622-a8068fd92c4a,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/banners,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,989,iad1,312,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0V38K4EZMRRVP818Z74D,2IP9eAfxrz2o,1
+2026-01-12 17:28:23,1768238903023,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,x674t-1768238901597-6b76f6de151d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/products/new-arrivals'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903066,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,x674t-1768238901597-6b76f6de151d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/products/new-arrivals'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903075,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,x674t-1768238901597-6b76f6de151d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Unhandled Rejection: Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at /opt/rust/nodejs.js:2:13529
+    at Function.dn (/opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (/opt/rust/nodejs.js:2:13499)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903075,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,x674t-1768238901597-6b76f6de151d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",fatal,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Node.js process exited with exit status: 128. The logs above can help with debugging the issue.,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901597,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,x674t-1768238901597-6b76f6de151d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/products/new-arrivals,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,981,iad1,313,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TJDJMK9MPX7WKT5Q2CD,egZufg1unhYq,1
+2026-01-12 17:28:21,1768238901597,synergyfoodtrading.com/api/products/new-arrivals,GET,limit=3,500,x674t-1768238901597-6b76f6de151d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,11,bom1,108,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TBQZ4C9CJSW4RCR65D2,Z5qhBnMmEOa8,1
+2026-01-12 17:28:23,1768238903063,synergyfoodtrading.com/api/product-types,GET,,500,r5lv5-1768238901595-fba5dd364de1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/product-types'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903109,synergyfoodtrading.com/api/product-types,GET,,500,r5lv5-1768238901595-fba5dd364de1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/product-types'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903117,synergyfoodtrading.com/api/product-types,GET,,500,r5lv5-1768238901595-fba5dd364de1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Unhandled Rejection: Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at /opt/rust/nodejs.js:2:13529
+    at Function.dn (/opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (/opt/rust/nodejs.js:2:13499)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903118,synergyfoodtrading.com/api/product-types,GET,,500,r5lv5-1768238901595-fba5dd364de1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",fatal,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Node.js process exited with exit status: 128. The logs above can help with debugging the issue.,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/product-types,GET,,500,r5lv5-1768238901595-fba5dd364de1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/product-types,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,1028,iad1,312,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TFF58QNE75S57ZJXRGW,AgqmG1ICaxSP,1
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/product-types,GET,,500,r5lv5-1768238901595-fba5dd364de1,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,21,bom1,108,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TB0V03TTFN12FPJWV28,Z5qhBnMmEOa8,1
+2026-01-12 17:28:22,1768238902949,synergyfoodtrading.com/api/categories,GET,,500,nxx47-1768238901595-c8efaa3a146e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/categories'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:22,1768238902992,synergyfoodtrading.com/api/categories,GET,,500,nxx47-1768238901595-c8efaa3a146e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/categories'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903057,synergyfoodtrading.com/api/categories,GET,,500,nxx47-1768238901595-c8efaa3a146e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Unhandled Rejection: Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at /opt/rust/nodejs.js:2:13529
+    at Function.dn (/opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (/opt/rust/nodejs.js:2:13499)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903057,synergyfoodtrading.com/api/categories,GET,,500,nxx47-1768238901595-c8efaa3a146e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",fatal,production,main,MISS,serverless,/500,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Node.js process exited with exit status: 128. The logs above can help with debugging the issue.,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/categories,GET,,500,nxx47-1768238901595-c8efaa3a146e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/categories,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,1086,iad1,317,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TF8RQFVSN7M7GA07P8C,aZQbMB8srVD3,1
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/categories,GET,,500,nxx47-1768238901595-c8efaa3a146e,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,14,bom1,107,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TB2GF7Y6M28M1VE5JMG,Z5qhBnMmEOa8,1
+2026-01-12 17:28:23,1768238903070,synergyfoodtrading.com/api/subcategories,GET,,,kwwjh-1768238901595-f089045cc982,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"⨯ Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/subcategories'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903115,synergyfoodtrading.com/api/subcategories,GET,,,kwwjh-1768238901595-f089045cc982,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Error: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at <unknown> (../../opt/rust/nodejs.js:2:13529)
+    at Function.dn (../../opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (../../opt/rust/nodejs.js:2:13499) {
+  code: 'ERR_REQUIRE_ESM',
+  page: '/api/subcategories'
+}",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903123,synergyfoodtrading.com/api/subcategories,GET,,,kwwjh-1768238901595-f089045cc982,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",error,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,"Unhandled Rejection: Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/parse5/dist/index.js from /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js not supported.
+Instead change the require of index.js in /var/task/node_modules/jsdom/lib/jsdom/browser/parser/html.js to a dynamic import() which is available in all CommonJS modules.
+    at /opt/rust/nodejs.js:2:13529
+    at Function.dn (/opt/rust/nodejs.js:2:13907)
+    at Je.e.<computed>.ze._load (/opt/rust/nodejs.js:2:13499)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)",prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:23,1768238903123,synergyfoodtrading.com/api/subcategories,GET,,,kwwjh-1768238901595-f089045cc982,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",fatal,production,main,,serverless,,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Node.js process exited with exit status: 128. The logs above can help with debugging the issue.,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/subcategories,GET,,,kwwjh-1768238901595-f089045cc982,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,serverless,/api/subcategories,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,1044,iad1,314,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0THHD2WP3EATWJZ2SPZM,zjBA0yJWypH6,1
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/subcategories,GET,,,kwwjh-1768238901595-f089045cc982,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,12,bom1,108,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TB7JFNRCAEQ1YFRAGTX,Z5qhBnMmEOa8,1
+2026-01-12 17:28:24,1768238904341,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238901595-f864fb17813d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",info,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,,,,,Cached all banner types: banners:location:home:all-types,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238901595-f864fb17813d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,middleware,src/middleware,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,38,bom1,108,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0TB5855HB5SKB6DTGT1G,Z5qhBnMmEOa8,1
+2026-01-12 17:28:21,1768238901595,synergyfoodtrading.com/api/promotional-banners/by-location,GET,location=home,200,g8vdx-1768238901595-f864fb17813d,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,MISS,serverless,/api/promotional-banners/by-location,synergyfoodtrading.com,synergyfoodtrading.com,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,2403,iad1,256,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0THA9NJM7633FJ1KVENA,jZrxuW2kXzdt,1
+2026-01-12 17:28:20,1768238900588,synergyfoodtrading.com/,GET,,304,8c4tn-1768238900588-790856fc7a9c,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,middleware,src/middleware,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,526,bom1,107,2048,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,01KESM0SBRTCPCKY1WT58D4EP3,Z5qhBnMmEOa8,1
+2026-01-12 17:28:20,1768238900588,synergyfoodtrading.com/,GET,,304,8c4tn-1768238900588-790856fc7a9c,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36",,production,main,HIT,static,/,synergyfoodtrading.com,synergy-foods-trading-clnzv02nl-souravs-projects-8a61e4e5.vercel.app,dpl_F3Dn3bRhtNy4gJ5n2J2zBGVrNET1,679,bom1,,,,prj_wdibyAxRcPm6hhBaFkMcnEzhADPp,,,,,
