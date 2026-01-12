@@ -5,7 +5,7 @@ import { userSchema } from "./user";
 
 export const mediaItemSchema = z.object({
     id: idSchema,
-    uploaderId: userSchema.shape.id,
+    uploaderId: userSchema.shape.id.nullable(),
     url: z
         .string({
             required_error: "Media URL is required",
