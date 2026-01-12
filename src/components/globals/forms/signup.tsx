@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CardContent, CardFooter } from "@/components/ui/card";
 import {
     Form,
     FormControl,
@@ -40,24 +39,23 @@ export function SignUpForm() {
 
     return (
         <Form {...form}>
-            <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
-                <CardContent className="space-y-4">
-                    <div className="flex flex-col items-center gap-4 md:flex-row">
+            <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+                <div className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
                         <FormField
                             control={form.control}
                             name="firstName"
                             render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>First Name</FormLabel>
-
+                                <FormItem>
+                                    <FormLabel>First name</FormLabel>
                                     <FormControl>
                                         <Input
                                             placeholder="John"
+                                            className="h-11"
                                             disabled={isPending}
                                             {...field}
                                         />
                                     </FormControl>
-
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -67,17 +65,16 @@ export function SignUpForm() {
                             control={form.control}
                             name="lastName"
                             render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>Last Name</FormLabel>
-
+                                <FormItem>
+                                    <FormLabel>Last name</FormLabel>
                                     <FormControl>
                                         <Input
                                             placeholder="Doe"
+                                            className="h-11"
                                             disabled={isPending}
                                             {...field}
                                         />
                                     </FormControl>
-
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -89,85 +86,80 @@ export function SignUpForm() {
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Email</FormLabel>
-
+                                <FormLabel>Email address</FormLabel>
                                 <FormControl>
                                     <Input
                                         type="email"
-                                        placeholder="johndoe@gmail.com"
+                                        placeholder="you@example.com"
+                                        className="h-11"
                                         disabled={isPending}
                                         {...field}
                                     />
                                 </FormControl>
-
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
 
-                    <div className="flex flex-col items-center gap-4 md:flex-row">
-                        <FormField
-                            control={form.control}
-                            name="password"
-                            render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>Password</FormLabel>
+                    <FormField
+                        control={form.control}
+                        name="password"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Password</FormLabel>
+                                <FormControl>
+                                    <PasswordInput
+                                        placeholder="Create a password"
+                                        className="h-11"
+                                        disabled={isPending}
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
 
-                                    <FormControl>
-                                        <PasswordInput
-                                            placeholder="********"
-                                            disabled={isPending}
-                                            {...field}
-                                        />
-                                    </FormControl>
+                    <FormField
+                        control={form.control}
+                        name="confirmPassword"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Confirm password</FormLabel>
+                                <FormControl>
+                                    <PasswordInput
+                                        placeholder="Confirm your password"
+                                        className="h-11"
+                                        disabled={isPending}
+                                        showToggle={false}
+                                        {...field}
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                </div>
 
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                <Button
+                    type="submit"
+                    className="h-11 w-full text-base"
+                    disabled={isPending}
+                >
+                    {isPending ? "Creating account..." : "Create account"}
+                </Button>
 
-                        <FormField
-                            control={form.control}
-                            name="confirmPassword"
-                            render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>Confirm Password</FormLabel>
-
-                                    <FormControl>
-                                        <PasswordInput
-                                            placeholder="********"
-                                            disabled={isPending}
-                                            showToggle={false}
-                                            {...field}
-                                        />
-                                    </FormControl>
-
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                    </div>
-                </CardContent>
-
-                <CardFooter className="flex-col items-end gap-4">
-                    <Button
-                        type="submit"
-                        className="w-full"
-                        disabled={isPending}
-                    >
-                        Create Account
-                    </Button>
-
-                    <p className="text-sm">
+                <div className="text-center text-sm">
+                    <span className="text-muted-foreground">
                         Already have an account?{" "}
-                        <Link
-                            href="/auth/signin"
-                            className="text-accent underline underline-offset-2"
-                        >
-                            Login here
-                        </Link>
-                    </p>
-                </CardFooter>
+                    </span>
+                    <Link
+                        href="/auth/signin"
+                        className="font-medium text-primary hover:underline"
+                    >
+                        Sign in
+                    </Link>
+                </div>
             </form>
         </Form>
     );

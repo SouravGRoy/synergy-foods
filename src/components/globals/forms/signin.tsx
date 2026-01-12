@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CardContent, CardFooter } from "@/components/ui/card";
 import {
     Form,
     FormControl,
@@ -45,59 +44,56 @@ export function SignInForm() {
     // Prevent hydration mismatch by not rendering interactive elements until mounted
     if (!isMounted) {
         return (
-            <div className="space-y-4">
-                <CardContent className="space-y-4">
+            <div className="space-y-6">
+                <div className="space-y-4">
                     <div className="space-y-2">
                         <div className="text-sm leading-none font-medium">
                             Email
                         </div>
-                        <div className="h-9 w-full rounded-md border border-input bg-background"></div>
+                        <div className="h-10 w-full rounded-lg border border-input bg-background"></div>
                     </div>
                     <div className="space-y-2">
                         <div className="text-sm leading-none font-medium">
                             Password
                         </div>
-                        <div className="h-9 w-full rounded-md border border-input bg-background"></div>
+                        <div className="h-10 w-full rounded-lg border border-input bg-background"></div>
                     </div>
-                </CardContent>
-                <CardFooter className="flex-col items-end gap-4">
-                    <div className="h-9 w-full rounded-md bg-primary"></div>
-                    <div className="space-y-1 text-end">
-                        <p className="text-sm">
-                            Don&apos;t have an account?{" "}
-                            <Link
-                                href="/auth/signup"
-                                className="text-accent underline underline-offset-2"
-                            >
-                                Create one here
-                            </Link>
-                        </p>
-                    </div>
-                </CardFooter>
+                </div>
+                <div className="h-10 w-full rounded-lg bg-primary"></div>
+                <div className="text-center text-sm">
+                    <span className="text-muted-foreground">
+                        Don&apos;t have an account?{" "}
+                    </span>
+                    <Link
+                        href="/auth/signup"
+                        className="font-medium text-primary hover:underline"
+                    >
+                        Sign up
+                    </Link>
+                </div>
             </div>
         );
     }
 
     return (
         <Form {...form}>
-            <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
-                <CardContent className="space-y-4">
+            <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+                <div className="space-y-4">
                     <FormField
                         control={form.control}
                         name="email"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Email</FormLabel>
-
+                                <FormLabel>Email address</FormLabel>
                                 <FormControl>
                                     <Input
                                         type="email"
-                                        placeholder="johndoe@gmail.com"
+                                        placeholder="you@example.com"
+                                        className="h-11"
                                         disabled={isPending}
                                         {...field}
                                     />
                                 </FormControl>
-
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -107,44 +103,49 @@ export function SignInForm() {
                         control={form.control}
                         name="password"
                         render={({ field }) => (
-                            <FormItem className="w-full">
-                                <FormLabel>Password</FormLabel>
-
+                            <FormItem>
+                                <div className="flex items-center justify-between">
+                                    <FormLabel>Password</FormLabel>
+                                    <Link
+                                        href="/auth/forgot-password"
+                                        className="text-sm text-primary hover:underline"
+                                    >
+                                        Forgot password?
+                                    </Link>
+                                </div>
                                 <FormControl>
                                     <PasswordInput
-                                        placeholder="********"
+                                        placeholder="Enter your password"
+                                        className="h-11"
                                         disabled={isPending}
                                         {...field}
                                     />
                                 </FormControl>
-
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-                </CardContent>
+                </div>
 
-                <CardFooter className="flex-col items-end gap-4">
-                    <Button
-                        type="submit"
-                        className="w-full"
-                        disabled={isPending}
+                <Button
+                    type="submit"
+                    className="h-11 w-full text-base"
+                    disabled={isPending}
+                >
+                    {isPending ? "Signing in..." : "Sign in"}
+                </Button>
+
+                <div className="text-center text-sm">
+                    <span className="text-muted-foreground">
+                        Don&apos;t have an account?{" "}
+                    </span>
+                    <Link
+                        href="/auth/signup"
+                        className="font-medium text-primary hover:underline"
                     >
-                        Sign In
-                    </Button>
-
-                    <div className="space-y-1 text-end">
-                        <p className="text-sm">
-                            Don&apos;t have an account?{" "}
-                            <Link
-                                href="/auth/signup"
-                                className="text-accent underline underline-offset-2"
-                            >
-                                Create one here
-                            </Link>
-                        </p>
-                    </div>
-                </CardFooter>
+                        Sign up
+                    </Link>
+                </div>
             </form>
         </Form>
     );
