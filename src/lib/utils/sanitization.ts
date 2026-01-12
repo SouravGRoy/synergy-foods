@@ -1,15 +1,20 @@
-import DOMPurify from 'isomorphic-dompurify';
 import validator from 'validator';
 
 /**
  * Sanitizes HTML content to prevent XSS attacks
+ * For server-side use, strips all HTML tags. For client-side, use a proper HTML sanitizer.
  */
 export function sanitizeHtml(input: string): string {
   if (!input || typeof input !== 'string') return '';
-  return DOMPurify.sanitize(input, {
-    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'p', 'br', 'ul', 'ol', 'li'],
-    ALLOWED_ATTR: []
-  });
+  
+  // Server-safe: strip all HTML tags
+  return input
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '') // Remove scripts
+    .replace(/<[^>]*>/g, '') // Remove all HTML tags
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .trim();
 }
 
 /**

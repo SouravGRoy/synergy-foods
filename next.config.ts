@@ -136,13 +136,7 @@ const nextConfig: NextConfig = {
     },
     
     // Server external packages - keeps these modules server-only
-    serverExternalPackages: [
-        'ioredis', 
-        'postgres', 
-        'isomorphic-dompurify',
-        '@exodus/bytes',
-        'html-encoding-sniffer'
-    ],
+    serverExternalPackages: ['ioredis', 'postgres'],
 };
 
 export default nextConfig;
