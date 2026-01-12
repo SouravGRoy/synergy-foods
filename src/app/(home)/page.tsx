@@ -13,6 +13,10 @@ import {
 import { queries } from "@/lib/db/queries";
 import dynamic from "next/dynamic";
 
+// Force dynamic rendering to avoid build-time database queries
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // Lazy load components that aren't immediately visible
 const BestSelling = dynamic(
     () =>
