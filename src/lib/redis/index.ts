@@ -30,17 +30,24 @@ redisClient.connect().catch(() => {
 // Proxy to return safe defaults when Redis is unavailable
 export const redis = new Proxy(redisClient, {
     get(target, prop) {
+        // Handle multi() specially - it's NOT async and returns immediately
+        if (!isRedisAvailable && prop === 'multi') {
+            const mockMulti: any = {
+                set: () => mockMulti,
+                get: () => mockMulti,
+                del: () => mockMulti,
+                setex: () => mockMulti,
+                mget: () => mockMulti,
+                sadd: () => mockMulti,
+                expire: () => mockMulti,
+                smembers: () => mockMulti,
+                exec: async () => [],
+            };
+            return () => mockMulti;
+        }
+        
         if (!isRedisAvailable && typeof target[prop as keyof Redis] === 'function') {
             return async (...args: any[]) => {
-                // Handle multi() - return a chainable mock
-                if (prop === 'multi') {
-                    return {
-                        set: () => ({ exec: async () => [] }),
-                        get: () => ({ exec: async () => [] }),
-                        del: () => ({ exec: async () => [] }),
-                        exec: async () => [],
-                    };
-                }
                 if (prop === 'get' || prop === 'getex') return null;
                 if (prop === 'mget') return [];
                 if (prop === 'keys' || prop === 'scan') return ['0', []];
