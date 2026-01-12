@@ -11,14 +11,14 @@ import {
     Type4BannerSection,
 } from "@/components/home";
 import { queries } from "@/lib/db/queries";
-import dynamic from "next/dynamic";
+import dynamicImport from "next/dynamic";
 
 // Force dynamic rendering to avoid build-time database queries
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 // Lazy load components that aren't immediately visible
-const BestSelling = dynamic(
+const BestSelling = dynamicImport(
     () =>
         import("@/components/home/best-selling").then((mod) => ({
             default: mod.BestSelling,
@@ -30,7 +30,7 @@ const BestSelling = dynamic(
     }
 );
 
-const Testimonials = dynamic(
+const Testimonials = dynamicImport(
     () =>
         import("@/components/home").then((mod) => ({
             default: mod.Testimonials,
@@ -42,7 +42,7 @@ const Testimonials = dynamic(
     }
 );
 
-const ShowCase = dynamic(() => import("@/components/home/showcase"), {
+const ShowCase = dynamicImport(() => import("@/components/home/showcase"), {
     loading: () => (
         <div className="h-96 animate-pulse rounded-lg bg-gray-100" />
     ),
