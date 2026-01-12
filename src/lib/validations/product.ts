@@ -71,7 +71,7 @@ export const productSchema = z.object({
             .min(3, "Description must be at least 3 characters long")
             .nullable()
     ),
-    uploaderId: userSchema.shape.id,
+    uploaderId: userSchema.shape.id.nullable(),
     isAvailable: z.boolean({
         required_error: "Availability is required",
         invalid_type_error: "Availability must be a boolean",
