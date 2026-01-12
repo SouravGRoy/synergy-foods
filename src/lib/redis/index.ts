@@ -32,10 +32,20 @@ export const redis = new Proxy(redisClient, {
     get(target, prop) {
         if (!isRedisAvailable && typeof target[prop as keyof Redis] === 'function') {
             return async (...args: any[]) => {
+                // Handle multi() - return a chainable mock
+                if (prop === 'multi') {
+                    return {
+                        set: () => ({ exec: async () => [] }),
+                        get: () => ({ exec: async () => [] }),
+                        del: () => ({ exec: async () => [] }),
+                        exec: async () => [],
+                    };
+                }
                 if (prop === 'get' || prop === 'getex') return null;
                 if (prop === 'mget') return [];
                 if (prop === 'keys' || prop === 'scan') return ['0', []];
                 if (prop === 'exists') return 0;
+                if (prop === 'set' || prop === 'setex' || prop === 'del') return 'OK';
                 return 'OK';
             };
         }
