@@ -140,7 +140,7 @@ export function useAuth() {
                 // If needs first factor (email verification, 2FA, etc.)
                 if (signInAttempt.status === "needs_first_factor") {
                     // Attempt to complete with email code strategy if available
-                    const emailCodeFactor = signInAttempt.supportedFirstFactors.find(
+                    const emailCodeFactor = signInAttempt.supportedFirstFactors?.find(
                         (factor) => factor.strategy === "email_code"
                     );
                     
