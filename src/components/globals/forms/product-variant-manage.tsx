@@ -27,7 +27,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { generateCombinations, generateSKU, groupVariants } from "@/lib/utils";
+import { generateCombinations, groupVariants } from "@/lib/utils";
 import { CreateProduct, FullProduct, MediaItem } from "@/lib/validations";
 import { parse, unparse } from "papaparse";
 import { useEffect, useRef, useState } from "react";
@@ -143,7 +143,7 @@ export function ProductVariantManage({
                 compareAtPrice: null,
                 costPerItem: null,
                 quantity: 0,
-                nativeSku: generateSKU(),
+                nativeSku: "",
                 sku: "",
                 barcode: null,
                 image: null,

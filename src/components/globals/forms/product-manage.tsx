@@ -41,12 +41,7 @@ import { Tag, TagInput } from "@/components/ui/tag-input";
 import { Textarea } from "@/components/ui/textarea";
 import { PRODUCT_VERIFICATION_STATUSES } from "@/config/const";
 import { useMediaItem, useProduct } from "@/lib/react-query";
-import {
-    cn,
-    convertValueToLabel,
-    generateSKU,
-    sanitizeHtml,
-} from "@/lib/utils";
+import { cn, convertValueToLabel, sanitizeHtml } from "@/lib/utils";
 import {
     CachedCategory,
     CachedProductType,
@@ -125,7 +120,7 @@ export function ProductManageForm({
             costPerItem: product?.costPerItem ?? 0, // Use AED value directly
 
             // INVENTORY
-            nativeSku: product?.nativeSku ?? generateSKU(),
+            nativeSku: product?.nativeSku ?? "",
             sku: product?.sku ?? "",
             barcode: product?.barcode ?? "",
             quantity: product?.quantity ?? 0,

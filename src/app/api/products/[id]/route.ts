@@ -2,7 +2,7 @@ import { env } from "@/../env";
 import { ERROR_MESSAGES } from "@/config/const";
 import { queries } from "@/lib/db/queries";
 import { cache } from "@/lib/redis/methods";
-import { AppError, CResponse, generateSKU, handleError } from "@/lib/utils";
+import { AppError, CResponse, generateSKU, generateUniqueSKU, handleError } from "@/lib/utils";
 import { cacheInvalidation } from "@/lib/utils/cache";
 import { Product, updateProductSchema } from "@/lib/validations";
 import { auth } from "@clerk/nextjs/server";

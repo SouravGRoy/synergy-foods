@@ -249,6 +249,17 @@ export function generateUploadThingUrl(key: string) {
     return `https://x6bo3x9qkp.ufs.sh/f/${key}`;
 }
 
+/**
+ * Generate unique SKU for products
+ * Format: SYN-{TIMESTAMP}-{RANDOM}
+ * Example: SYN-1234567890-A3F9
+ */
+export function generateUniqueSKU(): string {
+    const timestamp = Date.now().toString();
+    const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+    return `SYN-${timestamp}-${random}`;
+}
+
 export function getImageUrl(imageUrl?: string | null): string {
     if (!imageUrl) return placeholderImage;
     

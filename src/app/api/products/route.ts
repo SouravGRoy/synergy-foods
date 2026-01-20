@@ -11,6 +11,7 @@ import {
     CResponse,
     generateProductSlug,
     generateSKU,
+    generateUniqueSKU,
     handleError,
 } from "@/lib/utils";
 // Production optimizations - import directly from utils files
@@ -250,6 +251,7 @@ async function createProductsHandler(req: NextRequest): Promise<NextResponse> {
             return {
                 ...product,
                 slug: generateProductSlug(product.title),
+                sku: product.sku || generateUniqueSKU(), // Auto-generate if not provided
             };
         });
 
