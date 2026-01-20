@@ -132,12 +132,35 @@ export function useAuth() {
                     password: values.password,
                 });
 
-                if (signInAttempt.status !== "complete")
-                    throw new Error(
-                        "Missing requirements or verification aborted"
-                    );
+                // Handle different sign-in statuses
+                if (signInAttempt.status === "complete") {
+                    return { signInAttempt };
+                }
 
-                return { signInAttempt };
+                // If needs first factor (email verification, 2FA, etc.)
+                if (signInAttempt.status === "needs_first_factor") {
+                    // Attempt to complete with email code strategy if available
+                    const emailCodeFactor = signInAttempt.supportedFirstFactors.find(
+                        (factor) => factor.strategy === "email_code"
+                    );
+                    
+                    if (emailCodeFactor && "emailAddressId" in emailCodeFactor) {
+                        await signInAttempt.prepareFirstFactor({
+                            strategy: "email_code",
+                            emailAddressId: emailCodeFactor.emailAddressId,
+                        });
+                        toast.info("Verification code sent to your email");
+                        throw new Error("EMAIL_VERIFICATION_REQUIRED");
+                    }
+                }
+
+                // If needs second factor (2FA)
+                if (signInAttempt.status === "needs_second_factor") {
+                    toast.info("Two-factor authentication required");
+                    throw new Error("2FA_REQUIRED");
+                }
+
+                throw new Error("Unable to complete sign in. Please try again.");
             },
             onSuccess: async ({ signInAttempt }, _, { toastId }) => {
                 await setActive?.({
