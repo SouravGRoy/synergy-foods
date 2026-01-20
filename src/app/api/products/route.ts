@@ -251,7 +251,7 @@ async function createProductsHandler(req: NextRequest): Promise<NextResponse> {
             return {
                 ...product,
                 slug: generateProductSlug(product.title),
-                sku: product.sku || generateUniqueSKU(), // Auto-generate if not provided
+                sku: generateUniqueSKU(), // Always auto-generate SKU server-side
             };
         });
 

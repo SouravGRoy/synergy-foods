@@ -772,18 +772,24 @@ export function ProductManageForm({
                                             name="sku"
                                             render={({ field }) => (
                                                 <FormItem className="w-full">
-                                                    <FormLabel>SKU</FormLabel>
+                                                    <FormLabel>
+                                                        SKU{" "}
+                                                        <span className="text-xs text-muted-foreground">
+                                                            (Auto-generated)
+                                                        </span>
+                                                    </FormLabel>
 
                                                     <FormControl>
                                                         <Input
                                                             {...field}
-                                                            placeholder="SKU"
-                                                            className="h-9"
+                                                            placeholder="Auto-generated on save"
+                                                            className="h-9 bg-muted"
                                                             value={
-                                                                field.value ??
-                                                                ""
+                                                                field.value ||
+                                                                "Auto-generated on save"
                                                             }
-                                                            disabled={isPending}
+                                                            disabled
+                                                            readOnly
                                                         />
                                                     </FormControl>
 
