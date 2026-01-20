@@ -111,7 +111,33 @@ export function SignInForm() {
                     <div className="space-y-2">
                         <div className="text-sm leading-none font-medium">
                             Email
-            2FA form if required
+                        </div>
+                        <div className="h-10 w-full rounded-lg border border-input bg-background"></div>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="text-sm leading-none font-medium">
+                            Password
+                        </div>
+                        <div className="h-10 w-full rounded-lg border border-input bg-background"></div>
+                    </div>
+                </div>
+                <div className="h-10 w-full rounded-lg bg-primary"></div>
+                <div className="text-center text-sm">
+                    <span className="text-muted-foreground">
+                        Don&apos;t have an account?{" "}
+                    </span>
+                    <Link
+                        href="/auth/signup"
+                        className="font-medium text-primary hover:underline"
+                    >
+                        Sign up
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
+    // Show 2FA form if required
     if (needs2FA) {
         return (
             <div className="space-y-6">
@@ -158,32 +184,6 @@ export function SignInForm() {
                         Back to sign in
                     </Button>
                 </form>
-            </div>
-        );
-    }
-
-    // Show             </div>
-                        <div className="h-10 w-full rounded-lg border border-input bg-background"></div>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="text-sm leading-none font-medium">
-                            Password
-                        </div>
-                        <div className="h-10 w-full rounded-lg border border-input bg-background"></div>
-                    </div>
-                </div>
-                <div className="h-10 w-full rounded-lg bg-primary"></div>
-                <div className="text-center text-sm">
-                    <span className="text-muted-foreground">
-                        Don&apos;t have an account?{" "}
-                    </span>
-                    <Link
-                        href="/auth/signup"
-                        className="font-medium text-primary hover:underline"
-                    >
-                        Sign up
-                    </Link>
-                </div>
             </div>
         );
     }
