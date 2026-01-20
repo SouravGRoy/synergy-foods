@@ -23,6 +23,7 @@ import { toast } from "sonner";
 export function SignInForm() {
     const [isMounted, setIsMounted] = useState(false);
     const [needsVerification, setNeedsVerification] = useState(false);
+    const [needs2FA, setNeeds2FA] = useState(false);
     const [verificationCode, setVerificationCode] = useState("");
     const { signIn, isLoaded } = useClerkSignIn();
 
@@ -48,6 +49,8 @@ export function SignInForm() {
         } catch (error: any) {
             if (error?.message === "EMAIL_VERIFICATION_REQUIRED") {
                 setNeedsVerification(true);
+            } else if (error?.message === "TWO_FACTOR_REQUIRED") {
+                setNeeds2FA(true);
             }
         }
     };
@@ -76,6 +79,30 @@ export function SignInForm() {
         }
     };
 
+    const handle2FASubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!isLoaded || !signIn) return;
+
+        try {
+            const signInAttempt = await signIn.attemptSecondFactor({
+                strategy: "totp",
+                code: verificationCode,
+            });
+
+            if (signInAttempt.status === "complete") {
+                await (window as any).Clerk?.setActive({
+                    session: signInAttempt.createdSessionId,
+                });
+                toast.success("Successfully signed in!");
+                setNeeds2FA(false);
+                form.reset();
+                setVerificationCode("");
+            }
+        } catch (error: any) {
+            toast.error(error?.errors?.[0]?.message || "Invalid 2FA code");
+        }
+    };
+
     // Prevent hydration mismatch by not rendering interactive elements until mounted
     if (!isMounted) {
         return (
@@ -84,7 +111,58 @@ export function SignInForm() {
                     <div className="space-y-2">
                         <div className="text-sm leading-none font-medium">
                             Email
-                        </div>
+            2FA form if required
+    if (needs2FA) {
+        return (
+            <div className="space-y-6">
+                <div className="space-y-2 text-center">
+                    <h3 className="text-xl font-semibold">
+                        Two-factor authentication
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                        Enter the code from your authenticator app
+                    </p>
+                </div>
+
+                <form onSubmit={handle2FASubmit} className="space-y-4">
+                    <div className="space-y-2">
+                        <label className="text-sm leading-none font-medium">
+                            Authentication code
+                        </label>
+                        <Input
+                            type="text"
+                            placeholder="Enter 6-digit code"
+                            className="h-11 text-center text-lg tracking-widest"
+                            value={verificationCode}
+                            onChange={(e) =>
+                                setVerificationCode(e.target.value)
+                            }
+                            maxLength={6}
+                            autoFocus
+                        />
+                    </div>
+
+                    <Button type="submit" className="h-11 w-full text-base">
+                        Verify & Sign in
+                    </Button>
+
+                    <Button
+                        type="button"
+                        variant="ghost"
+                        className="h-11 w-full text-base"
+                        onClick={() => {
+                            setNeeds2FA(false);
+                            setVerificationCode("");
+                        }}
+                    >
+                        Back to sign in
+                    </Button>
+                </form>
+            </div>
+        );
+    }
+
+    // Show             </div>
                         <div className="h-10 w-full rounded-lg border border-input bg-background"></div>
                     </div>
                     <div className="space-y-2">

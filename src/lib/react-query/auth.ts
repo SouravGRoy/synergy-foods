@@ -157,7 +157,7 @@ export function useAuth() {
                 // If needs second factor (2FA)
                 if (signInAttempt.status === "needs_second_factor") {
                     toast.info("Two-factor authentication required");
-                    throw new Error("2FA_REQUIRED");
+                    throw new Error("TWO_FACTOR_REQUIRED");
                 }
 
                 throw new Error("Unable to complete sign in. Please try again.");
