@@ -11,21 +11,20 @@ import { useEffect, useState } from "react";
 // Move footer links outside component to ensure stability
 const FOOTER_LINKS = {
     products: [
-        { name: "Fresh Fruits", href: "/products/fruits" },
-        { name: "Vegetables", href: "/products/vegetables" },
-        { name: "Grains & Pulses", href: "/products/grains" },
-        { name: "Spices & Herbs", href: "/products/spices" },
+        { name: "Organic Pickles", href: "/shop" },
+        { name: "Quality Oils", href: "/shop" },
+        { name: "Quality Rice", href: "/shop" },
+        { name: "Spices & Herbs", href: "/shop" },
     ],
     company: [
-        { name: "About Us", href: "/about" },
-        { name: "Our Farms", href: "/farms" },
-        { name: "Careers", href: "/careers" },
-        { name: "News & Updates", href: "/news" },
+        { name: "About Us", href: "/blog" },
+        { name: "Support", href: "/support" },
+        { name: "News & Updates", href: "/blog" },
     ],
     support: [
-        { name: "My Account", href: "/account" },
-        { name: "Contact Us", href: "/contact" },
-        { name: "Shipping & Delivery", href: "/shipping" },
+        { name: "My Account", href: "/dashboard" },
+        { name: "Contact Us", href: "/support" },
+        { name: "Shipping & Delivery", href: "/support" },
         { name: "FAQs", href: "/faq" },
         { name: "Wholesale Inquiries", href: "/wholesale" },
     ],
@@ -33,7 +32,6 @@ const FOOTER_LINKS = {
         { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms & Conditions", href: "/terms" },
         { name: "Food Safety Policy", href: "/safety" },
-        { name: "Certifications", href: "/certifications" },
     ],
 } as const;
 
