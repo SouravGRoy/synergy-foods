@@ -1,199 +1,466 @@
+"use client";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock } from "lucide-react";
-import { Metadata } from "next";
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { motion } from "framer-motion";
+import {
+    ArrowRight,
+    Bookmark,
+    Calendar,
+    Clock,
+    Flame,
+    Search,
+    Tag,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-    title: "Blog & News",
-    description: "Latest updates, news, and insights from Synergy Foods",
-};
+// ------------------------
+// Mock data (replace with your CMS / DB)
+// ------------------------
+const categories = [
+    "All",
+    "Sustainability",
+    "Recipes",
+    "Supply Chain",
+    "Market Trends",
+    "Farming",
+    "Nutrition",
+];
 
-const blogPosts = [
+const posts = [
     {
-        id: 1,
-        title: "The Benefits of Organic Food: Why It Matters",
+        id: "featured",
+        title: "How Cold-Chain Logistics Keeps Produce Fresher for Longer",
         excerpt:
-            "Discover the health and environmental benefits of choosing organic products for your family and business.",
-        date: "2026-01-25",
-        readTime: "5 min read",
-        category: "Health & Wellness",
-        image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80",
+            "We break down modern cold-chain workflows and the exact checkpoints that matter for freshness, safety, and margins.",
+        cover: "https://images.unsplash.com/photo-1493236272120-200db0da1927?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        date: "2025-08-17",
+        readTime: 6,
+        category: "Supply Chain",
+        author: {
+            name: " Alex Carter",
+            avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
     },
     {
-        id: 2,
-        title: "Understanding Food Safety Standards in Global Trade",
+        id: "1",
+        title: "7 Seasonal Superfoods You Can Source Right Now",
         excerpt:
-            "Learn about international food safety certifications and how they ensure quality in the supply chain.",
-        date: "2026-01-20",
-        readTime: "7 min read",
-        category: "Food Safety",
-        image: "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=800&q=80",
+            "From berries to leafy greens: where to buy, how to store, and quick ways to use them.",
+        cover: "https://images.unsplash.com/photo-1605655293168-0235eac3f255?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        date: "2025-08-12",
+        readTime: 4,
+        category: "Nutrition",
+        author: {
+            name: "Maya Singh",
+            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
     },
     {
-        id: 3,
-        title: "Seasonal Produce Guide: What to Buy This Month",
+        id: "2",
+        title: "Inside a Zero‑Waste Packhouse: A Practical Tour",
         excerpt:
-            "Maximize freshness and flavor with our guide to seasonal fruits and vegetables available now.",
-        date: "2026-01-15",
-        readTime: "4 min read",
-        category: "Seasonal Guide",
-        image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800&q=80",
-    },
-    {
-        id: 4,
-        title: "Sustainable Sourcing: Our Commitment to the Planet",
-        excerpt:
-            "How we work with farmers and suppliers to ensure environmentally responsible food production.",
-        date: "2026-01-10",
-        readTime: "6 min read",
+            "We visited a facility that turns organic waste into value. Here's what the data says.",
+        cover: "https://images.unsplash.com/photo-1608663003523-ec3d747161ca?q=80&w=654&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        date: "2025-08-09",
+        readTime: 5,
         category: "Sustainability",
-        image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80",
+        author: {
+            name: "Kabir Shah",
+            avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
     },
     {
-        id: 5,
-        title: "Rice Varieties Explained: A Complete Guide",
+        id: "3",
+        title: "Quick Meal Prep with Frozen Veg—Without Losing Nutrients",
         excerpt:
-            "From Basmati to Jasmine, learn about different rice types and their culinary uses.",
-        date: "2026-01-05",
-        readTime: "8 min read",
-        category: "Product Guide",
-        image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=80",
+            "Freezing isn't the enemy. Learn which cuts and techniques keep texture and flavor.",
+        cover: "https://plus.unsplash.com/premium_photo-1723987767064-f8ccdc01f83e?q=80&w=1708&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        date: "2025-08-03",
+        readTime: 3,
+        category: "Recipes",
+        author: {
+            name: "Neha Verma",
+            avatar: "https://plus.unsplash.com/premium_photo-1673957923985-b814a9dbc03d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
     },
     {
-        id: 6,
-        title: "Wholesale Buying Tips for Restaurant Owners",
+        id: "4",
+        title: "What Retail Buyers Want in 2025: Packaging, Claims, and Pricing",
         excerpt:
-            "Essential strategies for purchasing quality ingredients in bulk while managing costs.",
-        date: "2025-12-28",
-        readTime: "5 min read",
-        category: "Business Tips",
-        image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+            "Survey insights from 120+ buyers on shelf appeal and conversion triggers.",
+        cover: "https://images.unsplash.com/photo-1742037770612-2a3c1699c766?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        date: "2025-07-28",
+        readTime: 7,
+        category: "Market Trends",
+        author: {
+            name: "Rohan Mehta",
+            avatar: "https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+    },
+    {
+        id: "5",
+        title: "Regenerative Farming, Explained in 5 Diagrams",
+        excerpt:
+            "Soil health, biodiversity, and ROI—see the system at a glance.",
+        cover: "https://images.unsplash.com/photo-1696850194823-24cf64cb3dad?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        date: "2025-07-24",
+        readTime: 5,
+        category: "Farming",
+        author: {
+            name: "Isha Kapoor",
+            avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+    },
+    {
+        id: "6",
+        title: "A Trader's Guide to Hedging Price Volatility",
+        excerpt:
+            "Risk isn't the enemy—uncertainty is. Here's how pros plan around it.",
+        cover: "https://images.unsplash.com/photo-1643962579365-3a9222e923b8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        date: "2025-07-19",
+        readTime: 8,
+        category: "Market Trends",
+        author: {
+            name: "Sameer Rao",
+            avatar: "https://plus.unsplash.com/premium_photo-1669703777437-27602d656c27?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
     },
 ];
 
+function formatDate(input: string) {
+    try {
+        return new Date(input).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "2-digit",
+        });
+    } catch {
+        return input;
+    }
+}
+
 export default function BlogPage() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-            <div className="mx-auto max-w-7xl px-4 py-16 md:px-8">
-                <div className="space-y-12">
-                    {/* Header */}
-                    <div className="space-y-4 text-center">
-                        <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
-                            Blog & News
+        <main className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-white">
+            {/* Hero */}
+            <section className="relative overflow-hidden">
+                <div className="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-emerald-200/50 blur-3xl" />
+                <div className="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-emerald-300/30 blur-3xl" />
+
+                <div className="mx-auto max-w-7xl px-4 pt-16 pb-10 md:pt-24">
+                    <div className="mx-auto max-w-3xl text-center">
+                        <Badge className="mb-4 bg-emerald-600/90">Blog</Badge>
+                        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                            Fresh Ideas for Food & Trade
                         </h1>
-                        <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                            Stay informed with the latest insights, tips, and
-                            updates from the world of food trading and quality
-                            products.
+                        <p className="mt-4 text-base text-gray-600 sm:text-lg">
+                            Stories, playbooks, and research from our team and
+                            partners across farming, logistics, and nutrition.
                         </p>
-                    </div>
 
-                    {/* Featured Post */}
-                    <div className="relative overflow-hidden rounded-lg border bg-card shadow-lg">
-                        <div className="grid gap-6 lg:grid-cols-2">
-                            <div className="relative h-64 lg:h-auto">
-                                <Image
-                                    src={blogPosts[0].image}
-                                    alt={blogPosts[0].title}
-                                    fill
-                                    className="object-cover"
+                        {/* Search bar */}
+                        <div className="mt-6 flex w-full items-center justify-center">
+                            <div className="flex w-full max-w-xl items-center gap-2 rounded-2xl border border-gray-200 bg-white p-2 shadow-sm">
+                                <Search className="ml-2 size-5 opacity-70" />
+                                <Input
+                                    placeholder="Search articles, topics, or authors…"
+                                    className="border-0 focus-visible:ring-0"
                                 />
-                            </div>
-                            <div className="flex flex-col justify-center space-y-4 p-6 lg:p-8">
-                                <div className="inline-flex w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                                    Featured
-                                </div>
-                                <h2 className="text-3xl font-bold">
-                                    {blogPosts[0].title}
-                                </h2>
-                                <p className="text-muted-foreground">
-                                    {blogPosts[0].excerpt}
-                                </p>
-                                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                                    <div className="flex items-center gap-1">
-                                        <Calendar className="h-4 w-4" />
-                                        {new Date(
-                                            blogPosts[0].date
-                                        ).toLocaleDateString("en-US", {
-                                            month: "long",
-                                            day: "numeric",
-                                            year: "numeric",
-                                        })}
-                                    </div>
-                                    <div className="flex items-center gap-1">
-                                        <Clock className="h-4 w-4" />
-                                        {blogPosts[0].readTime}
-                                    </div>
-                                </div>
-                                <Button className="w-fit">Read Article</Button>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Blog Grid */}
-                    <div>
-                        <h2 className="mb-6 text-2xl font-semibold">
-                            Recent Articles
-                        </h2>
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            {blogPosts.slice(1).map((post) => (
-                                <article
-                                    key={post.id}
-                                    className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-shadow hover:shadow-md"
+                                <Button
+                                    className="rounded-xl"
+                                    variant="default"
                                 >
-                                    <div className="relative h-48">
-                                        <Image
-                                            src={post.image}
-                                            alt={post.title}
-                                            fill
-                                            className="object-cover transition-transform group-hover:scale-105"
-                                        />
-                                    </div>
-                                    <div className="space-y-3 p-4">
-                                        <div className="inline-flex rounded-full bg-primary/10 px-2 py-1 text-xs font-semibold text-primary">
-                                            {post.category}
-                                        </div>
-                                        <h3 className="line-clamp-2 text-lg font-semibold group-hover:text-primary">
-                                            {post.title}
-                                        </h3>
-                                        <p className="line-clamp-2 text-sm text-muted-foreground">
-                                            {post.excerpt}
-                                        </p>
-                                        <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                                            <div className="flex items-center gap-1">
-                                                <Calendar className="h-3 w-3" />
-                                                {new Date(
-                                                    post.date
-                                                ).toLocaleDateString("en-US", {
-                                                    month: "short",
-                                                    day: "numeric",
-                                                })}
-                                            </div>
-                                            <div className="flex items-center gap-1">
-                                                <Clock className="h-3 w-3" />
-                                                {post.readTime}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                            ))}
+                                    Search
+                                </Button>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Newsletter CTA */}
-                    <div className="rounded-lg border bg-primary/5 p-8 text-center">
-                        <h2 className="mb-2 text-2xl font-semibold">
-                            Stay Updated
-                        </h2>
-                        <p className="mb-6 text-muted-foreground">
-                            Subscribe to our newsletter for the latest articles,
-                            tips, and exclusive offers.
-                        </p>
-                        <Button size="lg">Subscribe Now</Button>
+                        {/* Category pills */}
+                        <div className="mt-6 overflow-x-auto">
+                            <div className="flex items-center justify-center gap-2 px-1 whitespace-nowrap">
+                                {categories.map((c) => (
+                                    <Button
+                                        key={c}
+                                        variant="secondary"
+                                        className="rounded-full bg-white/70 backdrop-blur hover:bg-white"
+                                    >
+                                        {c}
+                                    </Button>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            {/* Featured + Grid */}
+            <section className="mx-auto max-w-7xl px-4 pb-24">
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    {/* Featured */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="lg:col-span-2"
+                    >
+                        <Card className="overflow-hidden border-0 shadow-xl">
+                            <div className="relative aspect-[16/9] w-full">
+                                <Image
+                                    src={posts[0].cover}
+                                    alt={posts[0].title}
+                                    fill
+                                    priority
+                                    className="object-cover"
+                                />
+                                <div className="absolute top-4 left-4 flex items-center gap-2">
+                                    <Badge className="bg-emerald-600/90">
+                                        {posts[0].category}
+                                    </Badge>
+                                    <Badge
+                                        variant="secondary"
+                                        className="backdrop-blur"
+                                    >
+                                        <Flame className="mr-1 size-3.5" />{" "}
+                                        Featured
+                                    </Badge>
+                                </div>
+                            </div>
+
+                            <CardHeader className="space-y-3">
+                                <Link
+                                    href="/blog"
+                                    className="group inline-block"
+                                >
+                                    <h2 className="text-2xl leading-tight font-semibold text-gray-900 md:text-3xl">
+                                        {posts[0].title}
+                                    </h2>
+                                    <span className="mt-1 inline-flex items-center text-sm text-emerald-700 group-hover:underline">
+                                        Read the deep‑dive{" "}
+                                        <ArrowRight className="ml-1 size-4" />
+                                    </span>
+                                </Link>
+                                <p className="text-gray-600">
+                                    {posts[0].excerpt}
+                                </p>
+                            </CardHeader>
+
+                            <CardFooter className="flex items-center justify-between border-t bg-gray-50/60">
+                                <AuthorRow
+                                    author={posts[0].author}
+                                    date={posts[0].date}
+                                    read={posts[0].readTime}
+                                />
+                                <Button
+                                    asChild
+                                    variant="outline"
+                                    className="rounded-xl"
+                                >
+                                    <Link href="/blog">Continue Reading</Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    </motion.div>
+
+                    {/* Sidebar / Popular */}
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-gray-900">
+                            Popular Reads
+                        </h3>
+                        <div className="space-y-4">
+                            {posts.slice(1, 4).map((p) => (
+                                <Link key={p.id} href="/blog" className="group">
+                                    <Card className="overflow-hidden transition-shadow hover:shadow-md">
+                                        <div className="flex items-center gap-4 p-3">
+                                            <div className="relative h-20 w-28 flex-shrink-0 overflow-hidden rounded-xl">
+                                                <Image
+                                                    src={p.cover}
+                                                    alt={p.title}
+                                                    fill
+                                                    className="object-cover transition-transform group-hover:scale-105"
+                                                />
+                                            </div>
+                                            <div className="min-w-0">
+                                                <Badge
+                                                    variant="secondary"
+                                                    className="mb-1"
+                                                >
+                                                    {p.category}
+                                                </Badge>
+                                                <h4 className="truncate text-sm font-semibold text-gray-900">
+                                                    {p.title}
+                                                </h4>
+                                                <Meta
+                                                    date={p.date}
+                                                    read={p.readTime}
+                                                    compact
+                                                />
+                                            </div>
+                                            <Bookmark className="ml-auto hidden size-4 opacity-40 group-hover:opacity-70 sm:block" />
+                                        </div>
+                                    </Card>
+                                </Link>
+                            ))}
+                        </div>
+
+                        {/* Newsletter / CTA */}
+                        <Card className="border-0 bg-emerald-600/95 text-white">
+                            <CardHeader>
+                                <h4 className="text-lg font-semibold">
+                                    Get new posts first
+                                </h4>
+                                <p className="text-sm text-emerald-50/90">
+                                    Join our newsletter for weekly insights and
+                                    market notes.
+                                </p>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="flex gap-2">
+                                    <Input
+                                        placeholder="your@email.com"
+                                        className="bg-white text-gray-900 placeholder:text-gray-500"
+                                    />
+                                    <Button
+                                        variant="secondary"
+                                        className="whitespace-nowrap"
+                                    >
+                                        Subscribe
+                                    </Button>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+
+                {/* Posts Grid */}
+                <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
+                    {posts.slice(1).map((p, i) => (
+                        <motion.article
+                            key={p.id}
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.35, delay: i * 0.06 }}
+                        >
+                            <Card className="group overflow-hidden border-0 shadow hover:shadow-lg">
+                                <div className="relative aspect-[16/10] w-full">
+                                    <Image
+                                        src={p.cover}
+                                        alt={p.title}
+                                        fill
+                                        className="object-cover transition-transform group-hover:scale-105"
+                                    />
+                                    <Badge className="absolute top-3 left-3 bg-white/90 text-gray-900 backdrop-blur">
+                                        <Tag className="mr-1 size-3.5" />{" "}
+                                        {p.category}
+                                    </Badge>
+                                </div>
+                                <CardHeader className="space-y-2">
+                                    <Link
+                                        href="/blog"
+                                        className="group inline-block"
+                                    >
+                                        <h3 className="line-clamp-2 text-xl font-semibold text-gray-900 group-hover:underline">
+                                            {p.title}
+                                        </h3>
+                                    </Link>
+                                    <p className="line-clamp-2 text-gray-600">
+                                        {p.excerpt}
+                                    </p>
+                                </CardHeader>
+                                <CardFooter className="flex items-center justify-between border-t bg-gray-50/60">
+                                    <AuthorRow
+                                        author={p.author}
+                                        date={p.date}
+                                        read={p.readTime}
+                                    />
+                                    <Button
+                                        asChild
+                                        variant="ghost"
+                                        className="rounded-xl"
+                                    >
+                                        <Link href="/blog">
+                                            Read{" "}
+                                            <ArrowRight className="ml-1 size-4" />
+                                        </Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        </motion.article>
+                    ))}
+                </div>
+            </section>
+
+            {/* Footer tease */}
+            <section className="border-t bg-gray-50/60">
+                <div className="mx-auto max-w-7xl px-4 py-12 text-center">
+                    <p className="text-sm text-gray-500">
+                        Psst… looking for something specific? Try the search bar
+                        above or explore categories.
+                    </p>
+                </div>
+            </section>
+        </main>
+    );
+}
+
+function AuthorRow({
+    author,
+    date,
+    read,
+}: {
+    author: { name: string; avatar?: string };
+    date: string;
+    read: number;
+}) {
+    return (
+        <div className="flex items-center gap-3">
+            <Avatar className="h-8 w-8">
+                <AvatarImage src={author.avatar} alt={author.name} />
+                <AvatarFallback>{getInitials(author.name)}</AvatarFallback>
+            </Avatar>
+            <div className="text-sm">
+                <div className="font-medium text-gray-900">{author.name}</div>
+                <Meta date={date} read={read} />
             </div>
         </div>
     );
+}
+
+function Meta({
+    date,
+    read,
+    compact = false,
+}: {
+    date: string;
+    read: number;
+    compact?: boolean;
+}) {
+    return (
+        <div
+            className={`mt-0.5 flex items-center gap-3 text-gray-500 ${compact ? "text-xs" : "text-sm"}`}
+        >
+            <span className="inline-flex items-center">
+                <Calendar className="mr-1 size-3.5" /> {formatDate(date)}
+            </span>
+            <span className="inline-flex items-center">
+                <Clock className="mr-1 size-3.5" /> {read} min read
+            </span>
+        </div>
+    );
+}
+
+function getInitials(name: string) {
+    const parts = name.split(" ").filter(Boolean);
+    const first = parts[0]?.[0] ?? "?";
+    const last = parts[1]?.[0] ?? "";
+    return (first + last).toUpperCase();
 }

@@ -22,9 +22,9 @@ const FOOTER_LINKS = {
         { name: "News & Updates", href: "/blog" },
     ],
     support: [
-        { name: "My Account", href: "/dashboard" },
+        { name: "My Account", href: "/account" },
         { name: "Contact Us", href: "/support" },
-        { name: "Shipping & Delivery", href: "/support" },
+        { name: "Shipping & Delivery", href: "/account" },
         { name: "FAQs", href: "/faq" },
         { name: "Wholesale Inquiries", href: "/wholesale" },
     ],
